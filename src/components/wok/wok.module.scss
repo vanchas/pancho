@@ -1,0 +1,126 @@
+.wok_page {
+		.wok_list_heading {
+			margin: 1em auto 2em auto;
+			text-align: center;
+			width: fit-content;
+			position: relative;
+			&::before {
+				content: "";
+				width: 7em;
+				height: 1px;
+				background-color: #000;
+				position: absolute;
+				top: 50%;
+				left: 0;
+				transform: translate(-110%, -50%);
+			}
+			&::after {
+				content: "";
+				width: 7em;
+				height: 1px;
+				background-color: #000;
+				position: absolute;
+				top: 50%;
+				right: 0;
+				transform: translate(110%, -50%);
+			}
+		}
+}
+
+.wok_list {
+	list-style: none;
+	padding: 0;
+	display: grid;
+	grid-gap: 2em;
+  grid-template-columns: repeat(4, 1fr);
+  @media screen and (max-width: 1240px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media screen and (max-width: 900px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media screen and (max-width: 600px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.card {
+	padding: 0.5em;
+}
+.card_title {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-bottom: 0.5em;
+	small {
+		font-size: 0.5em;
+	}
+}
+// .subtitle {
+//   display: flex;
+//   justify-content: space-between;
+// }
+// .subtitle_control {
+//   display: grid;
+//   grid-auto-flow: column;
+//   grid-gap: .2em;
+// }
+.new {
+	background-color: #662483;
+	color: #fff;
+	border-radius: 0.2em;
+	padding: 0 0.5em 0.2em 0.5em;
+	font-weight: 100;
+	font-size: 0.9em;
+}
+.hit {
+	background-color: #e30613;
+	color: #fff;
+	border-radius: 0.2em;
+	padding: 0 0.5em 0.2em 0.5em;
+	font-weight: 100;
+	font-size: 0.9em;
+}
+.person {
+	width: 1em;
+	opacity: 0.5;
+}
+.card_text {
+  padding: .5em 0;
+  line-height: 1.3em;
+}
+// .size_select {
+//   background-color: #e0e0e0;
+//   display: flex;
+//   justify-content: space-around;
+//   align-items: center;
+//   align-content: center;
+//   border-radius: .4em;
+//   margin-bottom: 1.1em;
+//   width: 100%;
+//   label {
+//     text-align: center;
+//     padding: .3em .5em;
+//     margin: 0;
+//     input {
+//       visibility: hidden;
+//     }
+//   }
+//   label.activeBtn {
+//     padding: .05em .3em;
+//     background-color: #fff;
+//     box-shadow: 2px 2px 3px 1px #aaa9a9;
+//     border-radius: .3em;
+//   }
+// }
+.basket {
+  background-color: #575756;
+  color: #f9e803;
+  img {
+    margin-right: .2em;
+  }
+  &:hover {
+    color: #fff;
+  }
+}
+

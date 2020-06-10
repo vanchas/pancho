@@ -20,9 +20,9 @@ const NavComponent = props => {
 
   return (
     <Navbar color="" expand="lg" className="py-1">
-      <NavbarBrand className={s.navbar_brand}>
+      <NavbarBrand href="tel:+0950001195" className={s.navbar_brand}>
         <img src={Phone} alt="" />
-        <a href="tel:+0950001195" className="btn">095-000-11-95</a>
+        <span className="btn">095-000-11-95</span>
       </NavbarBrand >
       <NavbarToggler className={s.navbar_toggler} onClick={toggle} />
       <Collapse isOpen={isOpen} navbar>
