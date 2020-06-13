@@ -1,30 +1,36 @@
 .wok_page {
-		.wok_list_heading {
-			margin: 1em auto 2em auto;
-			text-align: center;
-			width: fit-content;
-			position: relative;
-			&::before {
-				content: "";
-				width: 7em;
-				height: 1px;
-				background-color: #000;
-				position: absolute;
-				top: 50%;
-				left: 0;
-				transform: translate(-110%, -50%);
-			}
+	.wok_list_heading {
+		margin: 1em auto 2em auto;
+		text-align: center;
+		width: fit-content;
+		position: relative;
+		&::before {
+			content: "";
+			width: 7em;
+			height: 1px;
+			background-color: #000;
+			position: absolute;
+			top: 50%;
+			left: 0;
+			transform: translate(-110%, -50%);
+		}
+		&::after {
+			content: "";
+			width: 7em;
+			height: 1px;
+			background-color: #000;
+			position: absolute;
+			top: 50%;
+			right: 0;
+			transform: translate(110%, -50%);
+		}
+		@media screen and (max-width: 900px) {
+			&::before,
 			&::after {
-				content: "";
-				width: 7em;
-				height: 1px;
-				background-color: #000;
-				position: absolute;
-				top: 50%;
-				right: 0;
-				transform: translate(110%, -50%);
+				display: none;
 			}
 		}
+	}
 }
 
 .wok_list {
@@ -32,16 +38,16 @@
 	padding: 0;
 	display: grid;
 	grid-gap: 2em;
-  grid-template-columns: repeat(4, 1fr);
-  @media screen and (max-width: 1240px) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  @media screen and (max-width: 900px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  @media screen and (max-width: 600px) {
-    grid-template-columns: repeat(1, 1fr);
-  }
+	grid-template-columns: repeat(4, 1fr);
+	@media screen and (max-width: 1240px) {
+		grid-template-columns: repeat(3, 1fr);
+	}
+	@media screen and (max-width: 900px) {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	@media screen and (max-width: 600px) {
+		grid-template-columns: repeat(1, 1fr);
+	}
 }
 
 .card {
@@ -86,8 +92,8 @@
 	opacity: 0.5;
 }
 .card_text {
-  padding: .5em 0;
-  line-height: 1.3em;
+	padding: 0.5em 0;
+	line-height: 1.3em;
 }
 // .size_select {
 //   background-color: #e0e0e0;
@@ -114,13 +120,12 @@
 //   }
 // }
 .basket {
-  background-color: #575756;
-  color: #f9e803;
-  img {
-    margin-right: .2em;
-  }
-  &:hover {
-    color: #fff;
-  }
+	background-color: #575756;
+	color: #f9e803;
+	img {
+		margin-right: 0.2em;
+	}
+	&:hover {
+		color: #fff;
+	}
 }
-

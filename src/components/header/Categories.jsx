@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import s from './header.module.scss';
+import { useRouter } from 'next/router';
 import PropTypes from 'prop-types';
 import {
   Collapse,
@@ -22,6 +23,7 @@ import Desert from '../../assets/images/categories/category_desert.png';
 import Drink from '../../assets/images/categories/category_drink.png';
 
 export default function Categories(props) {
+  const router = useRouter();
   const [activeLink, setActiveLink] = useState('');
   const [isOpen, setIsOpen] = useState(false);
 
@@ -37,48 +39,48 @@ export default function Categories(props) {
       <Collapse isOpen={isOpen} navbar>
         <Nav className="mr-auto" navbar>
           <NavItem>
-            <NavLink href="/pizza" onClick={() => setActiveLink('pizza')} className={activeLink === 'pizza' ? s.activeLink : null}>
-              <img src={Pizza} alt=""/>
+            <NavLink href="/pizza" onClick={() => setActiveLink('pizza')} className={router.pathname === '/pizza' ? s.activeLink : null}>
+              <img src={Pizza} alt="" />
               ПИЦЦА</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="/half" onClick={() => setActiveLink('half')} className={activeLink === 'half' ? s.activeLink : null}>
-              <img src={Half} alt=""/>
+            <NavLink href="/half" onClick={() => setActiveLink('half')} className={router.pathname === '/half' ? s.activeLink : null}>
+              <img src={Half} alt="" />
               ПОЛОВИНКИ</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="/wok" onClick={() => setActiveLink('wok')} className={activeLink === 'wok' ? s.activeLink : null}>
-              <img src={Wok} alt=""/>
+            <NavLink href="/wok" onClick={() => setActiveLink('wok')} className={router.pathname === '/wok' ? s.activeLink : null}>
+              <img src={Wok} alt="" />
               ВОК</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="/snack" onClick={() => setActiveLink('snack')} className={activeLink === 'snack' ? s.activeLink : null}>
-              <img src={Snack} alt=""/>
+            <NavLink href="/snack" onClick={() => setActiveLink('snack')} className={router.pathname === '/snack' ? s.activeLink : null}>
+              <img src={Snack} alt="" />
               ЗАКУСКИ</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="/pasta" onClick={() => setActiveLink('pasta')} className={activeLink === 'pasta' ? s.activeLink : null}>
-              <img src={Pasta} alt=""/>
+            <NavLink href="/pasta" onClick={() => setActiveLink('pasta')} className={router.pathname === '/pasta' ? s.activeLink : null}>
+              <img src={Pasta} alt="" />
               ПАСТА</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="/combo" onClick={() => setActiveLink('combo')} className={activeLink === 'combo' ? s.activeLink : null}>
-              <img src={Combo} alt=""/>
+            <NavLink href="/combo" onClick={() => setActiveLink('combo')} className={router.pathname === '/combo' ? s.activeLink : null}>
+              <img src={Combo} alt="" />
               КОМБО</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="/set" onClick={() => setActiveLink('set')} className={activeLink === 'set' ? s.activeLink : null}>
-              <img src={Sets} alt=""/>
+            <NavLink href="/set" onClick={() => setActiveLink('set')} className={router.pathname === '/set' ? s.activeLink : null}>
+              <img src={Sets} alt="" />
               СЕТЫ</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="/desert" onClick={() => setActiveLink('desert')} className={activeLink === 'desert' ? s.activeLink : null}>
-              <img src={Desert} alt=""/>
+            <NavLink href="/desert" onClick={() => setActiveLink('desert')} className={router.pathname === '/desert' ? s.activeLink : null}>
+              <img src={Desert} alt="" />
               ДЕСЕРТЫ</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="/drink" onClick={() => setActiveLink('drink')} className={activeLink === 'drink' ? s.activeLink : null}>
-              <img src={Drink} alt=""/>
+            <NavLink href="/drink" onClick={() => setActiveLink('drink')} className={router.pathname === '/drink' ? s.activeLink : null}>
+              <img src={Drink} alt="" />
               НАПИТКИ</NavLink>
           </NavItem>
         </Nav>

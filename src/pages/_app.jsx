@@ -5,7 +5,7 @@ import './styles/app.scss';
 import Layout from '../components/layout/Layout';
 import withRedux from "next-redux-wrapper";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import store from '../redux/store.ts';
+import store from '../redux/store';
 // import "slick-carousel/slick/slick.css";
 // import "slick-carousel/slick/slick-theme.css";
 

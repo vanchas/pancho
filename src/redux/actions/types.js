@@ -1,0 +1,8 @@
+export const GET_PIZZAS = 'GET_PIZZAS';
+export const SET_LEFT_HALF_PIZZA = 'SET_LEFT_HALF_PIZZA';
+export const SET_RIGHT_HALF_PIZZA = 'SET_RIGHT_HALF_PIZZA';
+
+
+export const GET_TRANSACTONS = 'GET_TRANSACTONS';
+export const GET_ADDRESSES = 'GET_ADDRESSES';
+export const GET_BONUSES = 'GET_BONUSES';
