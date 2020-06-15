@@ -32,9 +32,9 @@ const Half = ({ pizza, setLeftHalfPizza, setRightHalfPizza, rightHalfPizza, left
 }
 
 const mapStateToProps = state => {
-  const pizzas = state.pizza.pizza;
-  const leftHalfPizza = state.pizza.leftHalfPizza;
-  const rightHalfPizza = state.pizza.rightHalfPizza;
+  const pizzas = state.products.pizza;
+  const leftHalfPizza = state.products.leftHalfPizza;
+  const rightHalfPizza = state.products.rightHalfPizza;
   return {
     pizza: pizzas,
     rightHalfPizza,

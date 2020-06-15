@@ -1,4 +1,4 @@
-import { GET_TRANSACTONS, GET_ADDRESSES, GET_BONUSES } from '../actions/types.js'
+import { GET_TRANSACTONS, GET_ADDRESSES, GET_BONUSES } from '../actions/types'
 
 const initialState = {
   transactions: [],
@@ -6,7 +6,7 @@ const initialState = {
   bonuses: []
 };
 
-export const userReducer = (state = initialState, action) => {
+export const userReducer = (state = initialState, action: any) => {
   switch (action.type) {
     case GET_TRANSACTONS:
       return { ...state, transactions: action.payload }

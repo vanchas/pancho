@@ -1,28 +1,23 @@
-import React, { useState } from 'react'
+import React from 'react'
 import s from './wok.module.scss'
-import Person from '../../assets/images/person.png'
 import Basket from '../../assets/images/basket.png'
-import Pepper from '../../assets/images/pepper.png'
-import Green from '../../assets/images/green.png'
 
-export default function WokCard({ image }) {
-  const [activeBtn, setActiveBtn] = useState(3);
-
+export default function WokCard({ image, name, description, price, weight }) {
   return (
     <div className={`${s.card} card border-0`}>
       <img className="card-img-top" src={image} alt="Card image cap" />
       <div className="card-body">
         <h5 className={`${s.card_title} card-title`}>
-          Фунчоза
-          <small className="text-muted">380г +- 20г</small>
+          {name}
+          <small className="text-muted">{weight}г +- 20г</small>
         </h5>
-        <p className={s.card_text}>Пшеничная лапша, брокколи, морковка, грибы, пекинская капуста, кунжут</p>
+        <p className={s.card_text}>{description}</p>
         <div className={`d-flex justify-content-between`}>
           <button className={`${s.basket} btn`}>
             <img src={Basket} alt="" />
             В КОРЗИНУ
           </button>
-          <span className="font-weight-bold h5">180 грн</span>
+          <span className="font-weight-bold h5">{price} грн</span>
         </div>
       </div>
     </div>
