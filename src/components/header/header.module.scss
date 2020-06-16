@@ -136,7 +136,13 @@
 	max-width: 1260px;
 	margin: 0 auto;
 	nav {
+		padding-left: 0;
+		padding-right: 0;
 		overflow-x: hidden;
+		@media screen and (max-width: 1999px) {
+			padding-left: 1em;
+			padding-right: 1em;
+		}
 		.navbar_brand {
 			display: none;
 		}
