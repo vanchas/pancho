@@ -1,9 +1,10 @@
-import { GET_TRANSACTONS, GET_ADDRESSES, GET_BONUSES } from '../actions/types'
+import { GET_TRANSACTONS, GET_ADDRESSES, GET_BONUSES, GET_REVIEWS } from '../actions/types'
 
 const initialState = {
   transactions: [],
   addresses: [],
-  bonuses: []
+  bonuses: [],
+  reviews: []
 };
 
 export const userReducer = (state = initialState, action: any) => {
@@ -16,6 +17,9 @@ export const userReducer = (state = initialState, action: any) => {
 
     case GET_BONUSES:
       return { ...state, bonuses: action.payload }
+
+    case GET_REVIEWS:
+      return { ...state, reviews: action.payload }
 
     default:
       return state;

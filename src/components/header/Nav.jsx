@@ -36,7 +36,7 @@ const NavComponent = props => {
             <NavLink href="/delivery" onClick={() => setActiveLink('delivery')} className={router.pathname === '/delivery' ? s.activeLink : null}>Доставка и оплата</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="/stocks" onClick={() => setActiveLink('stocks')} className={router.pathname === '/stocks' ? s.activeLink : null}>Акции</NavLink>
+            <NavLink href="/discounts" onClick={() => setActiveLink('discounts')} className={router.pathname === '/discounts' ? s.activeLink : null}>Акции</NavLink>
           </NavItem>
           <NavItem>
             <NavLink href="/bonus" onClick={() => setActiveLink('bonus')} className={router.pathname === '/bonus' ? s.activeLink : null}>Бонусная программа</NavLink>

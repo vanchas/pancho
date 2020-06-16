@@ -30,7 +30,7 @@ export default function Categories(props) {
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <Navbar color="" expand="xl" className="py-1">
+    <Navbar color="" expand="xl" className="px-0 py-1">
       <NavbarToggler className={s.navbar_toggler} onClick={toggle} />
       <NavbarBrand className={s.navbar_brand}>
         <p className="m-0">БЕСПЛАТНАЯ ДОСТАВКА ПИЦЦЫ</p>

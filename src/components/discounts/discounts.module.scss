@@ -1,0 +1,80 @@
+.discounts_page {
+	max-width: 1260px;
+	margin: 0 auto;
+}
+.discounts_page_heading {
+	margin: 1em auto 1em auto;
+	text-align: center;
+	width: fit-content;
+	position: relative;
+	&::before {
+		content: "";
+		width: 7em;
+		height: 1px;
+		background-color: #000;
+		position: absolute;
+		top: 50%;
+		left: 0;
+		transform: translate(-110%, -50%);
+	}
+	&::after {
+		content: "";
+		width: 7em;
+		height: 1px;
+		background-color: #000;
+		position: absolute;
+		top: 50%;
+		right: 0;
+		transform: translate(110%, -50%);
+	}
+	@media screen and (max-width: 900px) {
+		&::before,
+		&::after {
+			display: none;
+		}
+	}
+}
+
+.discount_list {
+	list-style: none;
+	padding: 1em 1em 2em 1em;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+  grid-gap: 5%;
+  justify-content: center;
+  justify-items: center;
+  @media screen and (max-width: 1023px) {
+		grid-template-columns: 1fr 1fr;
+  }
+  @media screen and (max-width: 700px) {
+		grid-template-columns: 1fr;
+	}
+}
+
+.discount_item {
+	display: grid;
+
+	img {
+		width: 100%;
+	}
+	h4 {
+		font-size: 1em;
+    font-weight: 700;
+    padding: 1em 0;
+	}
+	p {
+    color: #555;
+    line-height: 1.3em;
+    font-size: .9em;
+	}
+	span {
+    justify-self: end;
+    &:hover {
+      transition: .3s;
+      font-weight: 600;
+    }
+  }
+  @media screen and (max-width: 700px) {
+		text-align: center;
+	}
+}

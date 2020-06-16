@@ -133,9 +133,10 @@
 }
 
 .header_categories_block {
+	max-width: 1260px;
+	margin: 0 auto;
 	nav {
-		max-width: 1260px;
-		margin: 0 auto;
+		overflow-x: hidden;
 		.navbar_brand {
 			display: none;
 		}
@@ -179,7 +180,7 @@
 							align-items: center;
 							img {
 								order: 1;
-								margin: 0 0 0 .3em;
+								margin: 0 0 0 0.3em;
 							}
 						}
 					}
@@ -204,4 +205,3 @@
 		}
 	}
 }
-

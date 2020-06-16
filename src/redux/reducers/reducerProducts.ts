@@ -1,10 +1,11 @@
-import { GET_PIZZAS, SET_LEFT_HALF_PIZZA, SET_RIGHT_HALF_PIZZA, GET_WOKS } from '../actions/types'
+import { GET_PIZZAS, SET_LEFT_HALF_PIZZA, SET_RIGHT_HALF_PIZZA, GET_WOKS, SHOW_DISCOUNTS } from '../actions/types'
 
 const initialState = {
   pizza: [],
   leftHalfPizza: {},
   rightHalfPizza: {},
-  wok: []
+  wok: [],
+  discounts: []
 };
 
 export const reducerProducts = (state = initialState, action: any) => {
@@ -20,6 +21,10 @@ export const reducerProducts = (state = initialState, action: any) => {
     // wok
     case GET_WOKS:
       return { ...state, wok: action.payload }
+
+    // discounts
+    case SHOW_DISCOUNTS:
+      return { ...state, discounts: action.payload }
 
     default:
       return state;

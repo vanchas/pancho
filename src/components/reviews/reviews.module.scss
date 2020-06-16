@@ -1,0 +1,211 @@
+.revies_page { 
+  max-width: 1260px;
+  margin: 0 auto;
+}
+.revies_page_heading {
+	margin: 1em auto 1em auto;
+	text-align: center;
+	width: fit-content;
+	position: relative;
+	&::before {
+		content: "";
+		width: 7em;
+		height: 1px;
+		background-color: #000;
+		position: absolute;
+		top: 50%;
+		left: 0;
+		transform: translate(-110%, -50%);
+	}
+	&::after {
+		content: "";
+		width: 7em;
+		height: 1px;
+		background-color: #000;
+		position: absolute;
+		top: 50%;
+		right: 0;
+		transform: translate(110%, -50%);
+	}
+	@media screen and (max-width: 900px) {
+		&::before,
+		&::after {
+			display: none;
+		}
+	}
+}
+.rules_list {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2em .5em 2em 2em;
+}
+
+
+
+.review_form {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1em .5em;
+  form {
+    display: grid;
+    grid-template-columns: 3fr 3fr 2fr;
+    justify-items: center;
+    grid-gap: 1em;
+    align-items: center;
+    label {
+      margin-bottom: 0;
+    }
+    .name, .phone {
+      display: grid;
+      grid-auto-flow: column;
+      grid-gap: .5em;
+      align-items: center;
+    }
+    .message, .photo, .submit {
+      grid-column: span 3;
+    }
+    .message {
+      width: 100%;
+      textarea {
+        display: block;
+      }
+    }
+    .photo {
+      justify-self: end;
+    }
+    .submit {
+      justify-self: center;
+      button {
+        background-color: #575756;
+        color: #e6d60d;
+        padding: .3em 1em;
+        border: none;
+        border-radius: .3em;
+      }
+    }
+    .assessment {
+      display: flex;
+      justify-content: space-evenly;
+      width: 100%;
+      input {
+        visibility: hidden;
+      }
+      label {
+        background-color: #878787;
+        border-radius: 50%;
+        height: 50px;
+        width: 50px;
+        display: grid;
+        grid-template-rows: 1fr 0;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        opacity: .7;
+      }
+      label.activeBtn {
+        opacity: 1;
+        border: 2px solid #e6d60d;
+      }
+    }
+    @media screen and (max-width: 600px) { 
+      grid-template-columns: 1fr;
+      .message, .photo, .submit {
+        grid-column: span 1;
+      }
+    }
+  }
+}
+
+.reviews_list {
+  list-style: none;
+  padding: 2em .5em;
+  margin: 0 auto;
+  max-width: 1000px;
+  display: grid;
+  grid-gap: 2em;
+}
+.show_full_list_btn {
+  font-weight: 600;
+  display: block;
+  width: 100%;
+  text-align: center;
+  text-decoration: underline;
+}
+.reviews_item {
+  border: 1px solid #777;
+  border-radius: 1em;
+  display: grid;
+  grid-template-columns: 1fr 1fr 6fr 1fr;
+  grid-gap: 1em;
+  align-items: center;
+  justify-items: center;
+  min-height: 5em;
+  padding: .5em;
+  p {
+    position: relative;
+    height: 100%;
+    display: grid;
+    align-content: center;
+    margin-bottom: 0;
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      transform: translateX(-110%);
+      z-index: 0;
+      background: url('../../assets/images/quotes_up.png') center center / contain no-repeat;
+      width: 5em;
+      min-height: 4em;
+      top: .5em;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      transform: translateX(110%);
+      z-index: 0;
+      background: url('../../assets/images/quotes_down.png') center center / contain no-repeat;
+      width: 5em;
+      min-height: 4em;
+      bottom: .5em;
+    }
+    @media screen and (max-width: 1000px) {
+      &::before, &::after {
+        display: none;
+      }
+    }
+  }
+  @media screen and (max-width: 500px) {
+    grid-template-columns: 2fr 3fr 2fr;
+    .reviews_item_like_image {
+      order: 1;
+    }
+    .reviews_item_info {
+      order: 2;
+    }
+    p {
+      order: 4;
+      grid-column: span 3;
+      text-align: center;
+    }
+    .reviews_item_photo {
+      order: 3;
+    }
+  }
+}
+.reviews_item_like_image {
+  img {
+
+  }
+}
+.reviews_item_info {
+  display: grid;
+  span {
+
+  }
+}
+.reviews_item_photo {
+  img {
+
+  }
+}
