@@ -45,10 +45,10 @@ input.bg_dark {
 	background-color: #000;
 }
 .footer {
-  background-color: #000;
-  display: flex;
-  justify-content: space-around;
-  border: none;
+	background-color: #000;
+	display: flex;
+	justify-content: space-around;
+	border: none;
 }
 
 .delivery_control {
@@ -83,15 +83,201 @@ input.bg_dark {
 .total_sum {
 	background-color: #000;
 	border: 2px solid #fff;
-  color: #fff;
-  padding: .4em 1em;
-  border-radius: .3em;
+	color: #fff;
+	padding: 0.4em 1em;
+	border-radius: 0.3em;
 }
 .order_btn {
 	background-color: #ffed00 !important;
 	color: #000 !important;
-  border: none !important;
-  font-weight: 600 !important;
-  padding: .4em 1em !important;
-  border-radius: .3em !important;
+	border: none !important;
+	font-weight: 600 !important;
+	padding: 0.4em 1em !important;
+	border-radius: 0.3em !important;
+}
+
+// step 2
+.contacts_block {
+	background-color: #252523;
+	border-radius: 0.5em;
+	padding: 1em 0.5em;
+	display: grid;
+	grid-gap: 0.5em;
+	label {
+		display: grid;
+		grid-template-columns: 1fr 3fr;
+		align-items: center;
+		grid-gap: 0.5em;
+	}
+}
+.address_block {
+	background-color: #252523;
+	border-radius: 0.5em;
+	padding: 1em 0.5em;
+	display: grid;
+	grid-gap: 0.5em;
+	grid-template-columns: 1fr 1fr 1fr;
+	align-items: center;
+	label:first-child {
+		display: grid;
+		grid-template-columns: 1fr 5fr;
+		grid-column: span 3;
+	}
+	.address_label {
+		display: grid;
+		grid-template-columns: 1fr 3fr;
+		grid-gap: 0.5em;
+		span {
+			color: #fff;
+			white-space: nowrap;
+		}
+	}
+	.comment_label {
+		grid-column: span 3;
+		color: #fff;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-gap: 0.5em;
+		align-items: center;
+		span {
+		}
+		small {
+		}
+		textarea {
+			grid-row: span 2;
+		}
+	}
+}
+.time_block {
+	background-color: #252523;
+	border-radius: 0.5em;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 0.5em;
+	padding: 1em 0.5em;
+	align-items: center;
+}
+.choose_time_label {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	input {
+		margin-right: 0.5em;
+	}
+}
+.choose_asap_label {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+	input {
+		margin-right: 0.5em;
+	}
+}
+.date_time_control {
+	padding-top: 1em;
+	grid-column: span 2;
+	display: grid;
+	grid-template-columns: 1fr 2fr 2fr;
+	justify-items: center;
+	label {
+		display: flex;
+		align-items: center;
+		align-content: center;
+	}
+	.date_label {
+		position: relative;
+		display: flex;
+		img {
+			margin-right: 0.5em;
+		}
+		.calendar_input {
+			width: 3em;
+			text-align: center;
+			border-radius: 0.3em;
+			border: none;
+			&:focus {
+				outline: none;
+			}
+		}
+	}
+	.up {
+		user-select: none;
+		font-size: 2em;
+		font-weight: 700;
+		color: #ffed00;
+		transform: translate(70%, -70%) rotate(90deg);
+		position: absolute;
+		top: 0;
+		left: 50%;
+	}
+	.down {
+		user-select: none;
+		font-size: 2em;
+		font-weight: 700;
+		color: #ffed00;
+		transform: translate(-0%, 70%) rotate(-90deg);
+		position: absolute;
+		bottom: 0;
+		left: 50%;
+	}
+	.month_label {
+		width: 100%;
+		position: relative;
+		.month {
+			padding-left: 1em;
+			text-transform: uppercase;
+			display: block;
+			width: 100%;
+			text-align: center;
+		}
+	}
+	.time_label {
+		input {
+			width: 3em;
+			text-align: center;
+			border-radius: 0.3em;
+			border: none;
+			margin: 0 0.2em;
+			&:focus {
+				outline: none;
+			}
+		}
+	}
+}
+
+.payment_block {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-gap: 1em;
+	background-color: #252523;
+	padding: 1em 0.5em;
+	border-radius: 0.5em;
+	label {
+		padding: 0.5em;
+		border-radius: 0.5em;
+		border: 1px solid #999;
+		display: grid;
+		text-align: center;
+		align-items: center;
+		align-content: center;
+		span {
+			font-weight: 600;
+			padding-bottom: 0.4em;
+		}
+		small {
+			line-height: 1.3em;
+		}
+		input {
+			visibility: hidden;
+		}
+		img {
+			margin: 0 auto;
+			display: inline-block;
+		}
+	}
+	.activePayment {
+		box-shadow: 0px 0px 0px 3px #fff inset;
+	}
 }
