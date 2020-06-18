@@ -1,0 +1,97 @@
+.activeLink {
+	width: 100%;
+	color: #ffed00 !important;
+}
+.button {
+	color: #fff !important;
+	width: 100%;
+}
+
+.bg_dark,
+input.bg_dark {
+	background-color: #1d1d1b;
+	&:focus {
+		background-color: #1d1d1b;
+	}
+}
+
+.color_white {
+	color: #fff;
+}
+
+.basket_widget {
+	position: fixed;
+	bottom: 10%;
+	right: 0;
+	width: 5.5em;
+	z-index: 999;
+	img {
+		width: 100%;
+	}
+	span {
+		position: absolute;
+		bottom: 0.7em;
+		left: 50%;
+		transform: translateX(-50%);
+		color: #fff;
+	}
+}
+
+.header {
+	background-color: #000;
+	color: #ffed00;
+}
+.body {
+	background-color: #000;
+}
+.footer {
+  background-color: #000;
+  display: flex;
+  justify-content: space-around;
+  border: none;
+}
+
+.delivery_control {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 1em;
+	padding: 0.5em;
+	background-color: #1d1d1b;
+	border-radius: 0.5em;
+}
+.delivery_control_item {
+	label {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+		width: 100%;
+	}
+	img {
+	}
+	input {
+		margin: 0.3em 0 0 0;
+	}
+	span {
+		font-weight: 600;
+		font-size: 1.1em;
+		color: #fff;
+		small {
+		}
+	}
+}
+
+.total_sum {
+	background-color: #000;
+	border: 2px solid #fff;
+  color: #fff;
+  padding: .4em 1em;
+  border-radius: .3em;
+}
+.order_btn {
+	background-color: #ffed00;
+	color: #000;
+  border: none;
+  font-weight: 600;
+  padding: .4em 1em;
+  border-radius: .3em;
+}

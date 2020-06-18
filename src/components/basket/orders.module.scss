@@ -1,0 +1,145 @@
+.orders_list {
+	list-style: none;
+	padding: 0.5em;
+	background-color: #252523;
+	display: grid;
+	grid-gap: 0.5em;
+	border-radius: 0.5em;
+}
+.order_item {
+	display: grid;
+	color: #fff;
+	align-items: center;
+	grid-template-columns: 2fr 5fr 2fr 2fr 1fr;
+	.order_item_image {
+		img {
+			width: 2.5em;
+		}
+	}
+	.order_item_name {
+	}
+	.order_item_count_control {
+		display: flex;
+		div {
+			background-color: #ffed00;
+			border-radius: 50%;
+			width: 1em;
+			height: 1em;
+			color: #000;
+			display: grid;
+			justify-content: center;
+			align-content: center;
+			font-weight: 600;
+			font-size: 1.2em;
+		}
+		span {
+			padding: 0 0.5em;
+		}
+	}
+	.order_item_price {
+	}
+	.order_item_remove {
+		background-color: #ffed00;
+		border-radius: 50%;
+		width: 1em;
+		height: 1em;
+		color: #000;
+		display: grid;
+		justify-content: center;
+		align-content: center;
+		font-weight: 600;
+		font-size: 1.2em;
+	}
+}
+
+.souces_heading {
+	color: #ffed00;
+	text-align: center;
+	padding-top: 0.5em;
+}
+.souces_list {
+	list-style: none;
+	padding: 0.5em;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 0.5em;
+
+	li {
+		padding: 0.3em;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		align-items: center;
+		justify-items: center;
+		grid-gap: 0.1em;
+		.souce_image {
+			img {
+			}
+		}
+		.souce_price {
+			color: #fff;
+		}
+		.souce_name {
+			font-size: 0.9em;
+			color: #fff;
+		}
+		.to_basket_btn {
+			span {
+				color: #000;
+				background-color: #ffed00;
+				border-radius: 0.3em;
+				padding: 0.2em 0.5em;
+				font-size: 0.8em;
+				font-weight: 500;
+				white-space: nowrap;
+			}
+		}
+	}
+}
+
+.recommendations_heading {
+	color: #ffed00;
+	text-align: center;
+	padding: 0.5em;
+}
+.arrow {
+	color: #ffed00;
+	font-size: 4em;
+	height: 2em;
+	user-select: none;
+	&:active {
+		background-color: #1b1b1a;
+		box-shadow: 0 0 3px 3px #1b1b1a;
+	}
+}
+.recommendations_list {
+	list-style: none;
+	padding: 0 0.5em 0 0.5em;
+	display: grid;
+	grid-auto-flow: column;
+	justify-items: center;
+	overflow-x: hidden;
+	width: 100%;
+	li {
+		display: grid;
+		grid-gap: 0.5em;
+		justify-items: center;
+		.rec_image {
+			img {
+				width: 100%;
+			}
+		}
+		.to_basket_btn {
+			padding-top: .2em;
+			span {
+				background-color: #ffed00;
+				color: #000;
+				font-weight: 500;
+				padding: 0.2em 0.5em;
+				border-radius: .2em;
+			}
+		}
+		.rec_price {
+			color: #fff;
+		}
+	}
+}

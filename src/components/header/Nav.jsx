@@ -12,10 +12,10 @@ import {
   NavLink
 } from 'reactstrap';
 import Phone from '../../assets/images/signs/phone_light.png';
+import LoginModal from '../modals/LoginModal'
 
 const NavComponent = props => {
   const router = useRouter();
-  const [activeLink, setActiveLink] = useState('');
   const [isOpen, setIsOpen] = useState(false);
 
   const toggle = () => setIsOpen(!isOpen);
@@ -30,25 +30,25 @@ const NavComponent = props => {
       <Collapse isOpen={isOpen} navbar>
         <Nav className="mr-auto" navbar>
           <NavItem>
-            <NavLink href="/about" onClick={() => setActiveLink('about')} className={router.pathname === '/about' ? s.activeLink : null}>О компании Панчо</NavLink>
+            <NavLink href="/about" className={router.pathname === '/about' ? s.activeLink : null}>О компании Панчо</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="/delivery" onClick={() => setActiveLink('delivery')} className={router.pathname === '/delivery' ? s.activeLink : null}>Доставка и оплата</NavLink>
+            <NavLink href="/delivery" className={router.pathname === '/delivery' ? s.activeLink : null}>Доставка и оплата</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="/discounts" onClick={() => setActiveLink('discounts')} className={router.pathname === '/discounts' ? s.activeLink : null}>Акции</NavLink>
+            <NavLink href="/discounts" className={router.pathname === '/discounts' ? s.activeLink : null}>Акции</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="/bonus" onClick={() => setActiveLink('bonus')} className={router.pathname === '/bonus' ? s.activeLink : null}>Бонусная программа</NavLink>
+            <NavLink href="/bonus" className={router.pathname === '/bonus' ? s.activeLink : null}>Бонусная программа</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="/reviews" onClick={() => setActiveLink('reviews')} className={router.pathname === '/reviews' ? s.activeLink : null}>Отзывы</NavLink>
+            <NavLink href="/reviews" className={router.pathname === '/reviews' ? s.activeLink : null}>Отзывы</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="/contacts" onClick={() => setActiveLink('contacts')} className={router.pathname === '/contacts' ? s.activeLink : null}>Контакты</NavLink>
+            <NavLink href="/contacts" className={router.pathname === '/contacts' ? s.activeLink : null}>Контакты</NavLink>
           </NavItem>
           <NavItem className={s.login_nav_item}>
-            <NavLink href="/cabinet" onClick={() => setActiveLink('cabinet')} className={router.pathname === '/cabinet' ? s.activeLink : null}>Войти</NavLink>
+            <LoginModal buttonLabel="Войти" active={router.pathname === '/cabinet' ? true : false} />
           </NavItem>
         </Nav>
       </Collapse>

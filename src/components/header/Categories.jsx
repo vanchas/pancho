@@ -54,7 +54,7 @@ export default function Categories(props) {
               ВОК</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="/snack" onClick={() => setActiveLink('snack')} className={router.pathname === '/snack' ? s.activeLink : null}>
+            <NavLink href="/snacks" onClick={() => setActiveLink('snacks')} className={router.pathname === '/snacks' ? s.activeLink : null}>
               <img src={Snack} alt="" />
               ЗАКУСКИ</NavLink>
           </NavItem>
@@ -69,17 +69,17 @@ export default function Categories(props) {
               КОМБО</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="/set" onClick={() => setActiveLink('set')} className={router.pathname === '/set' ? s.activeLink : null}>
+            <NavLink href="/sets" onClick={() => setActiveLink('sets')} className={router.pathname === '/sets' ? s.activeLink : null}>
               <img src={Sets} alt="" />
               СЕТЫ</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="/desert" onClick={() => setActiveLink('desert')} className={router.pathname === '/desert' ? s.activeLink : null}>
+            <NavLink href="/desserts" onClick={() => setActiveLink('desserts')} className={router.pathname === '/desserts' ? s.activeLink : null}>
               <img src={Desert} alt="" />
               ДЕСЕРТЫ</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="/drink" onClick={() => setActiveLink('drink')} className={router.pathname === '/drink' ? s.activeLink : null}>
+            <NavLink href="/drinks" onClick={() => setActiveLink('drinks')} className={router.pathname === '/drinks' ? s.activeLink : null}>
               <img src={Drink} alt="" />
               НАПИТКИ</NavLink>
           </NavItem>

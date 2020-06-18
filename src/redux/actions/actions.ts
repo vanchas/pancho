@@ -1,9 +1,16 @@
-import { GET_PIZZAS, SET_LEFT_HALF_PIZZA, SET_RIGHT_HALF_PIZZA, GET_TRANSACTONS, GET_ADDRESSES, GET_BONUSES, GET_WOKS, SHOW_DISCOUNTS, ADD_REVIEW, GET_REVIEWS } from "./types"
+import { GET_PIZZAS, SET_LEFT_HALF_PIZZA, SET_RIGHT_HALF_PIZZA, GET_TRANSACTONS, GET_ADDRESSES, GET_BONUSES, GET_WOKS, SHOW_DISCOUNTS, ADD_REVIEW, GET_REVIEWS, SIGNIN, GET_SNACKS, GET_SOUCES, GET_DRINKS, GET_PASTAS, GET_COMBOS, GET_SETS, GET_DESSERTS } from "./types"
 import { pizza } from '../../../fakePizzas'
 import { woks } from '../../../fakeWoks'
 import { discounts } from '../../../fakeDiscounts'
 import { reviews } from '../../../fakeReviews'
+import { snacks } from '../../../fakeSnacks'
+import { souces, drinks } from "../../../fakeOrders"
+import { pastas } from "../../../fakePastas"
+import { combos } from "../../../fakeCombos"
+import { sets } from "../../../fakeSets"
+import { desserts } from "../../../fakeDesserts"
 
+// === PRODUCTS ===
 // pizza
 export const getPizzas = () => {
   return { type: GET_PIZZAS, payload: pizza }
@@ -14,6 +21,43 @@ export const setLeftHalfPizza = (pizza: any) => {
 export const setRightHalfPizza = (pizza: any) => {
   return { type: SET_RIGHT_HALF_PIZZA, payload: pizza }
 }
+// wok
+export const getWoks = () => {
+  return { type: GET_WOKS, payload: woks }
+}
+// combos
+export const getCombos = () => {
+  return { type: GET_COMBOS, payload: combos }
+}
+// pastas
+export const getPastas = () => {
+  return { type: GET_PASTAS, payload: pastas }
+}
+// stocks
+export const showDiscounts = () => {
+  return { type: SHOW_DISCOUNTS, payload: discounts }
+}
+// snacks
+export const getSnacks = () => {
+  return { type: GET_SNACKS, payload: snacks }
+}
+// souces
+export const getSouces = () => {
+  return { type: GET_SOUCES, payload: souces }
+}
+// drinks
+export const getDrinks = () => {
+  return { type: GET_DRINKS, payload: drinks }
+}
+// sets
+export const getSets = () => {
+  return { type: GET_SETS, payload: sets }
+}
+// deserts
+export const getDesserts = () => {
+  return { type: GET_DESSERTS, payload: desserts }
+}
+
 
 // user
 export const getTransactions = (id: number) => {
@@ -44,13 +88,6 @@ export const addReview = (review: any) => {
 export const getReviews = () => {
   return { type: GET_REVIEWS, payload: reviews }
 }
-
-// wok
-export const getWoks = () => {
-  return { type: GET_WOKS, payload: woks }
-}
-
-// stocks
-export const showDiscounts = () => {
-  return { type: SHOW_DISCOUNTS, payload: discounts }
+export const signIn = () => {
+  return { type: SIGNIN }
 }

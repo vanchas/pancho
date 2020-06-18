@@ -1,10 +1,12 @@
 import { GET_TRANSACTONS, GET_ADDRESSES, GET_BONUSES, GET_REVIEWS } from '../actions/types'
+import { orders } from '../../../fakeOrders'
 
 const initialState = {
   transactions: [],
   addresses: [],
   bonuses: [],
-  reviews: []
+  reviews: [],
+  orders
 };
 
 export const userReducer = (state = initialState, action: any) => {

@@ -11,7 +11,7 @@ const store = createStore(
 store.dispatch(getPizzas());
 
 store.subscribe(() => {
-  console.log('updated state: ', store.getState());
+  // console.log('updated state: ', store.getState());
 });
 
 export default store;

@@ -16,7 +16,7 @@ export default function PizzaCard({ image }) {
           Маргарита
           <small className="text-muted">1280г +- 50г</small>
         </h5>
-        <h6 class={`${s.subtitle} card-subtitle mb-2 text-muted`}>
+        <h6 className={`${s.subtitle} card-subtitle mb-2 text-muted`}>
           <span className={s.subtitle_control}>
             <img src={Green} alt="" />
             <img src={Pepper} alt="" />

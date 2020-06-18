@@ -1,11 +1,16 @@
-// html {
-// 	position: relative;
-// 	min-height: 100%;
-// }
-/*Normalize html and body elements,this style is just good to have*/
+
 html,
 body {
 	margin: 0;
 	padding: 0;
 }
 
+// modal
+.close {
+	color: #ffed00 !important;
+}
+@media (min-width: 576px) {
+	.modal-dialog {
+		margin: 3rem auto !important;
+	}
+}
