@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-import { PropTypes, string } from 'prop-types'
+import { PropTypes } from 'prop-types'
 import s from './modal.module.scss'
 import { useRouter } from 'next/router'
 import Widget from '../../assets/images/basket/widget.png';
@@ -10,11 +10,18 @@ import Person from '../../assets/images/basket/person.png';
 import Car from '../../assets/images/basket/car.png';
 import SoucesList from '../basket/SoucesList';
 import Recommendations from '../basket/Recommendations';
+import { getDrinks, getSouces } from '../../redux/actions/actions';
+import BasketStep_2 from './BasketStep_2';
 
-const ModalExample = ({ orders, souces, drinks }) => {
+const BasketStep_1 = ({ orders, souces, drinks, getDrinks, getSouces }) => {
   const router = useRouter();
-  const [modal, setModal] = useState(false);
+  const [modal, setModal] = useState(true);
   const toggle = () => setModal(!modal);
+
+  useEffect(() => {
+    getDrinks();
+    getSouces();
+  }, []);
 
   const submitHandler = e => {
     e.preventDefault();
@@ -59,8 +66,8 @@ const ModalExample = ({ orders, souces, drinks }) => {
         </ModalBody>
 
         <ModalFooter className={`d-flex justify-content-around border-0 pt-0 pb-3 ${s.footer}`}>
-          <button className={`${s.total_sum}`}>ИТОГО: 499 грн</button>
-          <button className={`${s.order_btn}`}>ОФОРМИТЬ ЗАКАЗ</button>
+          <span className={`${s.total_sum}`}>ИТОГО: 499 грн</span>
+          <BasketStep_2 buttonLabel={`ОФОРМИТЬ ЗАКАЗ`} />
         </ModalFooter>
       </Modal>
     </div>
@@ -68,17 +75,16 @@ const ModalExample = ({ orders, souces, drinks }) => {
 }
 
 const mapStateToProps = state => {
-  const orders = state.user.orders;
-  const souces = state.products.souces;
-  const drinks = state.products.drinks;
-  return { orders, souces, drinks }
+  return {
+    orders: state.user.orders,
+    souces: state.products.souces,
+    drinks: state.products.drinks
+  }
 }
 
 const mapDispatchToProps = {
-
+  getDrinks, getSouces
 }
-
-export default connect(mapStateToProps, mapDispatchToProps)(ModalExample);
 
 Modal.propTypes = {
   isOpen: PropTypes.bool,
@@ -113,3 +119,5 @@ Modal.propTypes = {
   unmountOnClose: PropTypes.bool,
   returnFocusAfterClose: PropTypes.bool
 }
+
+export default connect(mapStateToProps, mapDispatchToProps)(BasketStep_1);

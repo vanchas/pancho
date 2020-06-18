@@ -36,7 +36,7 @@ export default function Recommendations({ drinks }) {
 
   return (
     <>
-      {drinks.length && <div>
+      {drinks.length ? <div>
         <h5 className={s.recommendations_heading}>РЕКОМЕНДУЕМ ПОПРОБОВАТЬ</h5>
         <div className="d-flex">
           <span className={s.arrow} onClick={() => plusDivs(-1)}>&#8249;</span>
@@ -56,7 +56,7 @@ export default function Recommendations({ drinks }) {
           <span className={s.arrow} onClick={() => plusDivs(1)
           }>&#8250;</span>
         </div>
-      </div>}
+      </div> : null}
     </>
   )
 }

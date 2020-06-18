@@ -123,19 +123,20 @@
 		display: grid;
 		grid-gap: 0.5em;
 		justify-items: center;
+		padding: 0 0.3em 0 0.3em;
 		.rec_image {
 			img {
 				width: 100%;
 			}
 		}
 		.to_basket_btn {
-			padding-top: .2em;
+			padding-top: 0.2em;
 			span {
 				background-color: #ffed00;
 				color: #000;
 				font-weight: 500;
 				padding: 0.2em 0.5em;
-				border-radius: .2em;
+				border-radius: 0.2em;
 			}
 		}
 		.rec_price {
