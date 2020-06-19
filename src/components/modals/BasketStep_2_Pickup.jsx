@@ -5,6 +5,8 @@ import s from "./modal.module.scss";
 import Visa from "../../assets/images/basket/visa.png";
 import Calendar from "../../assets/images/basket/calendar.png";
 import Clock from "../../assets/images/basket/clock.png";
+import Map from '../../assets/images/basket/map.png';
+import Present from '../../assets/images/basket/present.png';
 
 const monthes = [
   "январь",
@@ -21,8 +23,8 @@ const monthes = [
   "декабрь",
 ];
 
-const BasketStep_2 = ({ buttonLabel }) => {
-  const [modal, setModal] = useState(true);
+const BasketStep_2_Pickup = ({ buttonLabel, ordersAmount }) => {
+  const [modal, setModal] = useState(false);
   const today = new Date();
   let [date, setDate] = useState(today.getDate() ? today.getDate() : "01");
   let [iterator, setIterator] = useState(0);
@@ -86,50 +88,31 @@ const BasketStep_2 = ({ buttonLabel }) => {
 
       <Modal isOpen={modal} toggle={toggle}>
         <ModalHeader className={`${s.header} border-0`} toggle={toggle}>
-          ОФОРМЛЕНИЕ НА ДОСТАВКУ
+          ОФОРМЛЕНИЕ НА САМОВЫВОЗ
 				</ModalHeader>
         <ModalBody className={s.body}>
           <form onSubmit={submitHandler}>
             <p className="text-white font-weight-bold mb-2">
-              КОНТАКТНАЯ ИНФОРМАЦИЯ
+              САМОВЫВОЗ ПО АДРЕСУ:
 						</p>
+            <p className="text-white mb-2">
+              г. Славянск, ул. Шевченко, 10 (бывший 19-й магазин)
+						</p>
+            <div className={s.map_image_block}>
+              <img src={Map} alt="г. Славянск, ул. Шевченко, 10 (бывший 19-й магазин)" />
+            </div>
             <div className={s.contacts_block}>
               <label className="text-white">
                 ИМЯ*
-								<input type="text" className="form-control" />
+                <input type="text" required
+                  className="form-control"
+                  onChange={e => setName(e.target.value)} />
               </label>
               <label className="text-white">
                 ТЕЛЕФОН*
-								<input type="text" className="form-control" />
-              </label>
-            </div>
-            <p className="text-white font-weight-bold mt-3 mb-2">
-              ДАННЫЕ ДЛЯ ДОСТАВКИ
-						</p>
-            <div className={s.address_block}>
-              <label className="text-white">
-                <span> АДРЕС*</span>
-                <input type="text" className="form-control" />
-              </label>
-              <label className={s.address_label}>
-                <span> №ДОМ*</span>
-                <input type="text" className="form-control" />
-              </label>
-              <label className={s.address_label}>
-                <span> ЭТАЖ</span>
-                <input type="text" className="form-control" />
-              </label>
-              <label className={s.address_label}>
-                <span> № КВ.</span>
-                <input type="text" className="form-control" />
-              </label>
-              <label className={s.comment_label}>
-                <span>КОММАНТАРИЙ К ЗАКАЗУ</span>
-                <textarea type="text" className="form-control" />
-                <small>
-                  домофон, код двери или другие предложения и пожелания по
-                  заказу
-								</small>
+                <input type="number" required
+                  className="form-control"
+                  onChange={e => setPhone(e.target.value)} />
               </label>
             </div>
             <p className="font-weight-bold mb-2 mt-3 text-white">
@@ -226,12 +209,21 @@ const BasketStep_2 = ({ buttonLabel }) => {
             </div>
           </form>
         </ModalBody>
-        <ModalFooter className={`${s.footer} border-0`}>
-          <button onClick={toggle} className={s.total_sum}>
-            НАЗАД
-					</button>
-          <span className={s.total_sum}>ИТОГО: 1499 грн</span>
-          <button type="submit" className={`font-weight-bold ${s.order_btn}`}>ЗАКАЗАТЬ</button>
+        <ModalFooter className={`${s.footer} border-0 pt-0`}>
+          <div className={s.footer_bonus_block}>
+            <span>БОНУСНЫЙ СЧЕТ</span>
+            <span>332</span>
+            <img src={Present} alt="" />
+            <span><i>&#8250;</i> <u>СНЯТЬ БОНУСЫ</u></span>
+          </div>
+          <div className={s.footer_buttons}>
+            <button onClick={toggle}
+              className={s.total_sum}>
+              <i>&#10157;</i> НАЗАД
+					  </button>
+            <span className={s.total_sum}>ИТОГО: {ordersAmount} грн</span>
+            <button type="submit" className={`font-weight-bold ${s.order_btn}`}>ЗАКАЗАТЬ</button>
+          </div>
         </ModalFooter>
       </Modal>
     </div>
@@ -266,4 +258,4 @@ Modal.propTypes = {
   returnFocusAfterClose: PropTypes.bool,
 };
 
-export default BasketStep_2;
+export default BasketStep_2_Pickup;

@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
-import { getSnacks } from '../redux/actions/actions'
+import { getSnacks, addAnOrderItem } from '../redux/actions/actions'
 import SnacksList from '../components/snacks/SnacksList';
 import s from '../components/snacks/snacks.module.scss'
 
-function Snacks({ getSnacks, snacks }) {
+function Snacks({ getSnacks, snacks, addAnOrderItem }) {
 
   useEffect(() => {
     getSnacks();
@@ -13,7 +13,7 @@ function Snacks({ getSnacks, snacks }) {
   return (
     <div className={s.snacks_page}>
       <h3 className={s.snacks_page_heading}>ЗАКУСКИ</h3>
-      <SnacksList snacks={snacks} />
+      <SnacksList snacks={snacks} addAnOrderItem={addAnOrderItem} />
     </div>
   )
 }
@@ -23,7 +23,7 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = {
-  getSnacks
+  getSnacks, addAnOrderItem
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Snacks);

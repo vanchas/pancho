@@ -1,4 +1,4 @@
-import { GET_PIZZAS, SET_LEFT_HALF_PIZZA, SET_RIGHT_HALF_PIZZA, GET_TRANSACTONS, GET_ADDRESSES, GET_BONUSES, GET_WOKS, SHOW_DISCOUNTS, ADD_REVIEW, GET_REVIEWS, SIGNIN, GET_SNACKS, GET_SOUCES, GET_DRINKS, GET_PASTAS, GET_COMBOS, GET_SETS, GET_DESSERTS } from "./types"
+import { GET_PIZZAS, SET_LEFT_HALF_PIZZA, SET_RIGHT_HALF_PIZZA, GET_TRANSACTONS, GET_ADDRESSES, GET_BONUSES, GET_WOKS, SHOW_DISCOUNTS, ADD_REVIEW, GET_REVIEWS, SIGNIN, GET_SNACKS, GET_SOUCES, GET_DRINKS, GET_PASTAS, GET_COMBOS, GET_SETS, GET_DESSERTS, MAKE_AN_ORDER, ADD_AN_ORDER_ITEM, REMOVE_AN_ORDER_ITEM, INCREMENT_ORDER_ITEM, DECREMENT_ORDER_ITEM } from "./types"
 import { pizza } from '../../../fakePizzas'
 import { woks } from '../../../fakeWoks'
 import { discounts } from '../../../fakeDiscounts'
@@ -90,4 +90,19 @@ export const getReviews = () => {
 }
 export const signIn = () => {
   return { type: SIGNIN }
+}
+export const makeAnOrder = () => {
+  return { type: MAKE_AN_ORDER, payload: 'order' }
+}
+export const addAnOrderItem = (orderItem: any) => {
+  return { type: ADD_AN_ORDER_ITEM, payload: { ...orderItem, id: Date.now(), counter: 1 } };
+}
+export const removeAnOrderItem = (id: number) => {
+  return { type: REMOVE_AN_ORDER_ITEM, payload: id };
+}
+export const incrementOrderItem = (id: number) => {
+  return { type: INCREMENT_ORDER_ITEM, payload: id };
+}
+export const decrementOrderItem = (id: number) => {
+  return { type: DECREMENT_ORDER_ITEM, payload: id };
 }

@@ -2,7 +2,7 @@ import React from 'react'
 import s from './pasta.module.scss'
 import Basket from '../../assets/images/basket.png'
 
-export default function PastasItem({ pasta }) {
+export default function PastasItem({ pasta, addAnOrderItem }) {
   return (
     <li className={s.pasta_item}>
       <div className={s.pasta_image}>
@@ -13,7 +13,7 @@ export default function PastasItem({ pasta }) {
         <small className={s.pasta_weight}>{pasta.weight} г</small>
         <p>{pasta.description}</p>
         <div className={s.pasta_btn}>
-          <span>
+          <span onClick={() => addAnOrderItem(pasta)}>
             <img src={Basket} alt="" />
             В КОРЗИНУ</span>
         </div>

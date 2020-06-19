@@ -52,6 +52,17 @@
 
 .card {
 	padding: 0.5em;
+
+	.basket {
+		background-color: #575756;
+		color: #f9e803;
+		img {
+			margin-right: 0.2em;
+		}
+		&:hover {
+			color: #fff;
+		}
+	}
 }
 .card_title {
 	display: flex;
@@ -62,15 +73,6 @@
 		font-size: 0.5em;
 	}
 }
-// .subtitle {
-//   display: flex;
-//   justify-content: space-between;
-// }
-// .subtitle_control {
-//   display: grid;
-//   grid-auto-flow: column;
-//   grid-gap: .2em;
-// }
 .new {
 	background-color: #662483;
 	color: #fff;
@@ -94,38 +96,4 @@
 .card_text {
 	padding: 0.5em 0;
 	line-height: 1.3em;
-}
-// .size_select {
-//   background-color: #e0e0e0;
-//   display: flex;
-//   justify-content: space-around;
-//   align-items: center;
-//   align-content: center;
-//   border-radius: .4em;
-//   margin-bottom: 1.1em;
-//   width: 100%;
-//   label {
-//     text-align: center;
-//     padding: .3em .5em;
-//     margin: 0;
-//     input {
-//       visibility: hidden;
-//     }
-//   }
-//   label.activeBtn {
-//     padding: .05em .3em;
-//     background-color: #fff;
-//     box-shadow: 2px 2px 3px 1px #aaa9a9;
-//     border-radius: .3em;
-//   }
-// }
-.basket {
-	background-color: #575756;
-	color: #f9e803;
-	img {
-		margin-right: 0.2em;
-	}
-	&:hover {
-		color: #fff;
-	}
 }

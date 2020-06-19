@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
-import { getCombos } from '../redux/actions/actions'
+import { getCombos, addAnOrderItem } from '../redux/actions/actions'
 import CombosList from '../components/combo/CombosList'
 import s from '../components/combo/combo.module.scss'
 
-function Combo({ getCombos, combos }) {
+function Combo({ getCombos, combos, addAnOrderItem }) {
 
   useEffect(() => {
     getCombos();
@@ -13,7 +13,7 @@ function Combo({ getCombos, combos }) {
   return (
     <div className={s.combos_page}>
       <h3 className={s.combos_page_heading}>КОМБО</h3>
-      <CombosList combos={combos} />
+      <CombosList combos={combos} addAnOrderItem={addAnOrderItem} />
     </div>
   )
 }
@@ -23,7 +23,7 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = {
-  getCombos
+  getCombos, addAnOrderItem
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Combo);

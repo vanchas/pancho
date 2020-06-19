@@ -2,7 +2,7 @@ import React from 'react'
 import s from './combo.module.scss'
 import Basket from '../../assets/images/basket.png'
 
-export default function CombosItem({ combo }) {
+export default function CombosItem({ combo, addAnOrderItem }) {
   return (
     <li className={s.combo_item}>
       <div className={s.combo_image}>
@@ -13,7 +13,7 @@ export default function CombosItem({ combo }) {
         <small className={s.combo_weight}>{combo.weight} г</small>
         <p>{combo.description}</p>
         <div className={s.combo_btn}>
-          <span>
+          <span onClick={() => addAnOrderItem(combo)}>
             <img src={Basket} alt="" />
           В КОРЗИНУ</span>
         </div>

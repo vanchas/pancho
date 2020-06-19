@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
-import { getPastas } from '../redux/actions/actions'
+import { getPastas, addAnOrderItem } from '../redux/actions/actions'
 import s from '../components/pastas/pasta.module.scss'
 import PastasList from '../components/pastas/PastasList'
 
-function Pasta({ getPastas, pastas }) {
+function Pasta({ getPastas, pastas, addAnOrderItem }) {
 
   useEffect(() => {
     getPastas();
@@ -13,7 +13,7 @@ function Pasta({ getPastas, pastas }) {
   return (
     <div className={s.pastas_page}>
       <h3 className={s.pastas_page_heading}>ПАСТА</h3>
-      <PastasList pastas={pastas} />
+      <PastasList pastas={pastas} addAnOrderItem={addAnOrderItem} />
     </div>
   )
 }
@@ -23,7 +23,7 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = {
-  getPastas
+  getPastas, addAnOrderItem
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Pasta);

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import s from './orders.module.scss'
 import $ from 'jquery'
 
-export default function Recommendations({ drinks }) {
+export default function Recommendations({ drinks, addAnOrderItem }) {
   const [firstSlideIndex, setFirstSlideIndex] = useState(1);
   const [secondSlideIndex, setSecondSlideIndex] = useState(2);
 
@@ -47,7 +47,7 @@ export default function Recommendations({ drinks }) {
                   <img src={d.image} alt={d.name} />
                 </div>
                 <div className={s.to_basket_btn}>
-                  <span>В КОРЗИНУ</span>
+                  <span onClick={() => addAnOrderItem(d)}>В КОРЗИНУ</span>
                 </div>
                 <div className={s.rec_price}>{d.price} грн</div>
               </li>

@@ -6,8 +6,8 @@ import juice from './src/assets/images/drinks/juice.jpeg'
 import beer from './src/assets/images/drinks/beer.jpeg'
 
 export const orders = [
-  { name: 'Маргарита', size: '40 см', price: 199, number: 1, image: p1 },
-  { name: 'Биг боc', size: '30 см', price: 299, number: 1, image: p2 }
+  { name: 'Маргарита', size: '40 см', price: 199, image: p1, id: Date.now(), counter: 1 },
+  { name: 'Биг боc', size: '30 см', price: 299, image: p2, id: Date.now() + 1, counter: 1 }
 ];
 
 export const souces = [

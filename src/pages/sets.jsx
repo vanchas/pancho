@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
-import { getSets } from '../redux/actions/actions'
+import { getSets, addAnOrderItem } from '../redux/actions/actions'
 import SetsList from '../components/sets/SetsList'
 import s from '../components/sets/sets.module.scss'
 
-function Sets({ getSets, sets }) {
+function Sets({ getSets, sets, addAnOrderItem }) {
 
   useEffect(() => {
     getSets();
@@ -13,7 +13,7 @@ function Sets({ getSets, sets }) {
   return (
     <div className={s.sets_page}>
       <h3 className={s.sets_page_heading}>СЕТЫ</h3>
-      <SetsList sets={sets} />
+      <SetsList sets={sets} addAnOrderItem={addAnOrderItem} />
     </div>
   )
 }
@@ -23,7 +23,7 @@ const mapStateToProps = state => {
 }
 
 const mapDispatchToProps = {
-  getSets
+  getSets, addAnOrderItem
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Sets);

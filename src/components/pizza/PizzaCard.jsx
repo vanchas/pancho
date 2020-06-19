@@ -5,16 +5,16 @@ import Basket from '../../assets/images/basket.png'
 import Pepper from '../../assets/images/pepper.png'
 import Green from '../../assets/images/green.png'
 
-export default function PizzaCard({ image }) {
-  const [activeBtn, setActiveBtn] = useState(3);
+export default function PizzaCard({ addAnOrderItem, pizza }) {
+  const [activeBtn, setActiveBtn] = useState(2);
 
   return (
     <div className={`${s.card} card border-0`}>
-      <img className="card-img-top" src={image} alt="Card image cap" />
+      <img className="card-img-top" src={pizza.bigImage} alt="Card image cap" />
       <div className="card-body">
         <h5 className={`${s.card_title} card-title`}>
-          Маргарита
-          <small className="text-muted">1280г +- 50г</small>
+          {pizza.name}
+          <small className="text-muted">{pizza.weight}г +- 50г</small>
         </h5>
         <h6 className={`${s.subtitle} card-subtitle mb-2 text-muted`}>
           <span className={s.subtitle_control}>
@@ -28,24 +28,34 @@ export default function PizzaCard({ image }) {
             3-4
           </span>
         </h6>
-        <p className={s.card_text}>Томатный соус, томаты, увеличенная порция сыра моцарелла, орегано</p>
+        <p className={s.card_text}>{pizza.description}</p>
         <div className={s.size_select}>
-          <label className={activeBtn === 1 ? s.activeBtn : ''} >25 см
-            <input type="radio" value="25 см" onChange={() => setActiveBtn(1)} />
+          <label className={activeBtn === 0 ? s.activeBtn : ''} >{Object.values(pizza.size)[0]} см
+            <input type="radio" name="size" value="25 см" onChange={() => setActiveBtn(0)} />
           </label>
-          <label className={activeBtn === 2 ? s.activeBtn : ''} >30 см
-            <input type="radio" value="30 см" onChange={() => setActiveBtn(2)} />
+          <label className={activeBtn === 1 ? s.activeBtn : ''} >{Object.values(pizza.size)[1]} см
+            <input type="radio" name="size" value="30 см" onChange={() => setActiveBtn(1)} />
           </label>
-          <label className={activeBtn === 3 ? s.activeBtn : ''} >40 см
-            <input type="radio" value="40 см" onChange={() => setActiveBtn(3)} />
+          <label className={activeBtn === 2 ? s.activeBtn : ''} >{Object.values(pizza.size)[2]} см
+            <input type="radio" name="size" value="40 см" onChange={() => setActiveBtn(2)} />
           </label>
         </div>
         <div className={`d-flex justify-content-between`}>
-          <button className={`${s.basket} btn`}>
+          <button className={`${s.basket} btn`}
+            onClick={() => addAnOrderItem({
+              bigImage: pizza.bigImage,
+              smallImage: pizza.smallImage,
+              description: pizza.description,
+              name: pizza.name,
+              size: Object.values(pizza.size)[activeBtn],
+              green: pizza.green,
+              hot: pizza.hot,
+              price: Object.values(pizza.price)[activeBtn]
+            })}>
             <img src={Basket} alt="" />
             В КОРЗИНУ
           </button>
-          <span className="font-weight-bold h5">180 грн</span>
+          <span className="font-weight-bold h5">{Object.values(pizza.price)[activeBtn]} грн</span>
         </div>
       </div>
     </div>

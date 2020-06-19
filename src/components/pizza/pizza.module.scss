@@ -54,6 +54,17 @@
 
 .card {
 	padding: 0.5em;
+
+	.basket {
+		background-color: #575756;
+		color: #f9e803;
+		img {
+			margin-right: 0.2em;
+		}
+		&:hover {
+			color: #fff;
+		}
+	}
 }
 .card_title {
 	display: flex;
@@ -77,7 +88,7 @@
 	background-color: #662483;
 	color: #fff;
 	border-radius: 0.2em;
-	padding: 0 0.5em 0.2em 0.5em;
+	padding: 0.2em 0.5em;
 	font-weight: 100;
 	font-size: 0.9em;
 }
@@ -85,7 +96,7 @@
 	background-color: #e30613;
 	color: #fff;
 	border-radius: 0.2em;
-	padding: 0 0.5em 0.2em 0.5em;
+	padding: 0.2em 0.5em;
 	font-weight: 100;
 	font-size: 0.9em;
 }
@@ -121,13 +132,4 @@
 		border-radius: 0.3em;
 	}
 }
-.basket {
-	background-color: #575756;
-	color: #f9e803;
-	img {
-		margin-right: 0.2em;
-	}
-	&:hover {
-		color: #fff;
-	}
-}
+

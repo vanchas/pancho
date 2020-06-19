@@ -34,6 +34,7 @@ input.bg_dark {
 		left: 50%;
 		transform: translateX(-50%);
 		color: #fff;
+		white-space: nowrap;
 	}
 }
 
@@ -86,6 +87,11 @@ input.bg_dark {
 	color: #fff;
 	padding: 0.4em 1em;
 	border-radius: 0.3em;
+	i {
+		display: inline-block;
+		transform: translate(-10%, 15%) rotate(180deg) scale(1.5);
+		font-style: normal;
+	}
 }
 .order_btn {
 	background-color: #ffed00 !important;
@@ -279,5 +285,55 @@ input.bg_dark {
 	}
 	.activePayment {
 		box-shadow: 0px 0px 0px 3px #fff inset;
+	}
+}
+
+.map_image_block {
+	background-color: #252523;
+	border-radius: .5em;
+	padding: .5em;
+	margin-bottom: 1em;
+	img {
+		width: 100%;
+	}
+}
+
+.footer_buttons {
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+}
+
+.footer_bonus_block {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	align-content: center;
+	justify-content: center;
+	padding-bottom: .3em;
+	span:first-child {
+		color: #fff;
+		font-family: 500;
+		font-size: 1.1em;
+		padding-right: .8em;
+	}
+	span:nth-child(2) {
+		font-size: 1.1em;
+		color: #ffed00;
+		font-weight: 500;
+		padding-right: .3em;
+	}
+	span:last-child {
+		font-size: 1.1em;
+		color: #ffed00;
+		font-weight: 500;
+		i {
+			height: 1em;
+			font-style: normal;
+			display: inline-block;
+			transform: scale(2) translateY(-20%);
+			padding: 0 .2em 0 .5em;
+			font-weight: 700;
+		}
 	}
 }

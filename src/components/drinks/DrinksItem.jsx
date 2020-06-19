@@ -2,7 +2,7 @@ import React from 'react'
 import s from './drinks.module.scss'
 import Basket from '../../assets/images/basket.png'
 
-export default function DrinksItem({ drink }) {
+export default function DrinksItem({ drink, addAnOrderItem }) {
   return (
     <li className={s.drink_item}>
       <div className={s.drink_image}>
@@ -13,7 +13,7 @@ export default function DrinksItem({ drink }) {
         <small className={s.drink_weight}>{drink.weight} л</small>
         <p>{drink.description}</p>
         <div className={s.drink_btn}>
-          <span>
+          <span onClick={() => addAnOrderItem(drink)}>
             <img src={Basket} alt="" />
           В КОРЗИНУ</span>
         </div>

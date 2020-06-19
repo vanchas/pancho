@@ -2,7 +2,7 @@ import React from 'react'
 import s from './desserts.module.scss'
 import Basket from '../../assets/images/basket.png'
 
-export default function DessertsItem({ dessert }) {
+export default function DessertsItem({ dessert, addAnOrderItem }) {
   return (
     <li className={s.dessert_item}>
       <div className={s.dessert_image}>
@@ -13,7 +13,7 @@ export default function DessertsItem({ dessert }) {
         <small className={s.dessert_weight}>{dessert.weight} г</small>
         <p>{dessert.description}</p>
         <div className={s.dessert_btn}>
-          <span>
+          <span onClick={() => addAnOrderItem(dessert)}>
             <img src={Basket} alt="" />
             В КОРЗИНУ</span>
         </div>
