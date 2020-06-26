@@ -1,13 +1,12 @@
 import React from 'react'
 import s from '../components/half/half.module.scss'
 import { connect } from 'react-redux'
-import { setLeftHalfPizza, setRightHalfPizza } from '../redux/actions/actions'
+import { setLeftHalfPizza, setRightHalfPizza, addAnOrderItem } from '../redux/actions/actions'
 import LeftList from '../components/half/LeftList'
 import RightList from '../components/half/RightList'
 import HalfPizzaConstructor from '../components/half/HalfPizzaConstructor'
-import { pizza } from '../../fakePizzas'
 
-const Half = ({ pizza, setLeftHalfPizza, setRightHalfPizza, rightHalfPizza, leftHalfPizza }) => {
+const Half = ({ pizza, setLeftHalfPizza, setRightHalfPizza, rightHalfPizza, leftHalfPizza, addAnOrderItem }) => {
 
   return (
     <div className={s.half_page}>
@@ -19,11 +18,12 @@ const Half = ({ pizza, setLeftHalfPizza, setRightHalfPizza, rightHalfPizza, left
         <LeftList pizza={pizza}
           setLeftHalfPizza={setLeftHalfPizza} />
         <HalfPizzaConstructor
-          pizza={pizza}
+          pizzas={pizza}
           rightHalfPizza={rightHalfPizza}
           leftHalfPizza={leftHalfPizza}
           setLeftHalfPizza={setLeftHalfPizza}
-          setRightHalfPizza={setRightHalfPizza} />
+          setRightHalfPizza={setRightHalfPizza}
+          addAnOrderItem={addAnOrderItem} />
         <RightList pizza={pizza}
           setRightHalfPizza={setRightHalfPizza} />
       </div>
@@ -44,7 +44,8 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = {
   setLeftHalfPizza,
-  setRightHalfPizza
+  setRightHalfPizza,
+  addAnOrderItem
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Half);

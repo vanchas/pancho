@@ -7,12 +7,14 @@ import { addAnOrderItem } from '../redux/actions/actions'
 
 function Pizza({ addAnOrderItem, pizza }) {
   return (
-    <div style={{ maxWidth: '1260px', margin: '0 auto' }} className={s.pizza_page}>
+    <div className={s.pizza_page}>
       <Billboard />
-      <header>
-        <h2>ПИЦЦЫ</h2>
-      </header>
-      <PizzaList addAnOrderItem={addAnOrderItem} pizzas={pizza} />
+      <div style={{ maxWidth: '1260px', margin: '0 auto' }}>
+        <header>
+          <h2>ПИЦЦЫ</h2>
+        </header>
+        <PizzaList addAnOrderItem={addAnOrderItem} pizzas={pizza} />
+      </div>
     </div>
   )
 }

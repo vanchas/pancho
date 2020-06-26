@@ -11,10 +11,12 @@ function Wok({ getWoks, woks }) {
   useEffect(() => { getWoks() }, []);
 
   return (
-    <div style={{ maxWidth: '1260px', margin: '0 auto' }} className={s.wok_page}>
+    <div className={s.wok_page}>
       <Billboard />
-      <WokVegitableList woks={woks} addAnOrderItem={addAnOrderItem} />
-      <WokChickenList woks={woks} addAnOrderItem={addAnOrderItem} />
+      <div style={{ maxWidth: '1260px', margin: '0 auto' }}>
+        <WokVegitableList woks={woks} addAnOrderItem={addAnOrderItem} />
+        <WokChickenList woks={woks} addAnOrderItem={addAnOrderItem} />
+      </div>
     </div>
   )
 }

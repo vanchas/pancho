@@ -54,6 +54,14 @@
 
 .card {
 	padding: 0.5em;
+	display: grid;
+	align-content: stretch;
+
+	.big_pizza_image {
+		height: 17em;
+		width: auto;
+		margin: 0 auto;
+	}
 
 	.basket {
 		background-color: #575756;
@@ -117,16 +125,20 @@
 	border-radius: 0.4em;
 	margin-bottom: 1.1em;
 	width: 100%;
+	padding: .3em 0;
 	label {
 		text-align: center;
-		padding: 0.3em 0.5em;
+		padding: 0.1em 0.5em;
 		margin: 0;
+		position: relative;
+		white-space: nowrap;
 		input {
+			position: absolute;
 			visibility: hidden;
 		}
 	}
 	label.activeBtn {
-		padding: 0.05em 0.3em;
+		padding: 0.1em 1em;
 		background-color: #fff;
 		box-shadow: 2px 2px 3px 1px #aaa9a9;
 		border-radius: 0.3em;

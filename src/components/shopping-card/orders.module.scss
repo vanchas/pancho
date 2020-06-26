@@ -20,20 +20,9 @@
 	}
 	.order_item_count_control {
 		display: flex;
-		div {
-			background-color: #ffed00;
-			border-radius: 50%;
-			width: 1em;
-			height: 1em;
-			color: #000;
-			display: grid;
-			justify-content: center;
-			align-content: center;
-			font-weight: 600;
-			font-size: 1.2em;
-		}
-		span {
-			padding: 0 0.5em;
+		align-items: center;
+		.count_number {
+			padding: .1em .3em 0 .3em;
 		}
 	}
 	.order_item_price {
@@ -63,7 +52,9 @@
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	grid-gap: 0.5em;
-
+	@media screen and (max-width: 500px) {
+		grid-template-columns: 1fr;
+	}
 	li {
 		padding: 0.3em;
 		display: grid;
@@ -120,6 +111,7 @@
 	overflow-x: hidden;
 	width: 100%;
 	li {
+		width: 100%;
 		display: grid;
 		grid-gap: 0.5em;
 		justify-items: center;
@@ -127,10 +119,12 @@
 		.rec_image {
 			img {
 				width: 100%;
+				min-width: 9em;
 			}
 		}
 		.to_basket_btn {
 			padding-top: 0.2em;
+			white-space: nowrap;
 			span {
 				background-color: #ffed00;
 				color: #000;

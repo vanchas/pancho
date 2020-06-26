@@ -1,26 +1,26 @@
 import React, { useState, useEffect } from "react";
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
-import { PropTypes } from "prop-types";
 import s from "./modal.module.scss";
 import Widget from "../../assets/images/basket/widget.png";
-import OrdersList from "../basket/OrdersList";
+import OrdersList from "../shopping-card/OrdersList";
 import { connect } from "react-redux";
 import Person from "../../assets/images/basket/person.png";
 import Car from "../../assets/images/basket/car.png";
-import SoucesList from "../basket/SoucesList";
-import Recommendations from "../basket/Recommendations";
+import SoucesList from "../shopping-card/SoucesList";
+import Recommendations from "../shopping-card/Recommendations";
 import {
 	getDrinks,
 	getSouces,
 	addAnOrderItem,
 	removeAnOrderItem,
 	incrementOrderItem,
-	decrementOrderItem
+	decrementOrderItem,
+	openDeliveryShoppingCard,
+	openPickupShoppingCard
 } from "../../redux/actions/actions";
-import BasketStep_2_Delivery from "./BasketStep_2_Delivery";
-import BasketStep_2_Pickup from "./BasketStep_2_Pickup";
+import ShoppingCard_2 from "./ShoppingCard_2";
+import ShoppingCard_3 from "./ShoppingCard_3";
 
-const BasketStep_1 = ({
+const ShoppingCard_1 = ({
 	orders,
 	souces,
 	drinks,
@@ -30,34 +30,40 @@ const BasketStep_1 = ({
 	ordersAmount,
 	removeAnOrderItem,
 	incrementOrderItem,
-	decrementOrderItem
+	decrementOrderItem,
+	pickupCard,
+	deliveryCard,
+	openDeliveryShoppingCard,
+	openPickupShoppingCard
 }) => {
-	const [modal, setModal] = useState(false);
-	const toggle = () => setModal(!modal);
 	const [step2, setStep2] = useState("delivery");
+	const [show, setShow] = useState(false);
 
 	useEffect(() => {
 		getDrinks();
 		getSouces();
 	}, []);
 
-	const submitHandler = (e) => {
-		e.preventDefault();
-	};
-
 	return (
-		<div>
-			<Button color="" className={`p-0 ${s.basket_widget}`} onClick={toggle}>
-				<img src={Widget} alt="" />
+		<React.Fragment>
+			{deliveryCard &&
+				<ShoppingCard_2 open={openDeliveryShoppingCard} />}
+			{pickupCard &&
+				<ShoppingCard_3 open={openPickupShoppingCard} />}
+
+			<div className={s.shopping_card_widget}
+				onClick={() => setShow(true)} >
+				<img src={Widget} alt="shopping card" />
 				<span>{ordersAmount} грн</span>
-			</Button>
+			</div>
 
-			<Modal isOpen={modal} toggle={toggle}>
-				<ModalHeader toggle={toggle} className={`border-0 ${s.header}`}>
+			{show && <div className={`${show && s.show} ${s.shopping_card_1} shopping-card-1`}>
+				<div className={`border-0 ${s.header}`}>
 					В КОРЗИНЕ
-				</ModalHeader>
+					<span onClick={() => setShow(false)}>&#10006;</span>
+				</div>
 
-				<ModalBody className={s.body}>
+				<div className={s.body}>
 					<OrdersList
 						orders={orders}
 						removeAnOrderItem={removeAnOrderItem}
@@ -95,26 +101,22 @@ const BasketStep_1 = ({
 					</div>
 					<SoucesList addAnOrderItem={addAnOrderItem} souces={souces} />
 					<Recommendations addAnOrderItem={addAnOrderItem} drinks={drinks} />
-				</ModalBody>
+				</div>
 
-				<ModalFooter
+				<footer
 					className={`d-flex justify-content-around border-0 pt-0 pb-3 ${s.footer}`}
 				>
 					<span className={`${s.total_sum}`}>ИТОГО: {ordersAmount} грн</span>
-					{step2 === "delivery" ? (
-						<BasketStep_2_Delivery
-							ordersAmount={ordersAmount}
-							buttonLabel={`ОФОРМИТЬ ЗАКАЗ`}
-						/>
-					) : (
-							<BasketStep_2_Pickup
-								ordersAmount={ordersAmount}
-								buttonLabel={`ОФОРМИТЬ ЗАКАЗ`}
-							/>
-						)}
-				</ModalFooter>
-			</Modal>
-		</div>
+					{(step2 === "delivery")
+						? <div className={s.order_btn}
+							onClick={() => openDeliveryShoppingCard()}>
+							ОФОРМИТЬ ЗАКАЗ</div>
+						: <div className={s.order_btn}
+							onClick={() => openPickupShoppingCard()}>
+							ОФОРМИТЬ ЗАКАЗ</div>}
+				</footer>
+			</div>}
+		</React.Fragment>
 	);
 };
 
@@ -124,6 +126,8 @@ const mapStateToProps = (state) => {
 		souces: state.products.souces,
 		drinks: state.products.drinks,
 		ordersAmount: state.user.ordersAmount,
+		deliveryCard: state.user.deliveryShoppingCard,
+		pickupCard: state.user.pickupShoppingCard
 	};
 };
 
@@ -133,35 +137,9 @@ const mapDispatchToProps = {
 	addAnOrderItem,
 	removeAnOrderItem,
 	incrementOrderItem,
-	decrementOrderItem
+	decrementOrderItem,
+	openDeliveryShoppingCard,
+	openPickupShoppingCard
 };
 
-Modal.propTypes = {
-	isOpen: PropTypes.bool,
-	autoFocus: PropTypes.bool,
-	centered: PropTypes.bool,
-	size: PropTypes.string,
-	toggle: PropTypes.func,
-	role: PropTypes.string,
-	labelledBy: PropTypes.string,
-	keyboard: PropTypes.bool,
-	backdrop: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(["static"])]),
-	scrollable: PropTypes.bool,
-	onEnter: PropTypes.func,
-	onExit: PropTypes.func,
-	onOpened: PropTypes.func,
-	onClosed: PropTypes.func,
-	className: PropTypes.string,
-	wrapClassName: PropTypes.string,
-	modalClassName: PropTypes.string,
-	backdropClassName: PropTypes.string,
-	contentClassName: PropTypes.string,
-	fade: PropTypes.bool,
-	cssModule: PropTypes.object,
-	zIndex: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-	innerRef: PropTypes.object,
-	unmountOnClose: PropTypes.bool,
-	returnFocusAfterClose: PropTypes.bool,
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(BasketStep_1);
+export default connect(mapStateToProps, mapDispatchToProps)(ShoppingCard_1);

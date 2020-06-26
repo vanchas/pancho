@@ -7,14 +7,26 @@ import Pepper from '../../assets/images/pepper.png'
 import Diameter from '../../assets/images/diameter.png'
 import ListItem from './ListItem'
 
-export default function HalfPizzaConstructor({ rightHalfPizza, leftHalfPizza, pizza, setLeftHalfPizza, setRightHalfPizza }) {
+export default function HalfPizzaConstructor({ rightHalfPizza, leftHalfPizza, pizzas, setLeftHalfPizza, setRightHalfPizza, addAnOrderItem }) {
 
   const setLeftHalfPizzaHandler = selectedPizza => {
-    setLeftHalfPizza(selectedPizza);
+    setLeftHalfPizza({ ...selectedPizza, size: 40 });
   }
 
   const setRightHalfPizzaHandler = selectedPizza => {
-    setRightHalfPizza(selectedPizza);
+    setRightHalfPizza({ ...selectedPizza, size: 40 });
+  }
+
+  const completeAdOrder = () => {
+    addAnOrderItem({
+      image: leftHalfPizza.smallImage,
+      description: `FIRST PIZZA: ${leftHalfPizza.description}. / SECOND PIZZA: ${rightHalfPizza.description}`,
+      green: null,
+      hot: null,
+      name: `${leftHalfPizza.name} / ${rightHalfPizza.name}`,
+      price: (+leftHalfPizza.price.L / 2) + (+rightHalfPizza.price.L / 2),
+      size: 40
+    });
   }
 
   return (
@@ -37,14 +49,15 @@ export default function HalfPizzaConstructor({ rightHalfPizza, leftHalfPizza, pi
 
         {leftHalfPizza.name && rightHalfPizza.name
           ? <div className={`${s.order_block}`}>
-            <button className={`${s.basket}`}>
+            <button className={`${s.basket}`}
+              onClick={completeAdOrder}>
               <img src={Basket} alt="" />
             В КОРЗИНУ
           </button>
           </div>
           : null}
 
-        <ul className={s.mobile_pizza_list}>{pizza.map((p, i) => (
+        <ul className={s.mobile_pizza_list}>{pizzas.map((p, i) => (
           <li key={i} onClick={() => setLeftHalfPizzaHandler(p)}>
             <ListItem pizza={p} />
           </li>
@@ -74,7 +87,7 @@ export default function HalfPizzaConstructor({ rightHalfPizza, leftHalfPizza, pi
           : null}
 
         <ul className={s.mobile_pizza_list}>
-          {pizza.reverse().map((p, i) => (
+          {pizzas.map((p, i) => (
             <li key={i} onClick={() => setRightHalfPizzaHandler(p)}>
               <ListItem pizza={p} />
             </li>

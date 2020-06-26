@@ -7,16 +7,16 @@ export default function Recommendations({ drinks, addAnOrderItem }) {
   const [secondSlideIndex, setSecondSlideIndex] = useState(2);
 
   useEffect(() => {
-    showDivs(firstSlideIndex);
-    showDivs(secondSlideIndex);
+    showSlides(firstSlideIndex);
+    showSlides(secondSlideIndex);
   }, [firstSlideIndex, secondSlideIndex]);
 
-  const plusDivs = n => {
-    showDivs(setFirstSlideIndex(firstSlideIndex + n));
-    showDivs(setSecondSlideIndex(secondSlideIndex + n));
+  const changeSlides = n => {
+    showSlides(setFirstSlideIndex(firstSlideIndex + n));
+    showSlides(setSecondSlideIndex(secondSlideIndex + n));
   }
 
-  const showDivs = (n) => {
+  const showSlides = (n) => {
     var i;
     const slides = $(".slide");
     if (n > slides.length) {
@@ -24,7 +24,7 @@ export default function Recommendations({ drinks, addAnOrderItem }) {
       setSecondSlideIndex(2);
     }
     if (n < 1) {
-      setFirstSlideIndex(slides.length);
+      setFirstSlideIndex(slides.length - 1);
       setSecondSlideIndex(slides.length);
     }
     for (i = 0; i < slides.length; i++) {
@@ -39,7 +39,7 @@ export default function Recommendations({ drinks, addAnOrderItem }) {
       {drinks.length ? <div>
         <h5 className={s.recommendations_heading}>РЕКОМЕНДУЕМ ПОПРОБОВАТЬ</h5>
         <div className="d-flex">
-          <span className={s.arrow} onClick={() => plusDivs(-1)}>&#8249;</span>
+          <span className={s.arrow} onClick={() => changeSlides(-1)}>&#8249;</span>
           <ul className={s.recommendations_list}>
             {drinks.map((d, i) => (
               <li key={i} className="slide">
@@ -53,7 +53,7 @@ export default function Recommendations({ drinks, addAnOrderItem }) {
               </li>
             ))}
           </ul>
-          <span className={s.arrow} onClick={() => plusDivs(1)
+          <span className={s.arrow} onClick={() => changeSlides(1)
           }>&#8250;</span>
         </div>
       </div> : null}

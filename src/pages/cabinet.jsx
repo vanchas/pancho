@@ -5,10 +5,10 @@ import UserAbout from '../components/cabinet/UserAbout'
 import UserHistory from '../components/cabinet/UserHistory'
 import UserBonus from '../components/cabinet/UserBonus'
 import UserAddress from '../components/cabinet/UserAddress'
-import { getTransactions, getAddress, getBonuses } from '../redux/actions/actions'
+import { getTransactions, getAddress, getBonuses, getHistory, repeatOrder } from '../redux/actions/actions'
 import { connect } from 'react-redux'
 
-function Cabinet({ getBonuses, getAddress, getTransactions, transactions, addresses, bonuses }) {
+function Cabinet({ getBonuses, getAddress, getTransactions, transactions, addresses, bonuses, history, getHistory, repeatOrder }) {
   const [component, setComponent] = useState(<UserAbout />);
   const [ref, setRef] = useState('about');
 
@@ -16,6 +16,7 @@ function Cabinet({ getBonuses, getAddress, getTransactions, transactions, addres
     getTransactions();
     getAddress();
     getBonuses();
+    getHistory();
   }, []);
 
   const setVisible = ref => {
@@ -23,7 +24,7 @@ function Cabinet({ getBonuses, getAddress, getTransactions, transactions, addres
     if (ref === 'about') {
       setComponent(<UserAbout />);
     } else if (ref === 'history') {
-      setComponent(<UserHistory transactions={transactions} />);
+      setComponent(<UserHistory transactions={transactions} history={history} repeatOrder={repeatOrder} />);
     } else if (ref === 'address') {
       setComponent(<UserAddress addresses={addresses} />);
     } else if (ref === 'bonus') {
@@ -46,13 +47,16 @@ const mapStateToProps = state => {
   const transactions = state.user.transactions;
   const addresses = state.user.addresses;
   const bonuses = state.user.bonuses;
-  return { transactions, addresses, bonuses }
+  const history = state.user.history;
+  return { transactions, addresses, bonuses, history }
 }
 
 const mapDispatchToProps = {
   getTransactions,
   getAddress,
-  getBonuses
+  getBonuses,
+  getHistory,
+  repeatOrder
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Cabinet);

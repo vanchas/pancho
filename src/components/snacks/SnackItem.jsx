@@ -14,7 +14,7 @@ export default function SnackItem({ snack, addAnOrderItem }) {
         <p>{snack.description}</p>
         <div className={s.snack_btn}>
           <span onClick={() => {
-            addAnOrderItem({ snack });
+            addAnOrderItem(snack);
           }}>
             <img src={Basket} alt="" />
             В КОРЗИНУ</span>

@@ -1,7 +1,7 @@
 import React from 'react'
 import s from './cabinet.module.scss'
 
-export default function Transaction({ transaction }) {
+export default function Transaction({ transaction, repeatOrder }) {
   return (
     <div className={s.transaction}>
       <table>
@@ -22,13 +22,13 @@ export default function Transaction({ transaction }) {
             <td>{transaction.id}</td>
             <td>{transaction.items.map((t, i) => (
               <React.Fragment key={i}>
-                {t.name} {t.size} cm, {t.number} шт. <br/>
+                {t.name} {t.size} cm, {t.counter} шт. <br />
               </React.Fragment>
             ))}</td>
             <td>{transaction.address}</td>
             <td>{transaction.phone}</td>
             <td>{transaction.amount} грн</td>
-            <td><button className="btn">
+            <td><button className="btn" onClick={() => repeatOrder(transaction.id)}>
               ПОВТОРИТЬ ЗАКАЗ</button>
             </td>
           </tr>

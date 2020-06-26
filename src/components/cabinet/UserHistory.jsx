@@ -2,14 +2,14 @@ import React from 'react'
 import s from './cabinet.module.scss'
 import Transaction from './Transaction'
 
-export default function UserHistory({ transactions }) {
+export default function UserHistory({ history, repeatOrder }) {
   return (
     <div className={s.user_history}>
       <ul>
-        {(transactions && transactions.length)
-          ? transactions.map((t, i) => (
+        {(history && history.length)
+          ? history.map((t, i) => (
             <li key={i}>
-              <Transaction transaction={t} />
+              <Transaction transaction={t} repeatOrder={repeatOrder} />
             </li>
           )) : null}
       </ul>

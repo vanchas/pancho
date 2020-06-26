@@ -13,27 +13,27 @@ export default function Footer() {
         <div className={s.footer_item}>
           <h6 className="text-muted">Меню</h6>
           <ul>
-            <li><Link href="/pizza"><a>Пицца</a></Link></li>
-            <li><Link href="/wok"><a>WOK</a></Link></li>
-            <li><Link href="/snacks"><a>Закуски</a></Link></li>
-            <li><Link href="/pasta"><a>Паста</a></Link></li>
-            <li><Link href="/salad"><a>Салаты</a></Link></li>
-            <li><Link href="/combo"><a>Комбо</a></Link></li>
-            <li><Link href="/set"><a>Сеты</a></Link></li>
-            <li><Link href="/desert"><a>Десерты</a></Link></li>
-            <li><Link href="/drink"><a>Напитки</a></Link></li>
+            <li><Link href="/pizza.html"><a>Пицца</a></Link></li>
+            <li><Link href="/wok.html"><a>WOK</a></Link></li>
+            <li><Link href="/snacks.html"><a>Закуски</a></Link></li>
+            <li><Link href="/pasta.html"><a>Паста</a></Link></li>
+            <li><Link href="/salad.html"><a>Салаты</a></Link></li>
+            <li><Link href="/combo.html"><a>Комбо</a></Link></li>
+            <li><Link href="/set.html"><a>Сеты</a></Link></li>
+            <li><Link href="/desert.html"><a>Десерты</a></Link></li>
+            <li><Link href="/drink.html"><a>Напитки</a></Link></li>
           </ul>
         </div>
         <div className={s.footer_item}>
           <h6 className="text-muted">Панчо</h6>
           <ul>
-            <li><Link href="/about"><a>О компании</a></Link></li>
+            <li><Link href="/about.html"><a>О компании</a></Link></li>
             <li><Link href="/"><a>Производство</a></Link></li>
-            <li><Link href="/delivery"><a>Условия и доставка</a></Link></li>
-            <li><Link href="/combo"><a>Комбо</a></Link></li>
-            <li><Link href="/stocks"><a>Акции</a></Link></li>
-            <li><Link href="/bonus"><a>Бонусная программа</a></Link></li>
-            <li><Link href="/contacts"><a>Контакты</a></Link></li>
+            <li><Link href="/delivery.html"><a>Условия и доставка</a></Link></li>
+            <li><Link href="/combo.html"><a>Комбо</a></Link></li>
+            <li><Link href="/stocks.html"><a>Акции</a></Link></li>
+            <li><Link href="/bonus.html"><a>Бонусная программа</a></Link></li>
+            <li><Link href="/contacts.html"><a>Контакты</a></Link></li>
           </ul>
         </div>
         <div className={s.footer_item}>

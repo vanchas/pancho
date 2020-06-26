@@ -1,11 +1,11 @@
 import Header from '../header/Header';
 import s from './layout.module.scss';
 import Footer from '../footer/Footer';
-import BasketStep_1 from '../modals/BasketStep_1';
+import ShoppingCard_1 from '../modals/ShoppingCard_1';
 
 const Layout = ({ children }) => (
   <div className={s.layout}>
-    <BasketStep_1 />
+    <ShoppingCard_1 />
     <header>
       <Header />
     </header>

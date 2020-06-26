@@ -1,10 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
 
 .navbar_container {
-	background-color: #000;
+	background-color: #1d1d1b;
 	nav {
-		max-width: 1260px;
-		margin: 0 auto;
+		width: 100%;
 		.navbar_brand {
 			display: none;
 			@media screen and (max-width: 768px) {
@@ -28,7 +27,9 @@
 			}
 		}
 		ul {
+			max-width: 1260px;
 			width: 100%;
+			margin: 0 auto;
 			justify-content: space-between;
 			justify-items: center;
 			li {
@@ -37,8 +38,9 @@
 					font-family: "Roboto", sans-serif;
 					font-size: 1.1em;
 					font-weight: 400;
+					white-space: nowrap;
 				}
-				@media screen and (max-width: 768px) {
+				@media screen and (max-width: 992px) {
 					a {
 						text-align: center;
 					}
@@ -48,9 +50,14 @@
 				color: #ffed00;
 			}
 			.login_nav_item {
-				// justify-self: flex-end;
-				// display: block;
-				// width: max-content;
+				flex-basis: 20%;
+				div {
+					display: flex;
+					justify-content: flex-end;
+					button {
+						width: fit-content;
+					}
+				}
 			}
 		}
 	}

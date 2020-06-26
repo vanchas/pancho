@@ -40,7 +40,7 @@ const [registrationWarning, setRegistrationWarning] = useState('');
     e.preventDefault();
     if (login.length && password.length) {
       setLoginWarning('');
-      router.push('/cabinet');
+      router.push('/cabinet.html');
       toggle();
     } else {
       setLoginWarning('WARNING !!!');
@@ -51,7 +51,7 @@ const [registrationWarning, setRegistrationWarning] = useState('');
     e.preventDefault();
     if (name.length && passwordR.length && email.length && phone.toString().length) {
       setRegistrationWarning('');
-      router.push('/cabinet');
+      router.push('/cabinet.html');
       toggleAll();
     } else {
       setRegistrationWarning('WARNING !!!');

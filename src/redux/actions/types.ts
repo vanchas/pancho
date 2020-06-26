@@ -33,3 +33,9 @@ export const ADD_AN_ORDER_ITEM: string = 'ADD_AN_ORDER_ITEM';
 export const REMOVE_AN_ORDER_ITEM: string = 'REMOVE_AN_ORDER_ITEM';
 export const INCREMENT_ORDER_ITEM: string = 'INCREMENT_ORDER_ITEM';
 export const DECREMENT_ORDER_ITEM: string = 'DECREMENT_ORDER_ITEM';
+export const GET_HISTORY: string = 'GET_HISTORY';
+export const REPEAT_ORDER: string = 'REPEAT_ORDER';
+
+export const DELIVERY_SHOPPING_CARD: string = 'OPEN_DELIVERY_SHOPPING_CARD';
+export const PICKUP_SHOPPING_CARD: string = 'OPEN_PICKUP_SHOPPING_CARD';
+

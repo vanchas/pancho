@@ -1,4 +1,4 @@
-import { GET_TRANSACTONS, GET_ADDRESSES, GET_BONUSES, GET_REVIEWS, ADD_AN_ORDER_ITEM, REMOVE_AN_ORDER_ITEM, INCREMENT_ORDER_ITEM, DECREMENT_ORDER_ITEM } from '../actions/types'
+import { GET_TRANSACTONS, GET_ADDRESSES, GET_BONUSES, GET_REVIEWS, ADD_AN_ORDER_ITEM, REMOVE_AN_ORDER_ITEM, INCREMENT_ORDER_ITEM, DECREMENT_ORDER_ITEM, GET_HISTORY, REPEAT_ORDER, DELIVERY_SHOPPING_CARD, PICKUP_SHOPPING_CARD } from '../actions/types'
 import { orders } from '../../../fakeOrders'
 
 const initialState = {
@@ -7,7 +7,10 @@ const initialState = {
   bonuses: [],
   reviews: [],
   orders,
-  ordersAmount: 498
+  ordersAmount: 498,
+  history: [],
+  deliveryShoppingCard: false,
+  pickupShoppingCard: false
 };
 
 export const userReducer = (state = initialState, action: any) => {
@@ -73,6 +76,20 @@ export const userReducer = (state = initialState, action: any) => {
         orders: decrementedOrders,
         ordersAmount: decrementedOrdersAmount
       };
+
+    case GET_HISTORY:
+      return { ...state, history: action.payload }
+
+    case REPEAT_ORDER:
+      // let repeatedOrders = [];
+      // state.orders.forEach(order => )
+      return { ...state }
+
+    case PICKUP_SHOPPING_CARD:
+      return { ...state, pickupShoppingCard: !state.pickupShoppingCard }
+
+    case DELIVERY_SHOPPING_CARD:
+      return { ...state, deliveryShoppingCard: !state.deliveryShoppingCard }
 
     default:
       return state;
