@@ -1,6 +1,6 @@
 .desserts_page {
-  max-width: 1260px;
-  margin: 0 auto;
+	max-width: 1260px;
+	margin: 0 auto;
 }
 .desserts_page_heading {
 	margin: 1em auto 2em auto;
@@ -37,19 +37,19 @@
 
 .desserts_list {
 	list-style: none;
-  padding: 0.5em;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-column-gap: 1em;
-  grid-row-gap: 2em;
-  @media screen and (max-width: 1240px) {
+	padding: 0.5em;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-column-gap: 1em;
+	grid-row-gap: 2em;
+	@media screen and (max-width: 1240px) {
 		grid-template-columns: repeat(3, 1fr);
 	}
 	@media screen and (max-width: 900px) {
 		grid-template-columns: repeat(2, 1fr);
 	}
 	@media screen and (max-width: 600px) {
-    grid-template-columns: repeat(1, 1fr);
+		grid-template-columns: repeat(1, 1fr);
 	}
 }
 .dessert_item {
@@ -57,57 +57,60 @@
 	align-content: space-between;
 }
 .dessert_image {
-  padding-bottom: 1em;
-  display: flex;
+	padding-bottom: 1em;
+	display: flex;
 	align-items: center;
 	justify-content: center;
 	height: 20em;
 	overflow: hidden;
 	img {
-    height: 100%;
+		height: 100%;
 	}
 }
 .dessert_info {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-  grid-gap: 0.5em;
+	grid-gap: 0.5em;
 	.dessert_name {
-    order: 1;
-    font-weight: 600;
+		order: 1;
+		font-weight: 600;
 	}
 	.dessert_price {
-    order: 5;
-    font-weight: 600;
-    font-size: 1.2em;
-    justify-self: center;
+		order: 5;
+		font-weight: 600;
+		font-size: 1.2em;
+		justify-self: center;
 	}
 	.dessert_weight {
-    order: 2;
-    color: #575756;
-    justify-self: center;
+		order: 2;
+		color: #575756;
+		justify-self: center;
 	}
 	.dessert_btn {
-    order: 4;
-    span {
-      background-color: #575756;
-      color: #f9e803;
-      padding: .3em .6em;
-      border-radius: .2em;
-      display: flex;
-      align-items: center;
-      img {
-        margin-right: .3em;
-      }
-      &:hover {
-        color: #fff;
-      }
-    }
+		order: 4;
+		span {
+			background-color: #575756;
+			color: #f9e803;
+			position: relative;
+			padding: 0.3em 0.6em 0.3em 2.5em;
+			border-radius: 0.2em;
+			img {
+				width: 6em;
+				position: absolute;
+				top: 50%;
+				left: 0;
+				transform: translate(-28%, -45%);
+			}
+			&:hover {
+				color: #fff;
+			}
+		}
 	}
 	p {
 		order: 3;
-    grid-column: span 2;
-    line-height: 1.3em;
-    font-size: .9em;
-    color: #575756;
+		grid-column: span 2;
+		line-height: 1.3em;
+		font-size: 0.9em;
+		color: #575756;
 	}
 }

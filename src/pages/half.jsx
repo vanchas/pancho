@@ -1,12 +1,15 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import s from '../components/half/half.module.scss'
 import { connect } from 'react-redux'
-import { setLeftHalfPizza, setRightHalfPizza, addAnOrderItem } from '../redux/actions/actions'
+import { setLeftHalfPizza, setRightHalfPizza, addAnOrderItem, getPizzas } from '../redux/actions/actions'
 import LeftList from '../components/half/LeftList'
 import RightList from '../components/half/RightList'
 import HalfPizzaConstructor from '../components/half/HalfPizzaConstructor'
 
-const Half = ({ pizza, setLeftHalfPizza, setRightHalfPizza, rightHalfPizza, leftHalfPizza, addAnOrderItem }) => {
+const Half = ({ pizza, setLeftHalfPizza, setRightHalfPizza, rightHalfPizza, leftHalfPizza, addAnOrderItem, getPizzas }) => {
+  useEffect(() => {
+    getPizzas();
+  }, []);
 
   return (
     <div className={s.half_page}>
@@ -45,7 +48,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = {
   setLeftHalfPizza,
   setRightHalfPizza,
-  addAnOrderItem
+  addAnOrderItem,
+  getPizzas
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Half);

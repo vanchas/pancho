@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import s from './pizza.module.scss'
 import $ from 'jquery'
 import Person from '../../assets/images/person.png'
-import Basket from '../../assets/images/basket.png'
+import Basket from '../../assets/images/basket/korzina-01.svg'
 import Pepper from '../../assets/images/pepper.png'
 import Green from '../../assets/images/green.png'
 

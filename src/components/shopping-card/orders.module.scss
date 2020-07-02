@@ -22,7 +22,7 @@
 		display: flex;
 		align-items: center;
 		.count_number {
-			padding: .1em .3em 0 .3em;
+			padding: 0.1em 0.3em 0 0.3em;
 		}
 	}
 	.order_item_price {
@@ -97,6 +97,7 @@
 	font-size: 4em;
 	height: 2em;
 	user-select: none;
+	transform: translateY(30%);
 	&:active {
 		background-color: #1b1b1a;
 		box-shadow: 0 0 3px 3px #1b1b1a;

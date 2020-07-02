@@ -1,6 +1,6 @@
 import React from 'react'
 import s from './wok.module.scss'
-import Basket from '../../assets/images/basket.png'
+import Basket from '../../assets/images/basket/korzina-01.svg'
 import { useDispatch } from 'react-redux'
 
 export default function WokCard({ wok, addAnOrderItem }) {

@@ -30,22 +30,22 @@ const NavComponent = props => {
       <Collapse isOpen={isOpen} navbar>
         <Nav className="mr-auto" navbar>
           <NavItem>
-            <NavLink href="/about.html" className={router.pathname === '/about' ? s.activeLink : null}>О компании Панчо</NavLink>
+            <NavLink href="/about" className={router.pathname === '/about' ? s.activeLink : null}>О компании Панчо</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="/delivery.html" className={router.pathname === '/delivery' ? s.activeLink : null}>Доставка и оплата</NavLink>
+            <NavLink href="/delivery" className={router.pathname === '/delivery' ? s.activeLink : null}>Доставка и оплата</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="/discounts.html" className={router.pathname === '/discounts' ? s.activeLink : null}>Акции</NavLink>
+            <NavLink href="/discounts" className={router.pathname === '/discounts' ? s.activeLink : null}>Акции</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="/bonus.html" className={router.pathname === '/bonus' ? s.activeLink : null}>Бонусная программа</NavLink>
+            <NavLink href="/bonus" className={router.pathname === '/bonus' ? s.activeLink : null}>Бонусная программа</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="/reviews.html" className={router.pathname === '/reviews' ? s.activeLink : null}>Отзывы</NavLink>
+            <NavLink href="/reviews" className={router.pathname === '/reviews' ? s.activeLink : null}>Отзывы</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="/contacts.html" className={router.pathname === '/contacts' ? s.activeLink : null}>Контакты</NavLink>
+            <NavLink href="/contacts" className={router.pathname === '/contacts' ? s.activeLink : null}>Контакты</NavLink>
           </NavItem>
           <NavItem className={s.login_nav_item}>
             <LoginModal buttonLabel="Войти" active={router.pathname === '/cabinet' ? true : false} />

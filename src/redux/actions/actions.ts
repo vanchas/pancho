@@ -1,4 +1,5 @@
-import { GET_PIZZAS, SET_LEFT_HALF_PIZZA, SET_RIGHT_HALF_PIZZA, GET_TRANSACTONS, GET_ADDRESSES, GET_BONUSES, GET_WOKS, SHOW_DISCOUNTS, ADD_REVIEW, GET_REVIEWS, SIGNIN, GET_SNACKS, GET_SOUCES, GET_DRINKS, GET_PASTAS, GET_COMBOS, GET_SETS, GET_DESSERTS, ADD_AN_ORDER_ITEM, REMOVE_AN_ORDER_ITEM, INCREMENT_ORDER_ITEM, DECREMENT_ORDER_ITEM, GET_HISTORY, REPEAT_ORDER, DELIVERY_SHOPPING_CARD, PICKUP_SHOPPING_CARD } from "./types"
+import fetch from 'isomorphic-unfetch'
+import { GET_PIZZAS, SET_LEFT_HALF_PIZZA, SET_RIGHT_HALF_PIZZA, GET_TRANSACTONS, GET_ADDRESSES, GET_BONUSES, GET_WOKS, SHOW_DISCOUNTS, ADD_REVIEW, GET_REVIEWS, SIGNIN, GET_SNACKS, GET_SOUCES, GET_DRINKS, GET_PASTAS, GET_COMBOS, GET_SETS, GET_DESSERTS, ADD_AN_ORDER_ITEM, REMOVE_AN_ORDER_ITEM, INCREMENT_ORDER_ITEM, DECREMENT_ORDER_ITEM, GET_HISTORY, REPEAT_ORDER, DELIVERY_SHOPPING_CARD, PICKUP_SHOPPING_CARD, GET_CURRENT_LOCATION, SET_PESISTED_STATE } from "./types"
 import { pizza } from '../../../fakePizzas'
 import { woks } from '../../../fakeWoks'
 import { discounts } from '../../../fakeDiscounts'
@@ -11,7 +12,6 @@ import { sets } from "../../../fakeSets"
 import { desserts } from "../../../fakeDesserts"
 
 // === PRODUCTS ===
-// pizza
 export const getPizzas = () => {
   return { type: GET_PIZZAS, payload: pizza }
 }
@@ -21,39 +21,30 @@ export const setLeftHalfPizza = (pizza: any) => {
 export const setRightHalfPizza = (pizza: any) => {
   return { type: SET_RIGHT_HALF_PIZZA, payload: pizza }
 }
-// wok
 export const getWoks = () => {
   return { type: GET_WOKS, payload: woks }
 }
-// combos
 export const getCombos = () => {
   return { type: GET_COMBOS, payload: combos }
 }
-// pastas
 export const getPastas = () => {
   return { type: GET_PASTAS, payload: pastas }
 }
-// stocks
 export const showDiscounts = () => {
   return { type: SHOW_DISCOUNTS, payload: discounts }
 }
-// snacks
 export const getSnacks = () => {
   return { type: GET_SNACKS, payload: snacks }
 }
-// souces
 export const getSouces = () => {
   return { type: GET_SOUCES, payload: souces }
 }
-// drinks
 export const getDrinks = () => {
   return { type: GET_DRINKS, payload: drinks }
 }
-// sets
 export const getSets = () => {
   return { type: GET_SETS, payload: sets }
 }
-// deserts
 export const getDesserts = () => {
   return { type: GET_DESSERTS, payload: desserts }
 }
@@ -88,9 +79,6 @@ export const addReview = (review: any) => {
 export const getReviews = () => {
   return { type: GET_REVIEWS, payload: reviews }
 }
-export const signIn = () => {
-  return { type: SIGNIN }
-}
 export const addAnOrderItem = (orderItem: any) => {
   return { type: ADD_AN_ORDER_ITEM, payload: { ...orderItem, id: Date.now(), counter: 1 } };
 }
@@ -115,3 +103,21 @@ export const openDeliveryShoppingCard = () => {
 export const openPickupShoppingCard = () => {
   return { type: PICKUP_SHOPPING_CARD };
 }
+
+// app
+export const getCurrentLocation = () => async (dispatch: Function) => {
+  return await fetch(`https://api.2ip.ua/geo.json?ip=`)
+    .then(res => res.json())
+    .then(data => {
+      if (data.city_rus.toLowerCase() === 'славянск') {
+        dispatch({ type: GET_CURRENT_LOCATION, payload: data.city_rus })
+      } else if (data.city_rus.toLowerCase() === 'краматорск') {
+        dispatch({ type: GET_CURRENT_LOCATION, payload: data.city_rus })
+      } else if (data.city_rus.toLowerCase() === 'бахмут') {
+        dispatch({ type: GET_CURRENT_LOCATION, payload: data.city_rus })
+      }
+    }).catch(err => console.error('Error: ', err));
+}
+export const setPersistedState = () => async (dispatch: Function) => {
+  return await dispatch({ type: SET_PESISTED_STATE });
+} 

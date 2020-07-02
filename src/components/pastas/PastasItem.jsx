@@ -1,6 +1,6 @@
 import React from 'react'
 import s from './pasta.module.scss'
-import Basket from '../../assets/images/basket.png'
+import Basket from '../../assets/images/basket/korzina-01.svg'
 
 export default function PastasItem({ pasta, addAnOrderItem }) {
   return (

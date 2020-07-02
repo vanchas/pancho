@@ -13,8 +13,8 @@ import b3 from './src/assets/images/pizzas/pizza_3.png';
 import b4 from './src/assets/images/pizzas/pizza_4.png';
 
 export const orders = [
-  { name: 'Маргарита', size: '40 см', price: 199, image: p1, id: Date.now(), counter: 1 },
-  { name: 'Биг боc', size: '30 см', price: 299, image: p2, id: Date.now() + 1, counter: 1 }
+  // { name: 'Маргарита', size: '40 см', price: 199, image: p1, id: Date.now(), counter: 1 },
+  // { name: 'Биг боc', size: '30 см', price: 299, image: p2, id: Date.now() + 1, counter: 1 }
 ];
 
 export const history = [
@@ -55,13 +55,13 @@ export const souces = [
 
 export const drinks = [
   { name: 'Cola', price: '25', weight: 1, description: '', image: cola },
-  { name: 'Juice', price: '25', weight: 1, description: '', image: juice },
-  { name: 'Beer', price: '25', weight: 0.5, description: '', image: beer },
+  { name: 'Juice', price: '35', weight: 1, description: '', image: juice },
+  { name: 'Beer', price: '40', weight: 0.5, description: '', image: beer },
   { name: 'Cola', price: '25', weight: 1, description: '', image: cola },
-  { name: 'Juice', price: '25', weight: 1, description: '', image: juice },
-  { name: 'Beer', price: '25', weight: 0.5, description: '', image: beer },
+  { name: 'Juice', price: '35', weight: 1, description: '', image: juice },
+  { name: 'Beer', price: '40', weight: 0.5, description: '', image: beer },
   { name: 'Cola', price: '25', weight: 1, description: '', image: cola },
-  { name: 'Juice', price: '25', weight: 1, description: '', image: juice },
-  { name: 'Beer', price: '25', weight: 0.5, description: '', image: beer }
+  { name: 'Juice', price: '35', weight: 1, description: '', image: juice },
+  { name: 'Beer', price: '40', weight: 0.5, description: '', image: beer }
 ];
 

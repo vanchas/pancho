@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import s from "./modal.module.scss";
-import Widget from "../../assets/images/basket/widget.png";
+import Widget from "../../assets/images/basket/korzina-01.svg";
 import OrdersList from "../shopping-card/OrdersList";
 import { connect } from "react-redux";
-import Person from "../../assets/images/basket/person.png";
-import Car from "../../assets/images/basket/car.png";
+import Person from "../../assets/images/basket/samovuvoz-01.svg";
+import Car from "../../assets/images/basket/dostavka-01.svg";
 import SoucesList from "../shopping-card/SoucesList";
 import Recommendations from "../shopping-card/Recommendations";
 import {
@@ -47,17 +47,24 @@ const ShoppingCard_1 = ({
 	return (
 		<React.Fragment>
 			{deliveryCard &&
-				<ShoppingCard_2 open={openDeliveryShoppingCard} />}
+				<ShoppingCard_2
+					ordersAmount={ordersAmount}
+					open={openDeliveryShoppingCard} />}
 			{pickupCard &&
-				<ShoppingCard_3 open={openPickupShoppingCard} />}
+				<ShoppingCard_3
+					ordersAmount={ordersAmount}
+					open={openPickupShoppingCard} />}
 
 			<div className={s.shopping_card_widget}
-				onClick={() => setShow(true)} >
+				onClick={() => {
+					setShow(true);
+					window.scrollTo({ top: 0, behavior: 'smooth' });
+				}} >
 				<img src={Widget} alt="shopping card" />
 				<span>{ordersAmount} грн</span>
 			</div>
 
-			{show && <div className={`${show && s.show} ${s.shopping_card_1} shopping-card-1`}>
+			{show && <div className={`${show && s.show} ${s.shopping_card_1} shopping-card-1 shopping-card`}>
 				<div className={`border-0 ${s.header}`}>
 					В КОРЗИНЕ
 					<span onClick={() => setShow(false)}>&#10006;</span>
@@ -72,7 +79,7 @@ const ShoppingCard_1 = ({
 					<div className={s.delivery_control}>
 						<div className={s.delivery_control_item}>
 							<label>
-								<img src={Person} alt="" />
+								<img src={Person} alt="" className={s.person_image} />
 								<input
 									type="radio"
 									name="delivery"
@@ -86,7 +93,7 @@ const ShoppingCard_1 = ({
 						</div>
 						<div className={s.delivery_control_item}>
 							<label>
-								<img src={Car} alt="" />
+								<img src={Car} alt="" className={s.car_image} />
 								<input
 									type="radio"
 									name="delivery"

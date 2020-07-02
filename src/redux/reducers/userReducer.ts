@@ -1,5 +1,6 @@
-import { GET_TRANSACTONS, GET_ADDRESSES, GET_BONUSES, GET_REVIEWS, ADD_AN_ORDER_ITEM, REMOVE_AN_ORDER_ITEM, INCREMENT_ORDER_ITEM, DECREMENT_ORDER_ITEM, GET_HISTORY, REPEAT_ORDER, DELIVERY_SHOPPING_CARD, PICKUP_SHOPPING_CARD } from '../actions/types'
+import { GET_TRANSACTONS, GET_ADDRESSES, GET_BONUSES, GET_REVIEWS, ADD_AN_ORDER_ITEM, REMOVE_AN_ORDER_ITEM, INCREMENT_ORDER_ITEM, DECREMENT_ORDER_ITEM, GET_HISTORY, REPEAT_ORDER, DELIVERY_SHOPPING_CARD, PICKUP_SHOPPING_CARD, GET_CURRENT_LOCATION, SET_PESISTED_STATE } from '../actions/types'
 import { orders } from '../../../fakeOrders'
+import { getStorage } from '../localStorage';
 
 const initialState = {
   transactions: [],
@@ -7,16 +8,21 @@ const initialState = {
   bonuses: [],
   reviews: [],
   orders,
-  ordersAmount: 498,
+  // ordersAmount: 498,
+  ordersAmount: 0,
   history: [],
   deliveryShoppingCard: false,
-  pickupShoppingCard: false
+  pickupShoppingCard: false,
+  currentLocation: null
 };
 
 export const userReducer = (state = initialState, action: any) => {
   switch (action.type) {
     case GET_TRANSACTONS:
       return { ...state, transactions: action.payload }
+
+    case GET_CURRENT_LOCATION:
+      return { ...state, currentLocation: action.payload }
 
     case GET_ADDRESSES:
       return { ...state, addresses: action.payload }
@@ -90,6 +96,12 @@ export const userReducer = (state = initialState, action: any) => {
 
     case DELIVERY_SHOPPING_CARD:
       return { ...state, deliveryShoppingCard: !state.deliveryShoppingCard }
+
+    case SET_PESISTED_STATE:
+      const persistedState = getStorage();
+      console.log('persistedState:', persistedState);
+
+      return { ...state, orders: persistedState.orders, ordersAmount: persistedState.ordersAmount }
 
     default:
       return state;

@@ -1,0 +1,19 @@
+.modal {
+	position: absolute;
+	top: 18%;
+	right: 10%;
+	background-color: #fafafa;
+	border-radius: 1em;
+	padding: 1em;
+	box-shadow: 0 0 5px 2px #ccc;
+	h4 {
+		font-weight: 600;
+		text-align: center;
+	}
+}
+.btn_group {
+	display: flex;
+	justify-content: space-around;
+	span {
+	}
+}

@@ -205,7 +205,7 @@ const ShoppingCard_3 = ({ ordersAmount, open }) => {
           <img src={Present} alt="" />
           <Bonus />
         </div>
-        <div className={s.footer_buttons}>
+        <div className={`pb-3 ${s.footer_buttons}`}>
           <button
             className={s.total_sum}
             onClick={open}>

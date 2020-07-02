@@ -1,25 +1,16 @@
 // == PRODUCTS ==
-// pizza
 export const GET_PIZZAS: string = 'GET_PIZZAS';
 export const SET_LEFT_HALF_PIZZA: string = 'SET_LEFT_HALF_PIZZA';
 export const SET_RIGHT_HALF_PIZZA: string = 'SET_RIGHT_HALF_PIZZA';
 export const SHOW_DISCOUNTS: string = 'SHOW_DISCOUNTS';
-// wok
 export const GET_WOKS: string = 'GET_WOKS';
 export const GET_REVIEWS: string = 'GET_REVIEWS';
-// snacks
 export const GET_SNACKS: string = 'GET_SNACKS';
-// souces
 export const GET_SOUCES: string = 'GET_SOUCES';
-// drinks
 export const GET_DRINKS: string = 'GET_DRINKS';
-// pastas
 export const GET_PASTAS: string = 'GET_PASTAS';
-// combos
 export const GET_COMBOS: string = 'GET_COMBOS';
-// sets
 export const GET_SETS: string = 'GET_SETS';
-// desserts
 export const GET_DESSERTS: string = 'GET_DESSERTS';
 
 // user
@@ -38,4 +29,8 @@ export const REPEAT_ORDER: string = 'REPEAT_ORDER';
 
 export const DELIVERY_SHOPPING_CARD: string = 'OPEN_DELIVERY_SHOPPING_CARD';
 export const PICKUP_SHOPPING_CARD: string = 'OPEN_PICKUP_SHOPPING_CARD';
+
+// app
+export const GET_CURRENT_LOCATION: string = 'GET_CURRENT_LOCATION';
+export const SET_PESISTED_STATE: string = 'SET_PESISTED_STATE';
 

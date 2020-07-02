@@ -60,10 +60,16 @@
 	}
 
 	.basket {
+		position: relative;
 		background-color: #575756;
 		color: #f9e803;
+		padding-left: 2em;
 		img {
-			margin-right: 0.2em;
+			width: 6em;
+			position: absolute;
+			top: 50%;
+			left: 0;
+			transform: translate(-31%, -45%);
 		}
 		&:hover {
 			color: #fff;

@@ -260,7 +260,7 @@ const ShoppingCard_2 = ({ ordersAmount, open }) => {
           </div>
         </form>
       </div>
-      <div className={`${s.footer} border-0`}>
+      <div className={`${s.footer} border-0 pt-3`}>
         <div className={s.footer_buttons}>
           <button className={s.total_sum} onClick={open}>
             <i>&#10157;</i> НАЗАД

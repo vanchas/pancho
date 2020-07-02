@@ -66,8 +66,15 @@
 	.basket {
 		background-color: #575756;
 		color: #f9e803;
+		position: relative;
+		padding: 0.3em 0.6em 0.3em 2.5em;
+		border-radius: 0.2em;
 		img {
-			margin-right: 0.2em;
+			width: 6em;
+			position: absolute;
+			top: 50%;
+			left: 0;
+			transform: translate(-28%, -45%);
 		}
 		&:hover {
 			color: #fff;
@@ -125,7 +132,7 @@
 	border-radius: 0.4em;
 	margin-bottom: 1.1em;
 	width: 100%;
-	padding: .3em 0;
+	padding: 0.3em 0;
 	label {
 		text-align: center;
 		padding: 0.1em 0.5em;
@@ -144,4 +151,3 @@
 		border-radius: 0.3em;
 	}
 }
-
