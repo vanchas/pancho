@@ -1,4 +1,4 @@
-import { GET_PIZZAS, SET_LEFT_HALF_PIZZA, SET_RIGHT_HALF_PIZZA, GET_WOKS, SHOW_DISCOUNTS, GET_SNACKS, GET_SOUCES, GET_DRINKS, GET_PASTAS, GET_COMBOS, GET_SETS, GET_DESSERTS } from '../actions/types'
+import { GET_PIZZAS, SET_LEFT_HALF_PIZZA, SET_RIGHT_HALF_PIZZA, GET_WOKS, SHOW_DISCOUNTS, GET_SNACKS, GET_SOUCES, GET_DRINKS, GET_PASTAS, GET_COMBOS, GET_SETS, GET_DESSERTS, GET_SALADS } from '../actions/types'
 
 const initialState = {
   pizza: [],
@@ -12,7 +12,8 @@ const initialState = {
   pastas: [],
   combos: [],
   sets: [],
-  desserts: []
+  desserts: [],
+  salads: []
 };
 
 export const reducerProducts = (state = initialState, action: any) => {
@@ -28,6 +29,10 @@ export const reducerProducts = (state = initialState, action: any) => {
     // wok
     case GET_WOKS:
       return { ...state, wok: action.payload }
+
+    // salads
+    case GET_SALADS:
+      return { ...state, salads: action.payload }
 
     // discounts
     case SHOW_DISCOUNTS:

@@ -47,7 +47,10 @@ export default function Recommendations({ drinks, addAnOrderItem }) {
                   <img src={d.image} alt={d.name} />
                 </div>
                 <div className={s.to_basket_btn}>
-                  <span onClick={() => addAnOrderItem(d)}>В КОРЗИНУ</span>
+                  <span onClick={(e) => {
+                    addAnOrderItem(d);
+                    $(e.target).css('backgroundColor', '#948a00');
+                  }}>В КОРЗИНУ</span>
                 </div>
                 <div className={s.rec_price}>{d.price} грн</div>
               </li>

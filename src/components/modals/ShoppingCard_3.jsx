@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import s from "./modal.module.scss";
 import Visa from "../../assets/images/basket/visa.png";
 import Calendar from "../../assets/images/basket/calendar.png";
 import Clock from "../../assets/images/basket/clock.png";
 import Present from '../../assets/images/basket/present.png';
 import Bonus from "./Bonus";
-import $ from 'jquery';
 
 const monthes = [
   "январь",
@@ -108,13 +107,13 @@ const ShoppingCard_3 = ({ ordersAmount, open }) => {
             ВРЕМЯ ПОЛУЧЕНИЯ
 						</p>
           <div className={`${s.time_block} text-white`}>
+            <label className={s.choose_asap_label}>
+              <input type="radio" name="time" onChange={() => setTimeToDelivery('asap')} checked={timeToDelivery === 'asap'} />
+								КАК МОЖНО СКОРЕЕ
+							</label>
             <label className={s.choose_time_label}>
               <input type="radio" name="time" onChange={() => setTimeToDelivery('choose')} />
 								ВЫБРАТЬ ВРЕМЯ
-							</label>
-            <label className={s.choose_asap_label}>
-              <input type="radio" name="time" onChange={() => setTimeToDelivery('asap')} />
-								КАК МОЖНО СКОРЕЕ
 							</label>
             {timeToDelivery === 'choose' ?
               <div className={s.date_time_control}>
@@ -198,7 +197,7 @@ const ShoppingCard_3 = ({ ordersAmount, open }) => {
           </div>
         </form>
       </div>
-      <div className={`${s.footer} border-0 pt-0`}>
+      <div className={`${s.footer} border-0 pt-0 pb-5`}>
         <div className={s.footer_bonus_block}>
           <span>БОНУСНЫЙ СЧЕТ</span>
           <span>332</span>

@@ -1,14 +1,12 @@
-import { GET_TRANSACTONS, GET_ADDRESSES, GET_BONUSES, GET_REVIEWS, ADD_AN_ORDER_ITEM, REMOVE_AN_ORDER_ITEM, INCREMENT_ORDER_ITEM, DECREMENT_ORDER_ITEM, GET_HISTORY, REPEAT_ORDER, DELIVERY_SHOPPING_CARD, PICKUP_SHOPPING_CARD, GET_CURRENT_LOCATION, SET_PESISTED_STATE } from '../actions/types'
-import { orders } from '../../../fakeOrders'
-import { getStorage } from '../localStorage';
+import { GET_TRANSACTONS, GET_ADDRESSES, GET_BONUSES, GET_REVIEWS, ADD_AN_ORDER_ITEM, REMOVE_AN_ORDER_ITEM, INCREMENT_ORDER_ITEM, DECREMENT_ORDER_ITEM, GET_HISTORY, DELIVERY_SHOPPING_CARD, PICKUP_SHOPPING_CARD, GET_CURRENT_LOCATION, SET_PESISTED_STATE } from '../actions/types'
+import { loadState } from '../localStorage';
 
 const initialState = {
   transactions: [],
   addresses: [],
   bonuses: [],
   reviews: [],
-  orders,
-  // ordersAmount: 498,
+  orders: [],
   ordersAmount: 0,
   history: [],
   deliveryShoppingCard: false,
@@ -42,21 +40,21 @@ export const userReducer = (state = initialState, action: any) => {
 
     case REMOVE_AN_ORDER_ITEM:
       let newOrdersAmount: number = state.ordersAmount;
-      state.orders.forEach(o => {
+      state.orders.forEach((o: any) => {
         if (o.id === action.payload) {
           return newOrdersAmount = state.ordersAmount - +o.price;
         }
       })
       return {
         ...state,
-        orders: state.orders.filter(o => +o.id != +action.payload),
+        orders: state.orders.filter((o: any) => +o.id != +action.payload),
         ordersAmount: newOrdersAmount
       }
 
     case INCREMENT_ORDER_ITEM:
       let incrementedOrders = state.orders;
       let incrementedOrdersAmount = state.ordersAmount;
-      incrementedOrders.forEach(order => {
+      incrementedOrders.forEach((order: any) => {
         if (order.id === action.payload) {
           incrementedOrdersAmount += +order.price;
           order.counter += 1;
@@ -71,7 +69,7 @@ export const userReducer = (state = initialState, action: any) => {
     case DECREMENT_ORDER_ITEM:
       let decrementedOrders = state.orders;
       let decrementedOrdersAmount = state.ordersAmount;
-      decrementedOrders.forEach(order => {
+      decrementedOrders.forEach((order: any) => {
         if (order.id === action.payload) {
           decrementedOrdersAmount -= +order.price;
           order.counter -= 1;
@@ -86,11 +84,6 @@ export const userReducer = (state = initialState, action: any) => {
     case GET_HISTORY:
       return { ...state, history: action.payload }
 
-    case REPEAT_ORDER:
-      // let repeatedOrders = [];
-      // state.orders.forEach(order => )
-      return { ...state }
-
     case PICKUP_SHOPPING_CARD:
       return { ...state, pickupShoppingCard: !state.pickupShoppingCard }
 
@@ -98,10 +91,15 @@ export const userReducer = (state = initialState, action: any) => {
       return { ...state, deliveryShoppingCard: !state.deliveryShoppingCard }
 
     case SET_PESISTED_STATE:
-      const persistedState = getStorage();
-      console.log('persistedState:', persistedState);
-
-      return { ...state, orders: persistedState.orders, ordersAmount: persistedState.ordersAmount }
+      const persistedState = loadState();
+      if (persistedState && persistedState.user) {
+        return {
+          ...state,
+          orders: persistedState.user.orders,
+          ordersAmount: persistedState.user.ordersAmount
+        }
+      }
+      return state
 
     default:
       return state;

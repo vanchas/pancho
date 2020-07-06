@@ -10,6 +10,7 @@ export const GET_SOUCES: string = 'GET_SOUCES';
 export const GET_DRINKS: string = 'GET_DRINKS';
 export const GET_PASTAS: string = 'GET_PASTAS';
 export const GET_COMBOS: string = 'GET_COMBOS';
+export const GET_SALADS: string = 'GET_SALADS';
 export const GET_SETS: string = 'GET_SETS';
 export const GET_DESSERTS: string = 'GET_DESSERTS';
 

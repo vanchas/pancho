@@ -64,7 +64,7 @@ const ShoppingCard_1 = ({
 				<span>{ordersAmount} грн</span>
 			</div>
 
-			{show && <div className={`${show && s.show} ${s.shopping_card_1} shopping-card-1 shopping-card`}>
+			{show && <div className={`${show && s.show} ${s.shopping_card_1} shopping-card-1 shopping-card`} style={{ height: 'auto' }}>
 				<div className={`border-0 ${s.header}`}>
 					В КОРЗИНЕ
 					<span onClick={() => setShow(false)}>&#10006;</span>
@@ -95,6 +95,7 @@ const ShoppingCard_1 = ({
 							<label>
 								<img src={Car} alt="" className={s.car_image} />
 								<input
+									checked={step2 === 'delivery'}
 									type="radio"
 									name="delivery"
 									onChange={() => setStep2("delivery")}

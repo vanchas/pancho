@@ -1,5 +1,5 @@
 import fetch from 'isomorphic-unfetch'
-import { GET_PIZZAS, SET_LEFT_HALF_PIZZA, SET_RIGHT_HALF_PIZZA, GET_TRANSACTONS, GET_ADDRESSES, GET_BONUSES, GET_WOKS, SHOW_DISCOUNTS, ADD_REVIEW, GET_REVIEWS, SIGNIN, GET_SNACKS, GET_SOUCES, GET_DRINKS, GET_PASTAS, GET_COMBOS, GET_SETS, GET_DESSERTS, ADD_AN_ORDER_ITEM, REMOVE_AN_ORDER_ITEM, INCREMENT_ORDER_ITEM, DECREMENT_ORDER_ITEM, GET_HISTORY, REPEAT_ORDER, DELIVERY_SHOPPING_CARD, PICKUP_SHOPPING_CARD, GET_CURRENT_LOCATION, SET_PESISTED_STATE } from "./types"
+import { GET_PIZZAS, SET_LEFT_HALF_PIZZA, SET_RIGHT_HALF_PIZZA, GET_TRANSACTONS, GET_ADDRESSES, GET_BONUSES, GET_WOKS, SHOW_DISCOUNTS, ADD_REVIEW, GET_REVIEWS, GET_SNACKS, GET_SOUCES, GET_DRINKS, GET_PASTAS, GET_COMBOS, GET_SETS, GET_DESSERTS, ADD_AN_ORDER_ITEM, REMOVE_AN_ORDER_ITEM, INCREMENT_ORDER_ITEM, DECREMENT_ORDER_ITEM, GET_HISTORY, REPEAT_ORDER, DELIVERY_SHOPPING_CARD, PICKUP_SHOPPING_CARD, GET_CURRENT_LOCATION, SET_PESISTED_STATE, GET_SALADS } from "./types"
 import { pizza } from '../../../fakePizzas'
 import { woks } from '../../../fakeWoks'
 import { discounts } from '../../../fakeDiscounts'
@@ -10,6 +10,7 @@ import { pastas } from "../../../fakePastas"
 import { combos } from "../../../fakeCombos"
 import { sets } from "../../../fakeSets"
 import { desserts } from "../../../fakeDesserts"
+import { salads } from "../../../fakeSalads"
 
 // === PRODUCTS ===
 export const getPizzas = () => {
@@ -26,6 +27,9 @@ export const getWoks = () => {
 }
 export const getCombos = () => {
   return { type: GET_COMBOS, payload: combos }
+}
+export const getSalads = () => {
+  return { type: GET_SALADS, payload: salads }
 }
 export const getPastas = () => {
   return { type: GET_PASTAS, payload: pastas }
@@ -89,6 +93,7 @@ export const incrementOrderItem = (id: number) => {
   return { type: INCREMENT_ORDER_ITEM, payload: id };
 }
 export const decrementOrderItem = (id: number) => {
+
   return { type: DECREMENT_ORDER_ITEM, payload: id };
 }
 export const getHistory = () => {

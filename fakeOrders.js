@@ -12,7 +12,7 @@ import b2 from './src/assets/images/pizzas/pizza_2.png';
 import b3 from './src/assets/images/pizzas/pizza_3.png';
 import b4 from './src/assets/images/pizzas/pizza_4.png';
 
-export const orders = [
+export const fakeOrders = [
   // { name: 'Маргарита', size: '40 см', price: 199, image: p1, id: Date.now(), counter: 1 },
   // { name: 'Биг боc', size: '30 см', price: 299, image: p2, id: Date.now() + 1, counter: 1 }
 ];

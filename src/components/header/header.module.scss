@@ -79,7 +79,7 @@
 		}
 		a {
 			font-weight: 600;
-			font-size: 2em;
+			font-size: 1.8em;
 			color: #3c3c3b;
 		}
 	}
@@ -137,26 +137,28 @@
 }
 .delivery {
 	padding-right: 1em;
-	font-size: 0.95em;
+	font-size: 0.85em;
 	font-weight: 700;
+	margin-bottom: 0.2em;
 }
 .delivery_time {
 	font-size: 0.9em;
-	padding-left: 0.5em;
+	margin: 0;
 }
 .work_time {
 	font-weight: 700;
-	font-size: 0.9em;
+	font-size: 0.85em;
 }
 .header_info_block_item_location {
 	padding-left: 1em;
 	display: grid;
 	position: relative;
 	p {
-		margin: 0;
+		margin: 0 0 -0.2em 0;
 	}
 	select {
 		border: none;
+		font-size: 0.9em;
 		font-weight: 700;
 		&:focus {
 			outline: none;
@@ -164,7 +166,7 @@
 	}
 }
 .location_image {
-	height: 4em;
+	height: 3em;
 	position: absolute;
 	top: 50%;
 	left: 0;
@@ -179,7 +181,7 @@
 	}
 }
 .watch_image {
-	width: 4.2em;
+	width: 4em;
 	position: absolute;
 	top: 50%;
 	left: 0;
@@ -220,16 +222,20 @@
 				justify-items: center;
 				align-items: center;
 				img {
-					height: 2.8em;
+					height: 2.5em;
 					margin-right: 0.3em;
 				}
 				a {
 					text-decoration: none;
 					font-weight: 700;
-					font-size: 1em;
+					font-size: 0.95em;
 					color: #3c3c3b;
 					display: flex;
-					align-items: center;
+					align-items: flex-end;
+				}
+				.navLink {
+					padding-left: 0 !important;
+					padding-right: 0 !important;
 				}
 				@media screen and (max-width: 1024px) {
 					padding: 0.5em;
@@ -245,10 +251,6 @@
 					}
 				}
 			}
-			.activeLink {
-				background-color: #ffed00;
-				border-radius: 0.5em;
-			}
 		}
 		@media screen and (max-width: 1024px) {
 			.navbar_brand {
@@ -256,10 +258,6 @@
 				p {
 					font-size: 0.7em;
 				}
-			}
-			ul .activeLink {
-				width: 100%;
-				justify-content: center;
 			}
 		}
 	}

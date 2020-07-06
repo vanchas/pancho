@@ -1,0 +1,116 @@
+.salad_page {
+	max-width: 1260px;
+	margin: 0 auto;
+}
+.salad_page_heading {
+	margin: 1em auto 2em auto;
+	text-align: center;
+	width: fit-content;
+	position: relative;
+	&::before {
+		content: "";
+		width: 7em;
+		height: 1px;
+		background-color: #000;
+		position: absolute;
+		top: 50%;
+		left: 0;
+		transform: translate(-110%, -50%);
+	}
+	&::after {
+		content: "";
+		width: 7em;
+		height: 1px;
+		background-color: #000;
+		position: absolute;
+		top: 50%;
+		right: 0;
+		transform: translate(110%, -50%);
+	}
+	@media screen and (max-width: 900px) {
+		&::after,
+		&::before {
+			display: none;
+		}
+	}
+}
+
+.salad_list {
+	list-style: none;
+	padding: 0.5em;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-column-gap: 1em;
+	grid-row-gap: 2em;
+	@media screen and (max-width: 1240px) {
+		grid-template-columns: repeat(3, 1fr);
+	}
+	@media screen and (max-width: 900px) {
+		grid-template-columns: repeat(2, 1fr);
+	}
+	@media screen and (max-width: 600px) {
+		grid-template-columns: repeat(1, 1fr);
+	}
+}
+.salad_item {
+	display: grid;
+	align-content: space-between;
+}
+.salad_image {
+	padding-bottom: 1em;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 20em;
+	overflow: hidden;
+	img {
+		height: 100%;
+	}
+}
+.salad_info {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 0.5em;
+	.salad_name {
+		order: 1;
+		font-weight: 600;
+	}
+	.salad_price {
+		order: 5;
+		font-weight: 600;
+		font-size: 1.2em;
+		justify-self: center;
+	}
+	.salad_weight {
+		order: 2;
+		color: #575756;
+		justify-self: center;
+	}
+	.salad_btn {
+		order: 4;
+		span {
+			background-color: #575756;
+			color: #f9e803;
+			position: relative;
+			padding: 0.3em 0.6em 0.3em 2.5em;
+			border-radius: 0.2em;
+			img {
+				width: 6em;
+				position: absolute;
+				top: 50%;
+				left: 0;
+				transform: translate(-28%, -45%);
+			}
+			&:hover {
+				color: #fff;
+			}
+		}
+	}
+	p {
+		order: 3;
+		grid-column: span 2;
+		line-height: 1.3em;
+		font-size: 0.9em;
+		color: #575756;
+	}
+}

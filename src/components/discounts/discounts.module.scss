@@ -1,6 +1,11 @@
 .discounts_page {
 	max-width: 1260px;
 	margin: 0 auto;
+	padding-right: 1em;
+	min-height: 40em;
+	@media screen and (max-width: 700px) {
+		padding: 0;
+	}
 }
 .discounts_page_heading {
 	margin: 1em auto 1em auto;
@@ -40,41 +45,42 @@
 	padding: 1em 1em 2em 1em;
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
-  grid-gap: 5%;
-  justify-content: center;
-  justify-items: center;
-  @media screen and (max-width: 1023px) {
+	grid-gap: 5%;
+	justify-content: center;
+	justify-items: center;
+	@media screen and (max-width: 1023px) {
 		grid-template-columns: 1fr 1fr;
-  }
-  @media screen and (max-width: 700px) {
+	}
+	@media screen and (max-width: 700px) {
 		grid-template-columns: 1fr;
 	}
 }
 
 .discount_item {
 	display: grid;
+	height: fit-content;
 
 	img {
 		width: 100%;
 	}
 	h4 {
 		font-size: 1em;
-    font-weight: 700;
-    padding: 1em 0;
+		font-weight: 700;
+		padding: 1em 0;
 	}
 	p {
-    color: #555;
-    line-height: 1.3em;
-    font-size: .9em;
+		color: #555;
+		line-height: 1.3em;
+		font-size: 0.9em;
 	}
 	span {
-    justify-self: end;
-    &:hover {
-      transition: .3s;
-      font-weight: 600;
-    }
-  }
-  @media screen and (max-width: 700px) {
+		justify-self: end;
+		&:hover {
+			transition: 0.3s;
+			font-weight: 600;
+		}
+	}
+	@media screen and (max-width: 700px) {
 		text-align: center;
 	}
 }

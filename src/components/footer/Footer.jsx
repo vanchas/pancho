@@ -1,8 +1,8 @@
 import React from 'react'
 import Link from 'next/link'
 import s from './footer.module.scss'
-import Phone from '../../assets/images/signs/phone_light.png';
-import Location from '../../assets/images/signs/location_light.png';
+import Phone from '../../assets/images/signs/phone-01.svg';
+import Location from '../../assets/images/signs/point-01.svg';
 import Social from '../../assets/images/signs/social.png';
 import AppStore from '../../assets/images/app_store.png';
 
@@ -38,13 +38,13 @@ export default function Footer() {
         </div>
         <div className={s.footer_item}>
           <h6 className="text-muted">Звоните для заказа</h6>
-          <div>
-            <img src={Phone} alt="" />
+          <div className="d-flex align-items-center">
+            <img src={Phone} alt="" className={s.sign} />
             <a href="tel:+0950001195" className="btn">095-000-11-95</a>
           </div>
           <h6 className="text-muted">Заходите в гости</h6>
-          <div>
-            <img src={Location} alt="" />
+          <div className="d-flex align-items-center">
+            <img src={Location} alt="" className={s.sign} />
             <address>Славянск, ул. Шевченко,10</address>
           </div>
         </div>

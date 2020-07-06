@@ -82,7 +82,7 @@ export default function HalfPizzaConstructor({ rightHalfPizza, leftHalfPizza, pi
 
         {leftHalfPizza.name && rightHalfPizza.name
           ? <div className={`${s.order_block}`}>
-            <span className="font-weight-bold h5">180 грн</span>
+            <span className="font-weight-bold h5 m-0 d-block pt-1">180 грн</span>
           </div>
           : null}
 

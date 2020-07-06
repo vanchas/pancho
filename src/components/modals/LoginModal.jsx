@@ -5,9 +5,11 @@ import s from './modal.module.scss'
 import Facebook from '../../assets/images/facebook.png'
 import Google from '../../assets/images/google.png'
 import { useRouter } from 'next/router'
+import Person from '../../assets/images/person.png'
 
 const ModalExample = ({ buttonLabel,
   className, active }) => {
+  const [inputType, setInputType] = useState(true);
   const router = useRouter();
   const [modal, setModal] = useState(false);
   // login
@@ -15,12 +17,13 @@ const ModalExample = ({ buttonLabel,
   const [password, setPassword] = useState('');
   const [loginWarning, setLoginWarning] = useState('');
   const [rememberMe, setRememberMe] = useState(false);
-// registration
-const [name, setName] = useState('');
-const [phone, setPhone] = useState('');
-const [email, setEmail] = useState('');
-const [passwordR, setPasswordR] = useState('');
-const [registrationWarning, setRegistrationWarning] = useState('');
+  // registration
+  const [name, setName] = useState('');
+  const [phone, setPhone] = useState('');
+  const [email, setEmail] = useState('');
+  const [passwordR, setPasswordR] = useState('');
+  const [passwordConfirmation, setPasswordConfirmation] = useState('');
+  const [registrationWarning, setRegistrationWarning] = useState('');
 
   const toggle = () => setModal(!modal);
 
@@ -40,10 +43,13 @@ const [registrationWarning, setRegistrationWarning] = useState('');
     e.preventDefault();
     if (login.length && password.length) {
       setLoginWarning('');
-      router.push('/cabinet.html');
+      router.push('/cabinet');
       toggle();
     } else {
-      setLoginWarning('WARNING !!!');
+      setLoginWarning('Оба поля должны быть заполнены');
+      setTimeout(() => {
+        setLoginWarning('');
+      }, 2000);
     }
   }
 
@@ -51,16 +57,22 @@ const [registrationWarning, setRegistrationWarning] = useState('');
     e.preventDefault();
     if (name.length && passwordR.length && email.length && phone.toString().length) {
       setRegistrationWarning('');
-      router.push('/cabinet.html');
+      router.push('/cabinet');
       toggleAll();
     } else {
-      setRegistrationWarning('WARNING !!!');
+      setRegistrationWarning('Bce поля должны быть заполнены');
+      setTimeout(() => {
+        setLoginWarning('');
+      }, 2000);
     }
   }
 
   return (
     <div>
-      <Button color="" className={active ? s.activeLink : s.button} onClick={toggle}>{buttonLabel}</Button>
+      <Button color="" className={s.toggle_button} onClick={toggle}>
+        <img src={Person} alt="" className={s.person_sign} />
+        <span className={active ? s.activeLink : s.button}>{buttonLabel}</span>
+      </Button>
 
       <Modal isOpen={modal} toggle={toggle} className={className}>
         <ModalHeader toggle={toggle} className={`${s.bg_dark} text-white text-center border-0`} >
@@ -70,13 +82,16 @@ const [registrationWarning, setRegistrationWarning] = useState('');
           <InputGroup>
             <Input placeholder="Логин" type="text" className={`text-white ${s.bg_dark} mb-4`} onChange={e => setLogin(e.target.value)} />
           </InputGroup>
-          <InputGroup>
-            <Input placeholder="Пароль" type="password" className={`text-white ${s.bg_dark}`} onChange={e => setPassword(e.target.value)} />
+          <InputGroup className={s.password_input}>
+            <Input placeholder="Пароль" type={inputType ? "password" : "text"} className={`text-white ${s.bg_dark}`} onChange={e => setPassword(e.target.value)} />
+            {password.length && inputType
+              ? <span onClick={() => setInputType(!inputType)}>&#x263C;</span>
+              : <span onClick={() => setInputType(!inputType)}>&#x263D;</span>}
           </InputGroup>
           {loginWarning.length
-            ? <span className="text-danger">
+            ? <div className="alert alert-warning mt-2 py-1" role="alert">
               {loginWarning}
-            </span>
+            </div>
             : null}
           <InputGroup className="d-flex justify-content-between">
             <Label className="pl-4 pt-1 text-white">
@@ -110,13 +125,16 @@ const [registrationWarning, setRegistrationWarning] = useState('');
               <InputGroup>
                 <Input placeholder="Пароль" type="password" className={`text-white ${s.bg_dark} mb-4`} onChange={e => setPasswordR(e.target.value)} />
               </InputGroup>
+              <InputGroup>
+                <Input placeholder="Подтверждение пароля" type="password" className={`text-white ${s.bg_dark} mb-4`} onChange={e => setPasswordR(e.target.value)} />
+              </InputGroup>
             </ModalBody>
             <ModalFooter className={`pt-0 border-0 ${s.bg_dark}`}>
-            {registrationWarning.length
-            ? <span className="text-danger">
-              {registrationWarning}
-            </span>
-            : null}
+              {registrationWarning.length
+                ? <div className="alert alert-warning mt-2 py-1" role="alert">
+                  {registrationWarning}
+                </div>
+                : null}
               <Button color="" className="d-block mx-auto" style={{ backgroundColor: '#ffed00' }} onClick={registrationSubmitHandler}>Продолжить</Button>
             </ModalFooter>
           </Modal>

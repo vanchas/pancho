@@ -38,6 +38,16 @@
 		align-content: center;
 		font-weight: 600;
 		font-size: 1.2em;
+		// &:active {
+		// 	transition: 0.2s;
+		// 	background-color: #ccbe00;
+		// }
+	}
+}
+.minus,
+.plus {
+	&:active {
+		filter: brightness(50%);
 	}
 }
 

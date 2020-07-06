@@ -1,6 +1,10 @@
 .half_page {
 	max-width: 1300px;
 	margin: 0 auto;
+	padding-right: 1em;
+	@media screen and (max-width: 700px) {
+		padding-right: 0;
+	}
 }
 
 .half_page_heading {
@@ -70,7 +74,9 @@
 	background-color: #ededed;
 	border-radius: 1.5em;
 	position: relative;
-	min-height: 46em;
+	min-height: 39em;
+	padding-bottom: 1.5em;
+	height: fit-content;
 
 	display: grid;
 	grid-template-columns: 1fr 1fr;
@@ -188,8 +194,9 @@
 
 .order_block {
 	width: 100%;
-	padding: 1em 0 0 0;
+	padding: 1.5em 0 0 0;
 	text-align: center;
+	margin-bottom: 0;
 }
 .basket {
 	background-color: #575756;

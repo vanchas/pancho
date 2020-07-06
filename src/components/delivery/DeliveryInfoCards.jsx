@@ -25,13 +25,13 @@ export default function DeliveryInfoCards() {
           <li key={i}>
             <div>
               <img src={c.image} alt="" />
-              {c.imageText && <span className="h3 font-weight-bold" style={{transform: 'translateY(-30%)'}}>{c.imageText}</span>}
+              {c.imageText && <span className="h3 font-weight-bold" style={{ transform: 'translateY(-30%)' }}>{c.imageText}</span>}
             </div>
             <div>
               <h6>{c.title}</h6>
               <p>{c.text}</p>
               {c.subtext && <p>{c.subtext}
-                <img src={c.visaImage} alt="" />
+                <img src={c.visaImage} alt="" className={s.visa} />
               </p>}
             </div>
           </li>

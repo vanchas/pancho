@@ -27,7 +27,7 @@ function Reviews({ getReviews, reviews }) {
 }
 
 const mapStateToProps = state => {
-  const reviews = state.user.reviews.length ? state.user.reviews : null;
+  const reviews = state.user.reviews && state.user.reviews.length ? state.user.reviews : null;
   return { reviews }
 }
 

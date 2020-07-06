@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import s from "./modal.module.scss";
-import $ from 'jquery';
 import Visa from "../../assets/images/basket/visa.png";
 import Calendar from "../../assets/images/basket/calendar.png";
 import Clock from "../../assets/images/basket/clock.png";
@@ -163,7 +162,7 @@ const ShoppingCard_2 = ({ ordersAmount, open }) => {
 					</p>
           <div className={`${s.time_block} text-white`}>
             <label className={s.choose_asap_label}>
-              <input
+              <input checked={timeToDelivery !== "choose"}
                 type="radio"
                 name="time"
                 onChange={() => setTimeToDelivery("asap")}
@@ -260,7 +259,7 @@ const ShoppingCard_2 = ({ ordersAmount, open }) => {
           </div>
         </form>
       </div>
-      <div className={`${s.footer} border-0 pt-3`}>
+      <div className={`${s.footer} border-0 pt-3 pb-5`}>
         <div className={s.footer_buttons}>
           <button className={s.total_sum} onClick={open}>
             <i>&#10157;</i> НАЗАД

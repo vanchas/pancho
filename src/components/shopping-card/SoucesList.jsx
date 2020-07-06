@@ -1,5 +1,6 @@
 import React from 'react'
 import s from './orders.module.scss'
+import $ from 'jquery'
 
 export default function SoucesLIst({ souces, addAnOrderItem }) {
   return (
@@ -14,7 +15,10 @@ export default function SoucesLIst({ souces, addAnOrderItem }) {
             <span className={s.souce_price}>{souce.price} грн</span>
             <span className={s.souce_name}>{souce.name}</span>
             <div className={s.to_basket_btn}>
-              <span onClick={() => addAnOrderItem(souce)}> В КОРЗИНУ</span>
+              <span onClick={e => {
+                addAnOrderItem(souce);
+                $(e.target).css('backgroundColor', '#948a00');
+              }}> В КОРЗИНУ</span>
             </div>
           </li>
         ))}

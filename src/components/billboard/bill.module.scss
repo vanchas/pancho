@@ -1,9 +1,8 @@
-
-
 .search_control {
 	width: 100%;
 	display: flex;
 	justify-content: flex-end;
+	padding-right: 3em;
 	div {
 		display: flex;
 		align-items: center;
@@ -17,5 +16,8 @@
 		span {
 			padding-left: 0.7em;
 		}
+	}
+	@media screen and (max-width: 600px) {
+		padding-right: 1em;
 	}
 }
