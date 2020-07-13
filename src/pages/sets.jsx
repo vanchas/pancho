@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { getSets, addAnOrderItem } from '../redux/actions/actions'
 import SetsList from '../components/sets/SetsList'
 import s from '../components/sets/sets.module.scss'
+import Billboard from "../components/billboard/Billboard";
 
 function Sets({ getSets, sets, addAnOrderItem }) {
 
@@ -12,6 +13,7 @@ function Sets({ getSets, sets, addAnOrderItem }) {
 
   return (
     <div className={s.sets_page}>
+        <Billboard />
       <h3 className={s.sets_page_heading}>СЕТЫ</h3>
       <SetsList sets={sets} addAnOrderItem={addAnOrderItem} />
     </div>

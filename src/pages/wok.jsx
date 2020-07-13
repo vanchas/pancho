@@ -13,7 +13,7 @@ function Wok({ getWoks, woks }) {
   return (
     <div className={s.wok_page}>
       <Billboard />
-      <div style={{ maxWidth: '1260px', margin: '0 auto' }}>
+      <div style={{ maxWidth: '1900px', margin: '0 auto' }}>
         <WokVegitableList woks={woks} addAnOrderItem={addAnOrderItem} />
         <WokChickenList woks={woks} addAnOrderItem={addAnOrderItem} />
       </div>

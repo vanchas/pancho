@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { getSalads, addAnOrderItem } from '../redux/actions/actions'
 import s from '../components/salad/salad.module.scss'
 import SaladList from '../components/salad/SaladList'
+import Billboard from "../components/billboard/Billboard";
 
 function Salad({ getSalads, salads, addAnOrderItem }) {
 
@@ -12,6 +13,7 @@ function Salad({ getSalads, salads, addAnOrderItem }) {
 
   return (
     <div className={s.salad_page}>
+        <Billboard />
       <h3 className={s.salad_page_heading}>CAЛATЫ</h3>
       <SaladList salads={salads} addAnOrderItem={addAnOrderItem} />
     </div>

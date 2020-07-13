@@ -1,5 +1,5 @@
 .revies_page {
-	max-width: 1260px;
+	max-width: 1900px;
 	margin: 0 auto;
 }
 .revies_page_heading {
@@ -110,9 +110,13 @@
 				align-items: center;
 				opacity: 0.7;
 			}
-			label.activeBtn {
+			label.activeBtnLike {
 				opacity: 1;
-				border: 2px solid #e6d60d;
+				border: 2px solid #00aa40;
+			}
+			label.activeBtnDislike {
+				opacity: 1;
+				border: 2px solid #ff0202;
 			}
 		}
 		@media screen and (max-width: 600px) {
@@ -157,6 +161,7 @@
 		display: grid;
 		align-content: center;
 		margin-bottom: 0;
+		width: 30em;
 		&::before {
 			content: "";
 			position: absolute;

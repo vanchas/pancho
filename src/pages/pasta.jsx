@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { getPastas, addAnOrderItem } from '../redux/actions/actions'
 import s from '../components/pastas/pasta.module.scss'
 import PastasList from '../components/pastas/PastasList'
+import Billboard from "../components/billboard/Billboard";
 
 function Pasta({ getPastas, pastas, addAnOrderItem }) {
 
@@ -12,6 +13,7 @@ function Pasta({ getPastas, pastas, addAnOrderItem }) {
 
   return (
     <div className={s.pastas_page}>
+        <Billboard />
       <h3 className={s.pastas_page_heading}>ПАСТА</h3>
       <PastasList pastas={pastas} addAnOrderItem={addAnOrderItem} />
     </div>

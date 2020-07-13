@@ -5,6 +5,7 @@ import { setLeftHalfPizza, setRightHalfPizza, addAnOrderItem, getPizzas } from '
 import LeftList from '../components/half/LeftList'
 import RightList from '../components/half/RightList'
 import HalfPizzaConstructor from '../components/half/HalfPizzaConstructor'
+import Billboard from "../components/billboard/Billboard";
 
 const Half = ({ pizza, setLeftHalfPizza, setRightHalfPizza, rightHalfPizza, leftHalfPizza, addAnOrderItem, getPizzas }) => {
   useEffect(() => {
@@ -13,6 +14,7 @@ const Half = ({ pizza, setLeftHalfPizza, setRightHalfPizza, rightHalfPizza, left
 
   return (
     <div className={s.half_page}>
+      <Billboard />
       <h2 className={s.half_page_heading}>
         ПИЦЦА ПОЛОВИНКИ
       </h2>

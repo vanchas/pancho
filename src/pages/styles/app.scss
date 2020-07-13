@@ -4,6 +4,11 @@ body {
 	margin: 0;
 	padding: 0;
 	overflow-x: hidden;
+	* {
+		&:focus {
+			outline: none;
+		}
+	}
 }
 
 // modal
@@ -16,3 +21,7 @@ body {
 	}
 }
 
+//modal
+.modal {
+	top: 15% !important;
+}

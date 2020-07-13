@@ -42,7 +42,7 @@ export const userReducer = (state = initialState, action: any) => {
       let newOrdersAmount: number = state.ordersAmount;
       state.orders.forEach((o: any) => {
         if (o.id === action.payload) {
-          return newOrdersAmount = state.ordersAmount - +o.price;
+          return newOrdersAmount = state.ordersAmount - (+o.price * +o.counter);
         }
       })
       return {

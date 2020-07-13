@@ -27,11 +27,11 @@ export default function ReviewForm() {
             <input type="number" onChange={(e) => setPhone(e.target.value)} className="form-control" required />
         </label>
         <div className={s.assessment}>
-          <label className={like ? s.activeBtn : ''}>
+          <label className={like ? s.activeBtnLike : ''}>
             <img src={Like} alt="like" />
             <input type="radio" value="like" name="assessment" onChange={(e) => setLike(true)} required />
           </label>
-          <label className={!like ? s.activeBtn : ''}>
+          <label className={!like ? s.activeBtnDislike : ''}>
             <img src={Diss} alt="dislike" />
             <input type="radio" value="dislike" name="assessment" onChange={(e) => setLike(false)} required />
           </label>

@@ -12,7 +12,7 @@ export default function ReviewsList({ reviews }) {
   }
 
   return (
-    <div>
+    <>
       {reviews && reviews.length ?
         <ul className={s.reviews_list}>
           {reviews.map((r, i) => {
@@ -22,6 +22,6 @@ export default function ReviewsList({ reviews }) {
           })}
         </ul> : null}
       {!showFullList && <span className={s.show_full_list_btn} onClick={showFullListHandler}>ПОКАЗАТЬ ЕЩЕ</span>}
-    </div>
+    </>
   )
 }

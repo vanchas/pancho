@@ -1,8 +1,9 @@
 .desserts_page {
-	max-width: 1260px;
-	margin: 0 auto;
+	//max-width: 1900px;
+	//margin: 0 auto;
 }
 .desserts_page_heading {
+	max-width: 1900px;
 	margin: 1em auto 2em auto;
 	text-align: center;
 	width: fit-content;
@@ -36,12 +37,15 @@
 }
 
 .desserts_list {
+	max-width: 1900px;
+	margin: 0 auto;
 	list-style: none;
 	padding: 0.5em;
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	grid-column-gap: 1em;
 	grid-row-gap: 2em;
+	justify-items: center;
 	@media screen and (max-width: 1240px) {
 		grid-template-columns: repeat(3, 1fr);
 	}
@@ -53,7 +57,8 @@
 	}
 }
 .dessert_item {
-	display: grid;
+	max-width: 22em;
+		display: grid;
 	align-content: space-between;
 }
 .dessert_image {

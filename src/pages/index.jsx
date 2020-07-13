@@ -1,6 +1,5 @@
 import LocationModal from '../components/modals/LocationModal'
 import { connect } from 'react-redux';
-import Test from '../assets/images/test.svg'
 
 function Home({ city }) {
   return (

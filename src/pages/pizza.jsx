@@ -13,7 +13,7 @@ function Pizza({ addAnOrderItem, pizza, getPizzas }) {
   return (
     <div className={s.pizza_page}>
       <Billboard />
-      <div style={{ maxWidth: '1260px', margin: '0 auto' }}>
+      <div style={{ maxWidth: '1900px', margin: '0 auto' }}>
         <header>
           <h2>ПИЦЦЫ</h2>
         </header>

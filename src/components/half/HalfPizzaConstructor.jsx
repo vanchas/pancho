@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 import s from './half.module.scss'
 import PizzaPlaceholder from '../../assets/images/pizza_placeholder.png'
 import Basket from '../../assets/images/basket/korzina-01.svg'
@@ -6,8 +6,13 @@ import Green from '../../assets/images/green.png'
 import Pepper from '../../assets/images/pepper.png'
 import Diameter from '../../assets/images/diameter.png'
 import ListItem from './ListItem'
+import {Tooltip} from "reactstrap";
 
 export default function HalfPizzaConstructor({ rightHalfPizza, leftHalfPizza, pizzas, setLeftHalfPizza, setRightHalfPizza, addAnOrderItem }) {
+  const [tooltipVeganLeft, setTooltipVeganLeft] = useState(false);
+  const [tooltipHotLeft, setTooltipHotLeft] = useState(false);
+  const [tooltipVeganRight, setTooltipVeganRight] = useState(false);
+  const [tooltipHotRight, setTooltipHotRight] = useState(false);
 
   const setLeftHalfPizzaHandler = selectedPizza => {
     setLeftHalfPizza({ ...selectedPizza, size: 40 });
@@ -40,8 +45,16 @@ export default function HalfPizzaConstructor({ rightHalfPizza, leftHalfPizza, pi
         {leftHalfPizza.name
           ? <div className={`text-left ${s.left_half_pizza_info}`}>
             <h5>{leftHalfPizza.name}
-              <img src={Green} alt="" style={leftHalfPizza.green ? { opacity: '1' } : { opacity: '0.3' }} />
-              <img src={Pepper} alt="" style={leftHalfPizza.hot ? { opacity: '1' } : { opacity: '0.3' }} />
+              <img src={Green} alt="" style={leftHalfPizza.green ? { display: 'inline-block' } : { display: 'none' }} id="vegetarian" />
+              <Tooltip placement="top" style={{ backgroundColor: '#111' }}
+                       isOpen={tooltipVeganLeft}
+                       target="vegetarian" toggle={() => setTooltipVeganLeft(!tooltipVeganLeft)}>Вегетарианская</Tooltip>
+              <img src={Pepper} alt="" style={leftHalfPizza.hot ? { display: 'inline-block' } : { display: 'none' }} id="hot" />
+              <Tooltip placement="top" style={{ backgroundColor: '#111' }}
+                       isOpen={tooltipHotLeft}
+                       target="hot" toggle={() => setTooltipHotLeft(!tooltipHotLeft)}>Острая</Tooltip>
+              {/*<img src={Green} alt="" style={leftHalfPizza.green ? { opacity: '1' } : { opacity: '0.3' }} />*/}
+              {/*<img src={Pepper} alt="" style={leftHalfPizza.hot ? { opacity: '1' } : { opacity: '0.3' }} />*/}
             </h5>
             <p>{leftHalfPizza.description}</p>
           </div>
@@ -72,8 +85,16 @@ export default function HalfPizzaConstructor({ rightHalfPizza, leftHalfPizza, pi
         {rightHalfPizza.name
           ? <div className={`text-right ${s.right_half_pizza_info}`}>
             <h5>
-              <img src={Green} alt="" style={rightHalfPizza.green ? { opacity: '1' } : { opacity: '0.3' }} />
-              <img src={Pepper} alt="" style={rightHalfPizza.hot ? { opacity: '1' } : { opacity: '0.3' }} />
+              <img src={Green} alt="" style={rightHalfPizza.green ? { display: 'inline-block' } : { display: 'none' }} id="vegetarian" />
+              <Tooltip placement="top" style={{ backgroundColor: '#111' }}
+                       isOpen={tooltipVeganRight}
+                       target="vegetarian" toggle={() => setTooltipVeganRight(!tooltipVeganRight)}>Вегетарианская</Tooltip>
+              <img src={Pepper} alt="" style={rightHalfPizza.hot ? { display: 'inline-block' } : { display: 'none' }} id="hot" />
+              <Tooltip placement="top" style={{ backgroundColor: '#111' }}
+                       isOpen={tooltipHotRight}
+                       target="hot" toggle={() => setTooltipHotRight(!tooltipHotRight)}>Острая</Tooltip>
+              {/*<img src={Green} alt="" style={rightHalfPizza.green ? { opacity: '1' } : { opacity: '0.3' }} />*/}
+              {/*<img src={Pepper} alt="" style={rightHalfPizza.hot ? { opacity: '1' } : { opacity: '0.3' }} />*/}
               {rightHalfPizza.name}
             </h5>
             <p>{rightHalfPizza.description}</p>
