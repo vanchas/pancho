@@ -5,13 +5,14 @@ import Phone from '../../assets/images/signs/phone-01.svg';
 import Location from '../../assets/images/signs/point-01.svg';
 import Social from '../../assets/images/signs/social.png';
 import AppStore from '../../assets/images/app_store.png';
+import GooglePlay from '../../assets/images/google.png';
 
 export default function Footer() {
   return (
     <div className={s.footer}>
       <div className={s.footer_content}>
         <div className={s.footer_item}>
-          <h6 className="text-muted">Меню</h6>
+          <h6 className="">Меню</h6>
           <ul>
             <li><Link href="/pizza"><a>Пицца</a></Link></li>
             <li><Link href="/wok"><a>WOK</a></Link></li>
@@ -25,7 +26,7 @@ export default function Footer() {
           </ul>
         </div>
         <div className={s.footer_item}>
-          <h6 className="text-muted">Панчо</h6>
+          <h6 className="">Панчо</h6>
           <ul>
             <li><Link href="/about"><a>О компании</a></Link></li>
             <li><Link href="/"><a>Производство</a></Link></li>
@@ -37,12 +38,12 @@ export default function Footer() {
           </ul>
         </div>
         <div className={s.footer_item}>
-          <h6 className="text-muted">Звоните для заказа</h6>
+          <h6 className="">Звоните для заказа</h6>
           <div className="d-flex align-items-center">
             <img src={Phone} alt="" className={s.sign} />
-            <a href="tel:+0950001195" className="btn">095-000-11-95</a>
+            <a href="tel:+0950001195" className={`${s.phone} btn`}>095-000-11-95</a>
           </div>
-          <h6 className="text-muted">Заходите в гости</h6>
+          <h6 className="">Заходите в гости</h6>
           <div className="d-flex align-items-center">
             <img src={Location} alt="" className={s.sign} />
             <address>Славянск, ул. Шевченко,10</address>
@@ -50,14 +51,15 @@ export default function Footer() {
         </div>
         <div className={s.footer_item}>
           <div className="pb-2">
-            <p className="text-muted">Все акции новости в наших соцсетях</p>
+            <p className="">Все акции новости в наших соцсетях</p>
             <img src={Social} alt="" />
           </div>
           <div>
-            <p className="text-muted">Закачай наше мобильное приложение</p>
+            <p className="">Закачай наше мобильное приложение</p>
             <div>
               <a href="http://" target="_blank" rel="noopener noreferrer">
-                <img src={AppStore} alt="" />
+                <img src={AppStore} alt="Apple Store" />
+                <img src={GooglePlay} alt="Google Play" />
               </a>
             </div>
           </div>

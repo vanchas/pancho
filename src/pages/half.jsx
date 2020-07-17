@@ -18,7 +18,7 @@ const Half = ({ pizza, setLeftHalfPizza, setRightHalfPizza, rightHalfPizza, left
       <h2 className={s.half_page_heading}>
         ПИЦЦА ПОЛОВИНКИ
       </h2>
-      <p className="text-center h4 pb-3 px-2">Соедини 2 любых вкуса. Выбери левую половинку пиццы, а после правую половинку. <br /> Все пиццы-половинки идут в одном размере 40 см</p>
+      <p className={`${s.subheading} text-center h4 pb-3 px-2`}>Соедини 2 любых вкуса. Выбери левую половинку пиццы, а после правую половинку. <br /> Все пиццы-половинки идут в одном размере 40 см</p>
       <div className={s.half_pizza_constuctor_block}>
         <LeftList pizza={pizza}
           setLeftHalfPizza={setLeftHalfPizza} />

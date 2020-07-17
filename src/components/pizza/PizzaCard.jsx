@@ -33,13 +33,15 @@ export default function PizzaCard({ addAnOrderItem, pizza }) {
   return (
     <div className={`${s.card} card border-0`}>
       <img className={`${s.big_pizza_image}`} src={pizza.bigImage} alt={pizza.name} />
-      <div className="card-body">
-        <h5 className={`${s.card_title} card-title`}>
+      <div className={s.card_body}>
+        <h5 className={`${s.card_title}`}>
           {pizza.name}
           <small className="text-muted">{pizza.weight}г +- 50г</small>
         </h5>
         <h6 className={`${s.subtitle} card-subtitle mb-2 text-muted`}>
           <span className={s.subtitle_control}>
+            <span className={s.new}>НОВИНКА</span>
+            <span className={s.hit}>ХИТ</span>
             <img src={Green} alt="" style={pizza.green ? { display: 'block' } : { display: 'none' }} id="vegetarian" />
             <Tooltip placement="top" style={{ backgroundColor: '#111' }}
               isOpen={tooltipVegan}
@@ -48,12 +50,10 @@ export default function PizzaCard({ addAnOrderItem, pizza }) {
             <Tooltip placement="top" style={{ backgroundColor: '#111' }}
               isOpen={tooltipHot}
               target="hot" toggle={() => setTooltipHot(!tooltipHot)}>Острая</Tooltip>
-            <span className={s.new}>НОВИНКА</span>
-            <span className={s.hit}>ХИТ</span>
           </span>
           <span id="person">
             <img src={Person} alt="" className={s.person} />
-            {peopleCount}
+            <span className={s.person_count}>{peopleCount}</span>
           </span>
           <Tooltip placement="top" style={{ backgroundColor: '#111' }} isOpen={tooltipPerson}
             target="person" toggle={() => setTooltipPerson(!tooltipPerson)}>
@@ -87,7 +87,7 @@ export default function PizzaCard({ addAnOrderItem, pizza }) {
             <img src={Basket} alt="" />
             В КОРЗИНУ
           </button>
-          <span className={`font-weight-bold h5 pizza-price-${pizza.id}`}>{Object.values(pizza.price)[activeBtn]} грн</span>
+          <span className={`${s.price} pizza-price-${pizza.id}`}>{Object.values(pizza.price)[activeBtn]} грн</span>
         </div>
       </div>
     </div>

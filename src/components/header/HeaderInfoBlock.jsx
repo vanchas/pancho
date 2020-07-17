@@ -29,7 +29,7 @@ export default function HeaderInfoBlock() {
       <div className={s.header_info_block_item_location}>
         <img src={Location} alt="" className={s.location_image} />
         <p>Ваш город</p>
-        <select defaultValue="Славянск">
+        <select defaultValue="Славянск" className={s.city_select}>
           <option value="Славянск" hidden>СЛАВЯНСК</option>
           <option value="Славянск">СЛАВЯНСК</option>
           <option value="Краматорск">КРАМАТОРСК</option>
@@ -38,7 +38,7 @@ export default function HeaderInfoBlock() {
       </div>
       <div className={`d-flex ${s.header_info_block_item}`}>
         <img src={Phone} alt="" className={s.phone_image} />
-        <a href="tel:+0950001195" className="btn">095-000-11-95</a>
+        <a href="tel:+0950001195" className={`${s.phone} btn`}>095-000-11-95</a>
       </div>
     </div>
   )

@@ -61,7 +61,7 @@ export default function HalfPizzaConstructor({ rightHalfPizza, leftHalfPizza, pi
           : <p className={s.message_left}>Выберите пиццу</p>}
 
         {leftHalfPizza.name && rightHalfPizza.name
-          ? <div className={`${s.order_block}`}>
+          ? <div className={`${s.order_block} ${s.order_block_btn}`}>
             <button className={`${s.basket}`}
               onClick={completeAdOrder}>
               <img src={Basket} alt="" />

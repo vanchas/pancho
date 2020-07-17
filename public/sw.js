@@ -1,1 +1,128 @@
-if(!self.define){const e=e=>{"require"!==e&&(e+=".js");let a=Promise.resolve();return c[e]||(a=new Promise(async a=>{if("document"in self){const c=document.createElement("script");c.src=e,document.head.appendChild(c),c.onload=a}else importScripts(e),a()})),a.then(()=>{if(!c[e])throw new Error(`Module ${e} didn’t register its module`);return c[e]})},a=(a,c)=>{Promise.all(a.map(e)).then(e=>c(1===e.length?e[0]:e))},c={require:Promise.resolve(a)};self.define=(a,s,i)=>{c[a]||(c[a]=Promise.resolve().then(()=>{let c={};const t={uri:location.origin+a.slice(1)};return Promise.all(s.map(a=>{switch(a){case"exports":return c;case"module":return t;default:return e(a)}})).then(e=>{const a=i(...e);return c.default||(c.default=a),c})}))}}define("./sw.js",["./workbox-e032be30"],(function(e){"use strict";importScripts(),e.skipWaiting(),e.clientsClaim(),e.precacheAndRoute([{url:"/",revision:"RmnwpwpUI4Ze3WS-FxK26"},{url:"/_next/static/RmnwpwpUI4Ze3WS-FxK26/_buildManifest.js",revision:"19715970328fed68c02d6888bde2bbc2"},{url:"/_next/static/RmnwpwpUI4Ze3WS-FxK26/_ssgManifest.js",revision:"abee47769bf307639ace4945f9cfd4ff"},{url:"/_next/static/RmnwpwpUI4Ze3WS-FxK26/pages/_app.js",revision:"571fc06d1e53c9f270368884c82ce23e"},{url:"/_next/static/RmnwpwpUI4Ze3WS-FxK26/pages/_error.js",revision:"82c77106f2434126928197c7524564ca"},{url:"/_next/static/RmnwpwpUI4Ze3WS-FxK26/pages/about.js",revision:"ba28969b93598c8e1f3f4042d54ab246"},{url:"/_next/static/RmnwpwpUI4Ze3WS-FxK26/pages/bonus.js",revision:"505046536e3a3b72987b2c076e84eaa2"},{url:"/_next/static/RmnwpwpUI4Ze3WS-FxK26/pages/cabinet.js",revision:"04f5c3422ec792812acb8ef983530e64"},{url:"/_next/static/RmnwpwpUI4Ze3WS-FxK26/pages/combo.js",revision:"6cb57f928fd3851881e275bbc56b4007"},{url:"/_next/static/RmnwpwpUI4Ze3WS-FxK26/pages/contacts.js",revision:"d173f72dd2c3c62d5d2ddb8d7bfd8264"},{url:"/_next/static/RmnwpwpUI4Ze3WS-FxK26/pages/delivery.js",revision:"6aded72215602f17afb241595917e3c5"},{url:"/_next/static/RmnwpwpUI4Ze3WS-FxK26/pages/desserts.js",revision:"3e04148c944ed0231e0ae9c289c01829"},{url:"/_next/static/RmnwpwpUI4Ze3WS-FxK26/pages/discounts.js",revision:"db626ae747d7ed5890bdd7d2058b5b49"},{url:"/_next/static/RmnwpwpUI4Ze3WS-FxK26/pages/drinks.js",revision:"9004ec875d828e41f000cf62417b0367"},{url:"/_next/static/RmnwpwpUI4Ze3WS-FxK26/pages/half.js",revision:"60d09e0317c81e527dc424004c457ecf"},{url:"/_next/static/RmnwpwpUI4Ze3WS-FxK26/pages/index.js",revision:"af54b570c48c175efe0784493ceb7cee"},{url:"/_next/static/RmnwpwpUI4Ze3WS-FxK26/pages/pasta.js",revision:"fe09733c35bc2c1562b3f0af80b23997"},{url:"/_next/static/RmnwpwpUI4Ze3WS-FxK26/pages/pizza.js",revision:"72b383401e2681e98e73fb0b5df0dd28"},{url:"/_next/static/RmnwpwpUI4Ze3WS-FxK26/pages/reviews.js",revision:"bac5b3b6cf634ab11a09ec6c03e71421"},{url:"/_next/static/RmnwpwpUI4Ze3WS-FxK26/pages/salad.js",revision:"5a109024067794998108e4b21e649dc0"},{url:"/_next/static/RmnwpwpUI4Ze3WS-FxK26/pages/sets.js",revision:"953aa6cc06ad5bb2de6994ee4bca0471"},{url:"/_next/static/RmnwpwpUI4Ze3WS-FxK26/pages/snacks.js",revision:"ff23b78831e9f96aec5c522411483a4f"},{url:"/_next/static/RmnwpwpUI4Ze3WS-FxK26/pages/wok.js",revision:"7a02d92a75a076d4cd33c04833ebbfcb"},{url:"/_next/static/chunks/18ca324c8611057b7726c36b72c8684937bddf5b.64dd29366f6f1f5fee57.js",revision:"1f6c098bc394cb267d3d805e1d61dcb8"},{url:"/_next/static/chunks/34eb4b1b2c1fbd7a4e53ab6346cab29a5df3c79f.ccbd5afbe73208731efa.js",revision:"51e643b462adc0ed80673de53003bf21"},{url:"/_next/static/chunks/39cc7a95fba8f2c1e15e5f737c538338607ed435.9f0004f1def9d0d2afbd.js",revision:"021936ba6bf727e09a7137f79dc825b1"},{url:"/_next/static/chunks/4fa83b08439f65d1187aaf3c7af5157ae203bdae.1d44368defdd618cded7.js",revision:"08b958c8494b381cce903b4198af790d"},{url:"/_next/static/chunks/8d43c430e57657db0c77716800a76dc6a4b73270.533ce04e39bfaae2cd02.js",revision:"dbf1dfdcf9a12ed723a060b1c9ec53a2"},{url:"/_next/static/chunks/b637e9a5.068392fc462eae7ef1a8.js",revision:"aedf92b46fdad62230d08838537e0b3f"},{url:"/_next/static/chunks/e8e4a1d7efa89fca94e85f240098ffca1e04da47.7d3cf8bbc43582bc3705.js",revision:"b041cb66c523fcc57808b33af67acc73"},{url:"/_next/static/chunks/framework.c4a2b05e6662040d1d25.js",revision:"fcc42d3255bb8891527c05f41240cc0b"},{url:"/_next/static/css/03271859503741ed0cb1.css",revision:"6c8a30c3c5e0a567d40fb69cd2296702"},{url:"/_next/static/css/0edddbe495732a75ba92.css",revision:"d98330543449e7b686254b24e45f04f5"},{url:"/_next/static/css/267d56cc52dcd9f40b57.css",revision:"7a11cb703eaa5df34d8084529479d92c"},{url:"/_next/static/css/3b981f5d073ae81cfe9c.css",revision:"0b4e66a3f3a9d9341d6ca11c119a6440"},{url:"/_next/static/css/492cd00fb155465c4490.css",revision:"39d4d4e82598c1846757f462ceade79a"},{url:"/_next/static/css/7e85fd6df22e44ea747e.css",revision:"8c823b186f545e39ccbdecafa3ec4be7"},{url:"/_next/static/css/92be609eea58b9a87501.css",revision:"c0f9802921c18a4b2de5edc864c8cedc"},{url:"/_next/static/css/a2be0a3be531db6460d5.css",revision:"de4fc5cc95274a26d79630cf34f43c2f"},{url:"/_next/static/css/ac76f268a746057199b3.css",revision:"31bfa4d421445b289879493653ae4eb1"},{url:"/_next/static/css/ac773e357c3dace72bef.css",revision:"d36e31ca7fa5def0054398be08f5ceb2"},{url:"/_next/static/css/ade756af4a6bdaa5bcad.css",revision:"b22079b4ece0e0bf4f479e54ec078d6f"},{url:"/_next/static/css/b57df4e579c7af67b587.css",revision:"a197a45a4959ff4a2e9dfdc5747f2deb"},{url:"/_next/static/css/c920b430bd215b3198af.css",revision:"ea20095d6b7e71983aecca5075f92361"},{url:"/_next/static/css/d7f291612e5ebbfa5cf4.css",revision:"98d0b3f6ecc4e9c430c1776139a8840e"},{url:"/_next/static/css/d80c4d600ef75bd5764a.css",revision:"03f30073ee4e3ae2facd9edb46797bae"},{url:"/_next/static/css/e7a8abafb5b75c70d3e4.css",revision:"43980677ed56abb954e5365d332e5f5a"},{url:"/_next/static/css/f9014be4617dc0aad4f8.css",revision:"150b875bea0cee2211f765b96379a1db"},{url:"/_next/static/images/1-4bcdeb9129b98848de8dd9098c66aa52.png",revision:"0c7583aaff16e98c2f5e423269e6b383"},{url:"/_next/static/images/2-4b259c3a53d424249307c0aec29c9b31.png",revision:"90193d0b847ff49f563798d7f7800a5d"},{url:"/_next/static/images/3-9608903de59636a37dd132997a4497bc.png",revision:"d1165c3d7799e2db60ceae520d6c403b"},{url:"/_next/static/images/beer-8573f79f4ca010a9a08b8ccee21708a0.jpeg",revision:"42284c5a21add7bbf4baddf684ca4c7e"},{url:"/_next/static/images/billboard-9857070f589ce85b9e704072991a603a.png",revision:"ecf2271fdc7dff3621689022bb11ec60"},{url:"/_next/static/images/cola-afd538607b1ae855c31ff501e014762c.jpg",revision:"d00c528174fa6320e2b59f398a4d6d0b"},{url:"/_next/static/images/combo-d5359d02d372c0e3a5204963702b2d34.png",revision:"7514fced724bbfd89f14345971138642"},{url:"/_next/static/images/combo_1-4b507919e8ff090f7387d782550684e9.jpg",revision:"c40b13a4ca3002b7fa101c7d68c2664d"},{url:"/_next/static/images/combo_2-6339cd5c8f6f39d3d3a8664c8ac2a6c3.jpg",revision:"12920c68df04e6ba583b5cebabe6dd00"},{url:"/_next/static/images/dessert-67c78886066b83a1655479cc42eb0eb2.png",revision:"fe5e876c84652201e6cae3e9bb3b6b59"},{url:"/_next/static/images/dessert_1-55bff457f41ff0a9aead29ede8447c9b.jpg",revision:"5e09fd1428a3cd779d3fa07680908718"},{url:"/_next/static/images/dessert_2-47a924280461f9cbdada2b42e69bb458.jpg",revision:"c32cc1670498805e6acc7509e19869cf"},{url:"/_next/static/images/dessert_3-8ee559a3c335d7bc1dd8f8bfa31166c8.jpg",revision:"90d168fcdffd1b11294543600ec1bf0f"},{url:"/_next/static/images/dislike-61ef6f75552b7bde567f172395ccc8f6.png",revision:"62b5cb4e948b1715d8dc6aeb8f84ac3a"},{url:"/_next/static/images/drink-dabe3c27d1b8e7d6745ac229bc42a95d.png",revision:"d5e8afca1071503dcbca70cbe31e43c0"},{url:"/_next/static/images/half-6d6980e83f6ef64349aa3b8e03210be0.png",revision:"525119e0b9794c6ce22363273778d542"},{url:"/_next/static/images/logo_pancho-01-c9e9a4b5d3d2b62d88e7abe4bcf343cf.svg",revision:"31d3b2898991dd13a9039a022819b222"},{url:"/_next/static/images/pasta-a6b7fcc65539f4072fb7d252b4f782e0.png",revision:"afc680d90751e3b5dca17fe558e2145c"},{url:"/_next/static/images/pasta_1-d25e60a498e3d4af3d4670306e7c2807.jpg",revision:"ce2aa37f940e8160b9aaed4a14fe2809"},{url:"/_next/static/images/pasta_2-5aca3da05e7e9f2c08af561589ead92f.jpg",revision:"3ffe90c8b947f43752db9f63fa9f2b7c"},{url:"/_next/static/images/pasta_3-f21a53e6bf99a0b82e8bcf69c86c7cfd.png",revision:"5e590b0de38f23562d75b34e2d73af4c"},{url:"/_next/static/images/pizza-b4e47ff966e2511c990d8c9e0d0a6fc6.png",revision:"838d624a306012516f815078899c1c75"},{url:"/_next/static/images/pizza_1-2e3d95fe298e766768e7e2fe2f1290d4.png",revision:"449bf7577e399b6930c9e457483c1f49"},{url:"/_next/static/images/pizza_1-e5d40dfc49819e12225ef071956e1566.png",revision:"cd3cf73a8516ba01bea721b50bd0dfa9"},{url:"/_next/static/images/pizza_2-6fcb2829ffcb0e8a8f5ecc69b8c4f14e.png",revision:"a2f7510db1d2048707fc0b85f247cad5"},{url:"/_next/static/images/pizza_2-f33bc251ded0f726819240161863ab3f.png",revision:"213812b870c0db9836ace73e7d713e93"},{url:"/_next/static/images/pizza_3-1e631615f44890d6aefca5a7fe1305ed.png",revision:"c0554f4c20a863eb710822037e1e5bbb"},{url:"/_next/static/images/pizza_3-f219e047a1dd106ca63f17d99e88ba86.png",revision:"961f194be9428d9bedacfa5b865205c2"},{url:"/_next/static/images/pizza_4-814655abcac89e2fc6eb0419d8480615.png",revision:"5a6948eb12dff11b78d272d5b364f2bc"},{url:"/_next/static/images/pizza_4-cc88fbc4365852fb76ea5b02d295f210.png",revision:"f2c1e3f571a99e42d7da68efcd5514f9"},{url:"/_next/static/images/pizza_placeholder-911528390c94f9ea47429f19aa52d4c3.png",revision:"4aa9948d98e6c51552dc23fb24a50288"},{url:"/_next/static/images/review_photo-8c78822731908837cc1290dfb2dbcef3.png",revision:"c813dbef492a559957afa4fe677d3e1d"},{url:"/_next/static/images/salad-1-130b462c6fd866f63ed50fd04a8a8cbd.jpg",revision:"633f7daa722a1adb34406380fec6c6db"},{url:"/_next/static/images/salad-2-e4c9d609eb512cad0a12ab83509a567a.jpg",revision:"f30c5781eb8c76bd9882ac590b6c5e2c"},{url:"/_next/static/images/salad-c4f876887c3dab97d8f1010afe425e28.png",revision:"ad19b84e614d52a0901edfada3359ee7"},{url:"/_next/static/images/set-ca501c16f18ce965c3a3452a0cb6211b.png",revision:"12ccc59964fa64d5e1842e3e39ffc8e6"},{url:"/_next/static/images/set_1-d8fa0b747bdfc15f3ac03ac693654f28.jpg",revision:"844e4c2d249269cb14ebe5f8a21e0363"},{url:"/_next/static/images/set_2-2fa65bc69a5ac02959b65a4ca0bed379.jpg",revision:"335bc14d9b0a8e497d19190e786fc16e"},{url:"/_next/static/images/snack-2eeb07cbfe7f75986606cc3b3e641603.png",revision:"ed04e76771aed7deee7750aad05b3c76"},{url:"/_next/static/images/snack_1-961afe01571c4693eb7d4b15ce9056a8.jpg",revision:"5550fdbf349639546462ba45b9ae9a6c"},{url:"/_next/static/images/snack_2-f44e4dff74ea5f07153f33296e3d12fe.jpg",revision:"5dff738d71a182903a9cbd0baf88e7c3"},{url:"/_next/static/images/snack_3-b648f010e0732ffe4bfabc3aa0883b8f.jpg",revision:"7e321fe840703b21cb1bf118ec2d36b0"},{url:"/_next/static/images/wok-116b343390525889bf04bd172e75970b.png",revision:"af4166e84abea2e5171f175f193875fd"},{url:"/_next/static/images/wok-e065b695e12e6760b9fe30201d7a0127.png",revision:"3410f8c9f4254d932da5ad5c1c8446b7"},{url:"/_next/static/media/quotes_down.2904c867799e8cf55e07a6214ac7c71d.png",revision:"b55e0e96ff4b3ecf824c362a364528a3"},{url:"/_next/static/media/quotes_up.8cac8a5bf1ec4f64cbc555213be2457a.png",revision:"7f14d0624ae0921eb83b1bca407ae859"},{url:"/_next/static/runtime/main-b79aa5b4a716ff71eedc.js",revision:"2e9d4a5dd8763b80443ed897e622ddf9"},{url:"/_next/static/runtime/polyfills-d4f5125ac451f7d9b26b.js",revision:"f9229c80bb7f9464d7fdb62dfc846dd9"},{url:"/_next/static/runtime/webpack-c212667a5f965e81e004.js",revision:"f5e6e2fca3144cc944812cfa3547f475"},{url:"/favicon.ico",revision:"412192267449ea67eebabd3e62acfe51"},{url:"/vercel.svg",revision:"0222c3eef0be0734c8cd707b37c55d7e"}],{ignoreURLParametersMatching:[]}),e.cleanupOutdatedCaches(),e.registerRoute(/^https:\/\/fonts\.(?:googleapis|gstatic)\.com\/.*/i,new e.CacheFirst({cacheName:"google-fonts",plugins:[new e.ExpirationPlugin({maxEntries:4,maxAgeSeconds:31536e3,purgeOnQuotaError:!0})]}),"GET"),e.registerRoute(/^https:\/\/use\.fontawesome\.com\/releases\/.*/i,new e.CacheFirst({cacheName:"font-awesome",plugins:[new e.ExpirationPlugin({maxEntries:1,maxAgeSeconds:31536e3,purgeOnQuotaError:!0})]}),"GET"),e.registerRoute(/\.(?:eot|otf|ttc|ttf|woff|woff2|font.css)$/i,new e.StaleWhileRevalidate({cacheName:"static-font-assets",plugins:[new e.ExpirationPlugin({maxEntries:4,maxAgeSeconds:604800,purgeOnQuotaError:!0})]}),"GET"),e.registerRoute(/\.(?:jpg|jpeg|gif|png|svg|ico|webp)$/i,new e.StaleWhileRevalidate({cacheName:"static-image-assets",plugins:[new e.ExpirationPlugin({maxEntries:64,maxAgeSeconds:86400,purgeOnQuotaError:!0})]}),"GET"),e.registerRoute(/\.(?:js)$/i,new e.StaleWhileRevalidate({cacheName:"static-js-assets",plugins:[new e.ExpirationPlugin({maxEntries:16,maxAgeSeconds:86400,purgeOnQuotaError:!0})]}),"GET"),e.registerRoute(/\.(?:css|less)$/i,new e.StaleWhileRevalidate({cacheName:"static-style-assets",plugins:[new e.ExpirationPlugin({maxEntries:16,maxAgeSeconds:86400,purgeOnQuotaError:!0})]}),"GET"),e.registerRoute(/\.(?:json|xml|csv)$/i,new e.StaleWhileRevalidate({cacheName:"static-data-assets",plugins:[new e.ExpirationPlugin({maxEntries:16,maxAgeSeconds:86400,purgeOnQuotaError:!0})]}),"GET"),e.registerRoute(/.*/i,new e.StaleWhileRevalidate({cacheName:"others",plugins:[new e.ExpirationPlugin({maxEntries:16,maxAgeSeconds:86400,purgeOnQuotaError:!0})]}),"GET")}));
+/**
+ * Copyright 2018 Google Inc. All Rights Reserved.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+// If the loader is already loaded, just stop.
+if (!self.define) {
+  const singleRequire = name => {
+    if (name !== 'require') {
+      name = name + '.js';
+    }
+    let promise = Promise.resolve();
+    if (!registry[name]) {
+      
+        promise = new Promise(async resolve => {
+          if ("document" in self) {
+            const script = document.createElement("script");
+            script.src = name;
+            document.head.appendChild(script);
+            script.onload = resolve;
+          } else {
+            importScripts(name);
+            resolve();
+          }
+        });
+      
+    }
+    return promise.then(() => {
+      if (!registry[name]) {
+        throw new Error(`Module ${name} didn’t register its module`);
+      }
+      return registry[name];
+    });
+  };
+
+  const require = (names, resolve) => {
+    Promise.all(names.map(singleRequire))
+      .then(modules => resolve(modules.length === 1 ? modules[0] : modules));
+  };
+  
+  const registry = {
+    require: Promise.resolve(require)
+  };
+
+  self.define = (moduleName, depsNames, factory) => {
+    if (registry[moduleName]) {
+      // Module is already loading or loaded.
+      return;
+    }
+    registry[moduleName] = Promise.resolve().then(() => {
+      let exports = {};
+      const module = {
+        uri: location.origin + moduleName.slice(1)
+      };
+      return Promise.all(
+        depsNames.map(depName => {
+          switch(depName) {
+            case "exports":
+              return exports;
+            case "module":
+              return module;
+            default:
+              return singleRequire(depName);
+          }
+        })
+      ).then(deps => {
+        const facValue = factory(...deps);
+        if(!exports.default) {
+          exports.default = facValue;
+        }
+        return exports;
+      });
+    });
+  };
+}
+define("./sw.js",['./workbox-b90066a8'], function (workbox) { 'use strict';
+
+  /**
+  * Welcome to your Workbox-powered service worker!
+  *
+  * You'll need to register this file in your web app.
+  * See https://goo.gl/nhQhGp
+  *
+  * The rest of the code is auto-generated. Please don't update this file
+  * directly; instead, make changes to your Workbox build configuration
+  * and re-run your build process.
+  * See https://goo.gl/2aRDsh
+  */
+
+  importScripts();
+  workbox.skipWaiting();
+  workbox.clientsClaim();
+  /**
+   * The precacheAndRoute() method efficiently caches and responds to
+   * requests for URLs in the manifest.
+   * See https://goo.gl/S9QRab
+   */
+
+  workbox.precacheAndRoute([{
+    "url": "/_next/static/runtime/amp.js",
+    "revision": "928ccca026f583450a075efc991608ff"
+  }, {
+    "url": "/_next/static/runtime/main.js",
+    "revision": "d44379075e48aba958f41a3f3003023c"
+  }, {
+    "url": "/_next/static/runtime/polyfills.js",
+    "revision": "516c3d4deeff70783126396a5a14d34e"
+  }, {
+    "url": "/_next/static/runtime/react-refresh.js",
+    "revision": "9d11ea7095b60a828f2db49ed1004ade"
+  }, {
+    "url": "/_next/static/runtime/webpack.js",
+    "revision": "2f99b15d25206ea0aba5d4232b0732cb"
+  }], {
+    "ignoreURLParametersMatching": [/ts/]
+  });
+  workbox.cleanupOutdatedCaches();
+
+});
+//# sourceMappingURL=sw.js.map

@@ -9,8 +9,8 @@ export default function WokCard({ wok, addAnOrderItem }) {
   return (
     <div className={`${s.card} card border-0`}>
       <img className={s.wok_image} src={wok.image} alt={wok.name} />
-      <div className="card-body">
-        <h5 className={`${s.card_title} card-title`}>
+      <div className={s.card_body}>
+        <h5 className={`${s.card_title}`}>
           {wok.name}
           <small className="text-muted">{wok.weight}г +- 20г</small>
         </h5>

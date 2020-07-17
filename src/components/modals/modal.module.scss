@@ -65,23 +65,23 @@
 }
 
 .toggle_button {
+	padding-top: 0.5em !important;
 	.activeLink,
 	.button {
 		margin-top: 0.3em;
-		padding: 0.1em 1em;
+		padding: 0.25em 1.5em;
 		font-weight: 600;
 		color: #000;
 		background-color: #ffed00;
 		width: 100%;
 		border-radius: 0.2em;
-		// &:active {
-		// 	transition: 0.2s;
-		// 	background-color: #ccbe00;
-		// }
+		span {
+			height: 27px;
+		}
 	}
 	.person_sign {
-		width: 1.4em;
-		margin-right: 0.3em;
+		height: 29px;
+		margin-right: 0.4em;
 		margin-top: -0.1em;
 	}
 }

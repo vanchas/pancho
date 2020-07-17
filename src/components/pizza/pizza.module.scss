@@ -5,9 +5,10 @@
 			text-align: center;
 			width: fit-content;
 			position: relative;
+			font-weight: 800;
 			&::before {
 				content: "";
-				width: 7em;
+				width: 300px;
 				height: 1px;
 				background-color: #000;
 				position: absolute;
@@ -17,7 +18,7 @@
 			}
 			&::after {
 				content: "";
-				width: 7em;
+				width: 300px;
 				height: 1px;
 				background-color: #000;
 				position: absolute;
@@ -36,21 +37,21 @@
 }
 
 .pizzas_list {
-	max-width: 1900px;
+	max-width: 1667px;
 	margin: 0 auto;
 	list-style: none;
 	padding: 0 1em 0 0;
 	display: grid;
-	grid-gap: 1em;
+	grid-gap: 90px;
 	grid-template-columns: repeat(4, 1fr);
 	justify-items: center;
-	@media screen and (max-width: 1240px) {
+	@media screen and (max-width: 1350px) {
 		grid-template-columns: repeat(3, 1fr);
 	}
-	@media screen and (max-width: 900px) {
+	@media screen and (max-width: 1050px) {
 		grid-template-columns: repeat(2, 1fr);
 	}
-	@media screen and (max-width: 600px) {
+	@media screen and (max-width: 767px) {
 		grid-template-columns: repeat(1, 1fr);
 		padding: 0;
 	}
@@ -62,13 +63,21 @@
 	display: grid;
 	align-content: stretch;
 
+	.card_body {
+		padding: 1em 0;
+	}
+
 	.big_pizza_image {
-		height: 15em;
-		width: auto;
+		//height: 15em;
+		//width: auto;
+		width: 100%;
 		margin: 0 auto;
 	}
 
 	.basket {
+		white-space: nowrap;
+		font-size: 18px;
+		font-weight: 500;
 		background-color: #575756;
 		color: #f9e803;
 		position: relative;
@@ -91,8 +100,13 @@
 	justify-content: space-between;
 	align-items: center;
 	padding-bottom: 0.5em;
+	color: #000000;
+	font-size: 21px;
+	font-weight: 500;
 	small {
-		font-size: 0.5em;
+		color: #9d9d9c;
+		font-size: 14px;
+		font-weight: 300;
 	}
 }
 .subtitle {
@@ -102,36 +116,43 @@
 .subtitle_control {
 	display: grid;
 	grid-auto-flow: column;
-	grid-gap: 0.2em;
+	gap: 0.5em;
 }
 .new {
 	background-color: #662483;
 	color: #fff;
 	border-radius: 0.2em;
 	padding: 0.2em 0.5em;
-	font-weight: 100;
-	font-size: 0.9em;
+	font-size: 17px;
+	font-weight: 300;
 }
 .hit {
 	background-color: #e30613;
 	color: #fff;
 	border-radius: 0.2em;
 	padding: 0.2em 0.5em;
-	font-weight: 100;
-	font-size: 0.9em;
+	font-size: 17px;
+	font-weight: 300;
 }
 .person {
-	width: 1em;
+	width: 1.3em;
 	margin-bottom: 0.3em;
 	opacity: 0.5;
+}
+.person_count {
+	color: #9d9d9c;
+	font-size: 14px;
+	font-weight: 300;
 }
 
 .card_text {
 	padding: 0.5em 0;
-	line-height: 1.3em;
+	font-size: 17px;
+	font-weight: 300;
+	line-height: 21px;
 }
 .size_select {
-	background-color: #e0e0e0;
+	background-color: #dadada;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
@@ -141,6 +162,9 @@
 	width: 100%;
 	padding: 0.3em 0;
 	label {
+		color: #706f6f;
+		font-size: 18px;
+		font-weight: 500;
 		text-align: center;
 		padding: 0.1em 0.5em;
 		margin: 0;
@@ -158,4 +182,8 @@
 		box-shadow: 2px 2px 3px 1px #aaa9a9;
 		border-radius: 0.3em;
 	}
+}
+.price {
+	font-size: 24px;
+	font-weight: 500;
 }
