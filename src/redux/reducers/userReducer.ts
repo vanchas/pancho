@@ -1,14 +1,29 @@
-import { GET_TRANSACTONS, GET_ADDRESSES, GET_BONUSES, GET_REVIEWS, ADD_AN_ORDER_ITEM, REMOVE_AN_ORDER_ITEM, INCREMENT_ORDER_ITEM, DECREMENT_ORDER_ITEM, GET_HISTORY, DELIVERY_SHOPPING_CARD, PICKUP_SHOPPING_CARD, GET_CURRENT_LOCATION, SET_PESISTED_STATE } from '../actions/types'
+import {
+  GET_TRANSACTONS,
+  GET_ADDRESSES,
+  GET_BONUSES,
+  GET_REVIEWS,
+  ADD_AN_ORDER_ITEM,
+  REMOVE_AN_ORDER_ITEM,
+  INCREMENT_ORDER_ITEM,
+  DECREMENT_ORDER_ITEM,
+  GET_HISTORY,
+  DELIVERY_SHOPPING_CARD,
+  PICKUP_SHOPPING_CARD,
+  GET_CURRENT_LOCATION,
+  SET_PESISTED_STATE,
+  ADD_REVIEW
+} from '../actions/types'
 import { loadState } from '../localStorage';
 
 const initialState = {
-  transactions: [],
-  addresses: [],
-  bonuses: [],
+  transactions: null,
+  addresses: null,
+  bonuses: null,
   reviews: [],
   orders: [],
   ordersAmount: 0,
-  history: [],
+  history: null,
   deliveryShoppingCard: false,
   pickupShoppingCard: false,
   currentLocation: null
@@ -29,6 +44,12 @@ export const userReducer = (state = initialState, action: any) => {
       return { ...state, bonuses: action.payload }
 
     case GET_REVIEWS:
+      return { ...state, reviews: action.payload }
+
+    case ADD_REVIEW:
+      if (state.reviews) {
+        return { ...state, reviews: [...state.reviews, action.payload] }
+      }
       return { ...state, reviews: action.payload }
 
     case ADD_AN_ORDER_ITEM:

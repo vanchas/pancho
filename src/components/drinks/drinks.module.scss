@@ -1,6 +1,10 @@
 .drinks_page {
 	//max-width: 1667px;
 	//margin: 0 auto;
+	padding-right: 1em;
+	@media screen and (max-width: 720px) {
+		padding-right: 0;
+	}
 }
 .drinks_page_heading {
 	max-width: 1667px;
@@ -41,25 +45,29 @@
 	max-width: 1667px;
 	margin: 0 auto;
 	list-style: none;
-	padding: 0.5em;
+	padding: 0;
+	row-gap: 1em;
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
-	grid-column-gap: 90px;
-	grid-row-gap: 100px;
+	justify-content: space-between;
 	justify-items: center;
-	@media screen and (max-width: 1240px) {
+	grid-template-columns: repeat(4, 1fr);
+	li {
+		margin: 0 auto;
+	}
+	@media screen and (max-width: 1550px) {
 		grid-template-columns: repeat(3, 1fr);
 	}
-	@media screen and (max-width: 900px) {
+	@media screen and (max-width: 1160px) {
 		grid-template-columns: repeat(2, 1fr);
 	}
-	@media screen and (max-width: 600px) {
+	@media screen and (max-width: 720px) {
 		grid-template-columns: repeat(1, 1fr);
 	}
 }
 .drink_item {
 	max-width: 22em;
-	padding: .5em;
+	padding: 1em;
 	display: grid;
 	align-content: space-between;
 }
@@ -98,6 +106,7 @@
 	}
 	.drink_btn {
 		order: 4;
+		white-space: nowrap;
 		span {
 			background-color: #575756;
 			color: #ffed00;

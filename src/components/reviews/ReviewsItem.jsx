@@ -18,7 +18,7 @@ export default function ReviewsItem({ review }) {
           : <img src={Dislike} alt="dislike" />}
       </div>
       <div className={s.reviews_item_info}>
-        <span>{review.name}</span>
+        <span className={`font-weight-bold`}>{review.name}</span>
         <span>{review.date}</span>
       </div>
       <p>{review.message}</p>

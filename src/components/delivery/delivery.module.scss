@@ -1,15 +1,17 @@
 .delivery_page {
 	max-width: 1667px;
 	margin: 0 auto;
+	padding-right: 1em;
 }
 .delivery_page_heading {
 	margin: 2em auto 2em auto;
 	text-align: center;
+	font-weight: bold;
 	width: fit-content;
 	position: relative;
 	&::before {
 		content: "";
-		width: 7em;
+		width: 300px;
 		height: 1px;
 		background-color: #000;
 		position: absolute;
@@ -19,7 +21,7 @@
 	}
 	&::after {
 		content: "";
-		width: 7em;
+		width: 300px;
 		height: 1px;
 		background-color: #000;
 		position: absolute;
@@ -52,19 +54,21 @@
 }
 
 .deilvery_cards {
-	padding-right: 1em;
 	ul {
 		list-style: none;
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
 		grid-column-gap: 1em;
 		grid-row-gap: 2em;
-		padding: 0 0.5em;
-		@media screen and (max-width: 1100px) {
+		padding: 0 1em;
+		width: 100%;
+		position: relative;
+		@media screen and (max-width: 1200px) {
 			grid-template-columns: 1fr 1fr;
 		}
 		@media screen and (max-width: 767px) {
 			grid-template-columns: 1fr;
+			padding-right: 0;
 		}
 		li {
 			border: 3px solid #999;
@@ -73,27 +77,49 @@
 			align-items: center;
 			justify-items: center;
 			grid-template-columns: 1fr 3fr;
-			padding: 2em 0.5em;
+			padding: 2em 1em;
 			grid-gap: 1em;
+			width: 100%;
 			h6 {
-				font-weight: 700;
+				font-weight: 800;
 			}
 			p {
-				margin: 0;
+				margin-bottom: .4em;
+				line-height: 1.2em;
 			}
 			.visa {
-				height: 1.3em;
-				margin-left: 0.2em;
+				height: 26px;
+				margin-left: 0.5em;
+			}
+			&:nth-child(4),
+			&:nth-child(5),
+			&:nth-child(6) {
+				justify-items: start;
+				@media screen and (max-width: 767px) {
+					padding-left: 1.2em;
+				}
 			}
 			div:nth-child(1) {
 				border-radius: 50%;
-				border: 5px solid #333;
+				border: 6px solid #333;
 				display: grid;
-				height: 7em;
-				width: 7em;
+				height: 7.5em;
+				width: 7.5em;
 				background-color: #ffed00;
 				justify-items: center;
 				align-items: center;
+				@media screen and (max-width: 767px) {
+					height: 4em;
+					width: 4em;
+					justify-self: center;
+					img {
+						width: 1.8em;
+					}
+					span {
+						font-size: 1em !important;
+						margin: 0;
+					}
+				}
 			}
 		}
 	}

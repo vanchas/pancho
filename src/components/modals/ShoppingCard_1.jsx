@@ -112,7 +112,7 @@ const ShoppingCard_1 = ({
 				</div>
 
 				<footer
-					className={`d-flex justify-content-around border-0 pt-0 pb-3 ${s.footer}`}
+					className={`border-0 pt-0 pb-3 ${s.footer}`}
 				>
 					<span className={`${s.total_sum}`}>ИТОГО: {ordersAmount} грн</span>
 					{(step2 === "delivery")

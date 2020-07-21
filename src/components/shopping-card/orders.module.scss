@@ -17,6 +17,10 @@
 		}
 	}
 	.order_item_name {
+		padding-left: .5em;
+		@media screen and (max-width: 500px) {
+			font-size: .9em;
+		}
 	}
 	.order_item_count_control {
 		display: flex;
@@ -26,6 +30,11 @@
 		}
 	}
 	.order_item_price {
+		padding-left: .3em;
+		@media screen and (max-width: 500px) {
+			font-size: .9em;
+			text-align: center;
+		}
 	}
 	.order_item_remove {
 		background-color: #ffed00;
@@ -55,6 +64,7 @@
 	color: #ffed00;
 	text-align: center;
 	padding-top: 0.5em;
+	font-weight: 700;
 }
 .souces_list {
 	list-style: none;
@@ -101,6 +111,7 @@
 	color: #ffed00;
 	text-align: center;
 	padding: 0.5em;
+	font-weight: 700;
 }
 .arrow {
 	color: #ffed00;
@@ -121,6 +132,7 @@
 	justify-items: center;
 	overflow-x: hidden;
 	width: 100%;
+
 	li {
 		width: 100%;
 		display: grid;
@@ -146,6 +158,9 @@
 		}
 		.rec_price {
 			color: #fff;
+		}
+		@media screen and (max-width: 390px) {
+			width: calc(100vw - 6em);
 		}
 	}
 }

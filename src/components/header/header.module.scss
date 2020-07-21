@@ -19,7 +19,7 @@
 		}
 		.navbar_toggler {
 			border: 1px solid #ffed00;
-			padding-bottom: 0.4em;
+			padding-bottom: 0.3em;
 			margin-right: .8em;
 			span {
 				display: none;
@@ -27,6 +27,9 @@
 			&::before {
 				content: "\2630";
 				color: #ffed00;
+			}
+			&:focus {
+				outline: none;
 			}
 		}
 		ul {
@@ -60,6 +63,10 @@
 					justify-content: flex-end;
 					button {
 						width: fit-content;
+					}
+					@media screen and (max-width: 992px) {
+						justify-content: center;
+						padding-bottom: 1em;
 					}
 				}
 			}
@@ -223,13 +230,14 @@
 .header_categories_block {
 	max-width: 1667px;
 	margin: 0 auto;
+	padding-right: 1em;
 	nav {
 		padding-left: 0;
 		padding-right: 0;
 		overflow-x: hidden;
 		@media screen and (max-width: 999px) {
-			padding-left: 1em;
-			padding-right: 1em;
+			padding-left: .5em;
+			padding-right: 0;
 		}
 		.navbar_brand {
 			display: none;
@@ -245,6 +253,9 @@
 				content: "\2630";
 				color: #000;
 			}
+			&:focus {
+				outline: none;
+			}
 		}
 		ul {
 			padding: 1.5em 0 1em 0;
@@ -258,6 +269,19 @@
 				img {
 					height: 4em;
 					margin-right: 0.3em;
+					@media screen and (max-width: 1600px) {
+						height: 3em;
+					}
+					@media screen and (max-width: 1340px) {
+						height: 2.7em;
+					}
+					@media screen and (max-width: 1250px) {
+						height: 2.5em;
+					}
+					@media screen and (max-width: 1180px) {
+						height: 4em;
+						margin-right: 2em;
+					}
 				}
 				a {
 					text-decoration: none;
@@ -268,6 +292,15 @@
 						font-size: 18px;
 						font-weight: 700;
 						padding-bottom: 5px;
+						@media screen and (max-width: 1600px) {
+							font-size: 16px;
+						}
+						@media screen and (max-width: 1340px) {
+							font-size: 15px;
+						}
+						@media screen and (max-width: 1180px) {
+							font-size: 18px;
+						}
 					}
 				}
 				.activeLink {
@@ -275,18 +308,29 @@
 						border-bottom: 2px solid #3c3c3b;
 					}
 				}
-				@media screen and (max-width: 1024px) {
+				@media screen and (max-width: 1180px) {
 					padding: 0.5em;
-					&:nth-child(even) {
+					justify-content: flex-start;
+					justify-items: flex-start;
+					//&:nth-child(even) {
 						a {
-							display: flex;
-							align-items: center;
+							display: grid;
+							grid-template-columns: 1fr 2fr;
+							//align-items: center;
+							width: 100%;
+							max-width: 400px;
+							margin: 0 auto;
 							img {
-								order: 1;
-								margin: 0 0 0 0.3em;
+								//order: 1;
+								margin-left: 0.3em;
+								@media screen and (max-width: 1180px) {
+									margin-left: 0;
+									//flex-basis: 50%;
+									//margin-right: 0;
+								}
 							}
 						}
-					}
+					//}
 				}
 			}
 		}
@@ -299,4 +343,10 @@
 			}
 		}
 	}
+}
+
+.collapse {
+	background-color: #1b1b1a;
+	width: calc(100vw + 1em);
+	margin-left: -1em;
 }

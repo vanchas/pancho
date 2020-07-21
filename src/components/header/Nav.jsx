@@ -21,33 +21,33 @@ const NavComponent = props => {
   const toggle = () => setIsOpen(!isOpen);
 
   return (
-    <Navbar color="" expand="lg" className="py-1">
+    <Navbar color="" expand="lg" className="py-1" style={{zIndex: '1'}}>
       <NavbarBrand href="tel:+0950001195" className={s.navbar_brand}>
         <img src={Phone} alt="" />
         <span className="btn text-light">095-000-11-95</span>
       </NavbarBrand >
       <NavbarToggler className={s.navbar_toggler} onClick={toggle} />
-      <Collapse isOpen={isOpen} navbar>
+      <Collapse isOpen={isOpen} navbar className={s.collapse} >
         <Nav className="mr-auto" navbar>
           <NavItem>
-            <NavLink href="/about" className={router.pathname === '/about' ? s.activeLink : 'font-weight-bold'}>О компании Панчо</NavLink>
+            <NavLink onClick={toggle} href="/about" className={router.pathname === '/about' ? s.activeLink : 'font-weight-bold'}>О компании Панчо</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="/delivery" className={router.pathname === '/delivery' ? s.activeLink : 'font-weight-bold'}>Доставка и оплата</NavLink>
+            <NavLink onClick={toggle} href="/delivery" className={router.pathname === '/delivery' ? s.activeLink : 'font-weight-bold'}>Доставка и оплата</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="/discounts" className={router.pathname === '/discounts' ? s.activeLink : 'font-weight-bold'}>Акции</NavLink>
+            <NavLink onClick={toggle} href="/discounts" className={router.pathname === '/discounts' ? s.activeLink : 'font-weight-bold'}>Акции</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="/bonus" className={router.pathname === '/bonus' ? s.activeLink : 'font-weight-bold'}>Бонусная программа</NavLink>
+            <NavLink onClick={toggle} href="/bonus" className={router.pathname === '/bonus' ? s.activeLink : 'font-weight-bold'}>Бонусная программа</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="/reviews" className={router.pathname === '/reviews' ? s.activeLink : 'font-weight-bold'}>Отзывы</NavLink>
+            <NavLink onClick={toggle} href="/reviews" className={router.pathname === '/reviews' ? s.activeLink : 'font-weight-bold'}>Отзывы</NavLink>
           </NavItem>
           <NavItem>
-            <NavLink href="/contacts" className={router.pathname === '/contacts' ? s.activeLink : 'font-weight-bold'}>Контакты</NavLink>
+            <NavLink onClick={toggle} href="/contacts" className={router.pathname === '/contacts' ? s.activeLink : 'font-weight-bold'}>Контакты</NavLink>
           </NavItem>
-          <NavItem className={s.login_nav_item}>
+          <NavItem onClick={toggle} className={s.login_nav_item}>
             <LoginModal buttonLabel="Войти" active={router.pathname === '/cabinet' ? true : false} />
           </NavItem>
         </Nav>

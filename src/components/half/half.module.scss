@@ -11,6 +11,7 @@
 }
 
 .half_page_heading {
+	padding: 0 1em;
 	max-width: 1667px;
 	margin: 1em auto 1em auto;
 	text-align: center;
@@ -49,11 +50,12 @@
 	max-width: 1667px;
 	margin: 0 auto;
 	display: grid;
-	grid-gap: 1em;
+	gap: 1em;
 	grid-template-columns: 1fr 37em 1fr;
 	padding: 0 0.5em;
 	@media screen and (max-width: 700px) {
 		grid-template-columns: 0 1fr 0;
+		gap: .5em;
 	}
 }
 
@@ -98,8 +100,6 @@
 
 // constructor
 .pizza_constructor {
-	//max-width: 1667px;
-	//margin: 0 auto;
 	background-color: #ededed;
 	border-radius: 1.5em;
 	position: relative;
@@ -113,7 +113,7 @@
 
 	.diameter_image {
 		position: absolute;
-		top: 2em;
+		top: 1.5em;
 		left: 2em;
 	}
 
@@ -138,7 +138,7 @@
 				height: 25em;
 				@media screen and (max-width: 700px) {
 					height: 75vw;
-					transform: translateX(6%);
+					transform: translateX(3%);
 				}
 			}
 			span {
@@ -168,6 +168,12 @@
 				img {
 					margin: 0 0 0 0.5em;
 				}
+				@media screen and (max-width: 700px) {
+					display: grid;
+					span {
+						height: 1em;
+					}
+				}
 			}
 			p {
 				line-height: 1.5em;
@@ -181,7 +187,7 @@
 		.right_half_pizza_image {
 			padding: 3em 0 0 0;
 			img {
-				transform: translateX(-52%);
+				transform: translateX(-54%);
 				height: 25em;
 				@media screen and (max-width: 700px) {
 					height: 75vw;
@@ -214,6 +220,13 @@
 				font-weight: 600;
 				img {
 					margin: 0 0.5em 0 0;
+				}
+				@media screen and (max-width: 700px) {
+					display: grid;
+					span {
+						height: 1em;
+						order: 1;
+					}
 				}
 			}
 			p {
@@ -255,6 +268,13 @@
 		transform: translate(-28%, -45%);
 		&:focus {
 			outline: none;
+		}
+	}
+	@media screen and (max-width: 700px) {
+		justify-self: center;
+		padding: 0.3em 0.6em 0.3em 0.6em;
+		img {
+			display: none;
 		}
 	}
 	&:focus {

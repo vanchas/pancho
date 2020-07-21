@@ -45,6 +45,7 @@ export default function HalfPizzaConstructor({ rightHalfPizza, leftHalfPizza, pi
         {leftHalfPizza.name
           ? <div className={`text-left ${s.left_half_pizza_info}`}>
             <h5>{leftHalfPizza.name}
+              <span>
               <img src={Green} alt="" style={leftHalfPizza.green ? { display: 'inline-block' } : { display: 'none' }} id="vegetarian" />
               <Tooltip placement="top" style={{ backgroundColor: '#111' }}
                        isOpen={tooltipVeganLeft}
@@ -53,8 +54,7 @@ export default function HalfPizzaConstructor({ rightHalfPizza, leftHalfPizza, pi
               <Tooltip placement="top" style={{ backgroundColor: '#111' }}
                        isOpen={tooltipHotLeft}
                        target="hot" toggle={() => setTooltipHotLeft(!tooltipHotLeft)}>Острая</Tooltip>
-              {/*<img src={Green} alt="" style={leftHalfPizza.green ? { opacity: '1' } : { opacity: '0.3' }} />*/}
-              {/*<img src={Pepper} alt="" style={leftHalfPizza.hot ? { opacity: '1' } : { opacity: '0.3' }} />*/}
+              </span>
             </h5>
             <p>{leftHalfPizza.description}</p>
           </div>
@@ -85,6 +85,7 @@ export default function HalfPizzaConstructor({ rightHalfPizza, leftHalfPizza, pi
         {rightHalfPizza.name
           ? <div className={`text-right ${s.right_half_pizza_info}`}>
             <h5>
+              <span>
               <img src={Green} alt="" style={rightHalfPizza.green ? { display: 'inline-block' } : { display: 'none' }} id="vegetarian" />
               <Tooltip placement="top" style={{ backgroundColor: '#111' }}
                        isOpen={tooltipVeganRight}
@@ -93,8 +94,7 @@ export default function HalfPizzaConstructor({ rightHalfPizza, leftHalfPizza, pi
               <Tooltip placement="top" style={{ backgroundColor: '#111' }}
                        isOpen={tooltipHotRight}
                        target="hot" toggle={() => setTooltipHotRight(!tooltipHotRight)}>Острая</Tooltip>
-              {/*<img src={Green} alt="" style={rightHalfPizza.green ? { opacity: '1' } : { opacity: '0.3' }} />*/}
-              {/*<img src={Pepper} alt="" style={rightHalfPizza.hot ? { opacity: '1' } : { opacity: '0.3' }} />*/}
+                </span>
               {rightHalfPizza.name}
             </h5>
             <p>{rightHalfPizza.description}</p>

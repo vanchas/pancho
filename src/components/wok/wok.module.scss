@@ -1,6 +1,11 @@
 .wok_page {
+	padding-right: 1em;
+	@media screen and (max-width: 720px) {
+		padding-right: 0;
+	}
 	.wok_list_heading {
 		margin: 2em auto 2em auto;
+		padding: 0 .5em;
 		text-align: center;
 		width: fit-content;
 		position: relative;
@@ -38,26 +43,32 @@
 	list-style: none;
 	padding: 0;
 	display: grid;
-	gap: 90px;
+	row-gap: 1em;
+	justify-content: space-between;
+	justify-items: center;
 	grid-template-columns: repeat(4, 1fr);
-	@media screen and (max-width: 1240px) {
+	li {
+		margin: 0 auto;
+	}
+	@media screen and (max-width: 1550px) {
 		grid-template-columns: repeat(3, 1fr);
 	}
-	@media screen and (max-width: 900px) {
+	@media screen and (max-width: 1160px) {
 		grid-template-columns: repeat(2, 1fr);
 	}
-	@media screen and (max-width: 600px) {
+	@media screen and (max-width: 720px) {
 		grid-template-columns: repeat(1, 1fr);
 	}
 }
 
 .card {
 	max-width: 22em;
-	padding: 0.5em;
+	padding: 1em;
 	.wok_image {
 		//height: 17em;
 		//width: auto;
-		width: 354px;
+		max-width: 354px;
+		width: 100%;
 		margin: 0 auto;
 	}
 
