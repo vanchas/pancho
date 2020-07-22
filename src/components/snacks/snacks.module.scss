@@ -65,6 +65,9 @@
 	display: grid;
 	max-width: 22em;
 	padding: 1em;
+	@media screen and (max-width: 500px) {
+		max-width: 100%;
+	}
 }
 .snack_image {
 	padding-bottom: 1em;

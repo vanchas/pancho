@@ -20,7 +20,7 @@ export default function StocksItem({ discount, index }) {
       <h4>{discount.title}</h4>
       <p>{discount.description.split('~~')[0]} {!showMore && '...'}</p>
       <p className={`full-text${index}`}>{discount.description.split('~~')[1]}</p>
-      <span onClick={showText}><u>
+      <span onClick={showText} className={`mr-3`}><u>
         {showMore ? 'Свернуть' : 'Подробнее...'}
       </u></span>
     </li>

@@ -70,6 +70,9 @@
 	padding: 1em;
 	display: grid;
 	align-content: space-between;
+	@media screen and (max-width: 500px) {
+		max-width: 100%;
+	}
 }
 .drink_image {
 	padding-bottom: 1em;

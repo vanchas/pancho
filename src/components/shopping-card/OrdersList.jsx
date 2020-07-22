@@ -11,7 +11,7 @@ export default function OrdersList({
 }) {
 	return (
 		<ul className={s.orders_list}>
-			{orders.length &&
+			{orders && orders.length ?
 				orders.map((o, i) => (
 					<OrderItem
 						key={i}
@@ -21,7 +21,7 @@ export default function OrdersList({
 						incrementOrderItem={incrementOrderItem}
 						decrementOrderItem={decrementOrderItem}
 					/>
-				))}
+				)) : null}
 		</ul>
 	);
 }

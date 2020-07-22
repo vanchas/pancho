@@ -3,8 +3,11 @@
 	margin: 0 auto;
 	padding-right: 1em;
 	min-height: 40em;
+	height: fit-content;
+	//min-height: 100vh;
 	@media screen and (max-width: 700px) {
-		min-height: 90em;
+		min-height: 105rem;
+		height: fit-content;
 		padding: 0;
 	}
 }
@@ -77,10 +80,8 @@
 	span {
 		justify-self: end;
 		cursor: pointer;
-		&:hover {
-			transition: 0.3s;
-			font-weight: 600;
-		}
+		//padding-right: 1em;
+		font-weight: 600;
 	}
 	@media screen and (max-width: 700px) {
 		text-align: center;

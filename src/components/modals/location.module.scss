@@ -1,12 +1,14 @@
 .modal {
 	position: absolute;
 	top: 18%;
-	right: 40%;
+	left: 50%;
+	transform: translateX(-50%);
 	background-color: #fafafa;
 	border-radius: 1em;
 	padding: 1em;
 	box-shadow: 0 0 5px 2px #ccc;
 	h4 {
+		white-space: nowrap;
 		font-weight: 600;
 		text-align: center;
 	}

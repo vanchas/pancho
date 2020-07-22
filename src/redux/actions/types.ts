@@ -15,7 +15,6 @@ export const GET_SETS: string = 'GET_SETS';
 export const GET_DESSERTS: string = 'GET_DESSERTS';
 
 // user
-export const GET_TRANSACTONS: string = 'GET_TRANSACTONS';
 export const GET_ADDRESSES: string = 'GET_ADDRESSES';
 export const GET_BONUSES: string = 'GET_BONUSES';
 export const ADD_REVIEW: string = 'ADD_REVIEW';

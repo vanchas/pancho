@@ -24,11 +24,11 @@ export const history = [
     id: Date.now(),
     address: 'Green Streen 123 / 321',
     phone: '123654789',
-    amount: 447,
+    amount: 477,
     items: [
-      { hot: false, green: false, description: 'Томатный соус, томаты, увеличенная порция сыра моцарелла, орегано', name: 'Margarita', bigImage: b1, smallImage: p1, size: 30, price: 149, counter: 1 },
-      { hot: false, green: false, description: 'Томатный соус, томаты, увеличенная порция сыра моцарелла, орегано', name: 'Margarita', bigImage: b1, smallImage: p1, size: 30, price: 149, counter: 1 },
-      { hot: false, green: false, description: 'Томатный соус, томаты, увеличенная порция сыра моцарелла, орегано', name: 'Margarita', bigImage: b1, smallImage: p1, size: 30, price: 149, counter: 1 }
+      { orderId: Date.now(), counter: 1, weight: 380, id: 1, hot: false, green: false, description: 'Томатный соус, томаты, увеличенная порция сыра моцарелла, орегано', name: 'Margarita', bigImage: b1, smallImage: p1, size: 40, price: 229 },
+      { orderId: Date.now() + 1, counter: 1,  weight: 380,id: 2, hot: true, green: true, description: 'Томатный соус, томаты, увеличенная порция сыра моцарелла, орегано', name: 'Rukola', bigImage: b2, smallImage: p2, size: 30, price: 149 },
+      { orderId: Date.now() + 2, counter: 1,  weight: 380,id: 3, hot: true, green: false, description: 'Томатный соус, томаты, увеличенная порция сыра моцарелла, орегано', name: 'Pepperoni', bigImage: b3, smallImage: p3, size: 25, price: 99 },
     ]
   },
   {
@@ -37,11 +37,11 @@ export const history = [
     id: Date.now() + 1,
     address: 'Green Streen 123 / 321',
     phone: '123654789',
-    amount: 447,
+    amount: 477,
     items: [
-      { hot: false, green: false, description: 'Томатный соус, томаты, увеличенная порция сыра моцарелла, орегано', name: 'Margarita', bigImage: b1, smallImage: p1, size: 30, price: 149, counter: 1 },
-      { hot: false, green: false, description: 'Томатный соус, томаты, увеличенная порция сыра моцарелла, орегано', name: 'Margarita', bigImage: b1, smallImage: p1, size: 30, price: 149, counter: 1 },
-      { hot: false, green: false, description: 'Томатный соус, томаты, увеличенная порция сыра моцарелла, орегано', name: 'Margarita', bigImage: b1, smallImage: p1, size: 30, price: 149, counter: 1 }
+      { orderId: Date.now() + 4, counter: 1, weight: 380, id: 1, hot: false, green: false, description: 'Томатный соус, томаты, увеличенная порция сыра моцарелла, орегано', name: 'Margarita', bigImage: b1, smallImage: p1, size: 40, price: 229 },
+      { orderId: Date.now() + 5, counter: 1, weight: 380,id: 2, hot: true, green: true, description: 'Томатный соус, томаты, увеличенная порция сыра моцарелла, орегано', name: 'Rukola', bigImage: b2, smallImage: p2, size: 30, price: 149 },
+      { orderId: Date.now() + 6, counter: 1, weight: 380,id: 3, hot: true, green: false, description: 'Томатный соус, томаты, увеличенная порция сыра моцарелла, орегано', name: 'Pepperoni', bigImage: b3, smallImage: p3, size: 25, price: 99 },
     ]
   }
 ];

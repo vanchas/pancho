@@ -1,25 +1,71 @@
 .search_control {
-	max-width: 1667px;
-	margin: 0 auto;
-	width: 100%;
-	display: flex;
-	justify-content: flex-end;
-	padding-right: 3em;
-	div {
-		display: flex;
-		align-items: center;
-		padding: 2em 1em;
-		img:nth-child(1) {
-			width: 2em;
-		}
-		img:nth-child(2) {
-			width: 3.5em;
-		}
-		span {
-			padding-left: 0.7em;
-		}
-	}
-	@media screen and (max-width: 600px) {
-		padding-right: 1em;
-	}
+  max-width: 1667px;
+  margin: 0 auto;
+  width: 100%;
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: end;
+  padding: 1em 3em 1em 1em;
+  div {
+    position: relative;
+  }
+  @media screen and (max-width: 450px) {
+    grid-auto-flow: row;
+    justify-content: center;
+    padding: 1em 1em 1em 5em;
+  }
+  .input {
+    display: block;
+    line-height: 3em;
+    border: none;
+    width: 10em;
+    margin-right: 4em;
+    border-bottom: 2px solid #fff;
+    &:focus {
+      outline: none;
+      border-bottom: 2px solid #888;
+    }
+    @media screen and (max-width: 450px) {
+      margin-right: 0;
+    }
+  }
+  .input_image {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-120%, -50%);
+    height: 43px;
+    display: block;
+    @media screen and (max-width: 450px) {
+      height: 40px;
+    }
+  }
+
+  .select {
+    display: block;
+    height: 3em;
+    border: none;
+    min-width: 8em;
+    background: none;
+    border: none;
+    color: #777;
+    &:focus {
+      outline: none;
+      //border-bottom: 2px solid #888;
+    }
+    @media screen and (max-width: 450px) {
+      width: 100%;
+    }
+  }
+  .select_image {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(-120%, -50%);
+    width: 50px;
+    display: block;
+    @media screen and (max-width: 450px) {
+      width: 40px;
+    }
+  }
 }

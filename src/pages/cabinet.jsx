@@ -5,18 +5,16 @@ import UserAbout from '../components/cabinet/UserAbout'
 import UserHistory from '../components/cabinet/UserHistory'
 import UserBonus from '../components/cabinet/UserBonus'
 import UserAddress from '../components/cabinet/UserAddress'
-import { getTransactions, getAddress, getBonuses, getHistory, repeatOrder } from '../redux/actions/actions'
+import { getAddress, getBonuses, repeatOrder } from '../redux/actions/actions'
 import { connect } from 'react-redux'
 
-function Cabinet({ getBonuses, getAddress, getTransactions, transactions, addresses, bonuses, history, getHistory, repeatOrder }) {
+function Cabinet({ getBonuses, getAddress, addresses, bonuses, repeatOrder }) {
   const [component, setComponent] = useState(<UserAbout />);
   const [ref, setRef] = useState('about');
 
   useEffect(() => {
-    getTransactions();
     getAddress();
     getBonuses();
-    getHistory();
   }, []);
 
   const setVisible = ref => {
@@ -24,7 +22,7 @@ function Cabinet({ getBonuses, getAddress, getTransactions, transactions, addres
     if (ref === 'about') {
       setComponent(<UserAbout />);
     } else if (ref === 'history') {
-      setComponent(<UserHistory transactions={transactions} history={history} repeatOrder={repeatOrder} />);
+      setComponent(<UserHistory repeatOrder={repeatOrder} />);
     } else if (ref === 'address') {
       setComponent(<UserAddress addresses={addresses} />);
     } else if (ref === 'bonus') {
@@ -44,18 +42,15 @@ function Cabinet({ getBonuses, getAddress, getTransactions, transactions, addres
 }
 
 const mapStateToProps = state => {
-  const transactions = state.user.transactions;
-  const addresses = state.user.addresses;
-  const bonuses = state.user.bonuses;
-  const history = state.user.history;
-  return { transactions, addresses, bonuses, history }
+ return {
+    addresses: state.user.addresses,
+    bonuses: state.user.bonuses,
+ }
 }
 
 const mapDispatchToProps = {
-  getTransactions,
   getAddress,
   getBonuses,
-  getHistory,
   repeatOrder
 }
 

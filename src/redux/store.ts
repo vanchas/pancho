@@ -16,20 +16,12 @@ const store = createStore(
 store.subscribe(() => {
   saveState({
     user: {
-      // transactions: store.getState().user.transactions,
-      // addresses: store.getState().user.addresses,
-      // bonuses: store.getState().user.bonuses,
-      // reviews: store.getState().user.reviews,
-      // history: store.getState().user.history,
-      // deliveryShoppingCard: store.getState().user.deliveryShoppingCard,
-      // pickupShoppingCard: store.getState().user.pickupShoppingCard,
-      // currentLocation: store.getState().user.currentLocation,
-
       ordersAmount: store.getState().user.ordersAmount,
       orders: store.getState().user.orders
     }
   });
   console.log('updated state: ', store.getState());
+  // console.log('local: ', persistedState);
 });
 
 store.dispatch(setPersistedState());

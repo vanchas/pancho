@@ -1,5 +1,4 @@
 import {
-  GET_TRANSACTONS,
   GET_ADDRESSES,
   GET_BONUSES,
   GET_REVIEWS,
@@ -12,18 +11,29 @@ import {
   PICKUP_SHOPPING_CARD,
   GET_CURRENT_LOCATION,
   SET_PESISTED_STATE,
-  ADD_REVIEW
+  ADD_REVIEW, REPEAT_ORDER
 } from '../actions/types'
 import { loadState } from '../localStorage';
 
-const initialState = {
-  transactions: null,
+interface IState {
+  addresses: any,
+  bonuses: any,
+  reviews: any[],
+  orders: any[],
+  ordersAmount: number,
+  history: any[],
+  deliveryShoppingCard: boolean,
+  pickupShoppingCard: boolean,
+  currentLocation: any
+};
+
+const initialState: IState = {
   addresses: null,
   bonuses: null,
   reviews: [],
   orders: [],
   ordersAmount: 0,
-  history: null,
+  history: [],
   deliveryShoppingCard: false,
   pickupShoppingCard: false,
   currentLocation: null
@@ -31,8 +41,27 @@ const initialState = {
 
 export const userReducer = (state = initialState, action: any) => {
   switch (action.type) {
-    case GET_TRANSACTONS:
-      return { ...state, transactions: action.payload }
+
+    case REPEAT_ORDER:
+      let repeatOrders: any[] = []
+      let repeatOrdersAmount: number = state.ordersAmount
+      let historyAfterRepeat: any[] = state.history
+
+      if (state.history.length) {
+        state.history.map((item: any) => {
+          if (item.id === action.payload) {
+            repeatOrdersAmount += item.amount
+            historyAfterRepeat.push(item)
+            return repeatOrders = [...state.orders, ...item.items]
+          }
+        })
+      }
+      return {
+        ...state,
+        orders: repeatOrders,
+        ordersAmount: repeatOrdersAmount,
+        history: historyAfterRepeat
+      }
 
     case GET_CURRENT_LOCATION:
       return { ...state, currentLocation: action.payload }
@@ -62,21 +91,21 @@ export const userReducer = (state = initialState, action: any) => {
     case REMOVE_AN_ORDER_ITEM:
       let newOrdersAmount: number = state.ordersAmount;
       state.orders.forEach((o: any) => {
-        if (o.id === action.payload) {
+        if (o.orderId === action.payload) {
           return newOrdersAmount = state.ordersAmount - (+o.price * +o.counter);
         }
       })
       return {
         ...state,
-        orders: state.orders.filter((o: any) => +o.id != +action.payload),
-        ordersAmount: newOrdersAmount
+        orders: state.orders.filter((o: any) => +o.orderId != +action.payload),
+        ordersAmount: newOrdersAmount >= 0 ? newOrdersAmount : 0
       }
 
     case INCREMENT_ORDER_ITEM:
       let incrementedOrders = state.orders;
       let incrementedOrdersAmount = state.ordersAmount;
       incrementedOrders.forEach((order: any) => {
-        if (order.id === action.payload) {
+        if (order.orderId === action.payload) {
           incrementedOrdersAmount += +order.price;
           order.counter += 1;
         }
@@ -91,7 +120,7 @@ export const userReducer = (state = initialState, action: any) => {
       let decrementedOrders = state.orders;
       let decrementedOrdersAmount = state.ordersAmount;
       decrementedOrders.forEach((order: any) => {
-        if (order.id === action.payload) {
+        if (order.orderId === action.payload) {
           decrementedOrdersAmount -= +order.price;
           order.counter -= 1;
         }

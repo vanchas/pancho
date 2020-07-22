@@ -2,6 +2,9 @@
 	max-width: 1667px;
 	margin: 0 auto;
 	padding-right: 1em;
+	@media screen and (max-width: 720px) {
+		padding-right: 0;
+	}
 }
 .delivery_page_heading {
 	margin: 2em auto 2em auto;
@@ -68,7 +71,7 @@
 		}
 		@media screen and (max-width: 767px) {
 			grid-template-columns: 1fr;
-			padding-right: 0;
+			//padding-right: 0;
 		}
 		li {
 			border: 3px solid #999;

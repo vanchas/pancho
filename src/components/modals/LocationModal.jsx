@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import s from './location.module.scss'
 
 export default function LocationModal({ city }) {
-  const [show, setShow] = useState(false);
+  const [show, setShow] = useState(true);
 
   useEffect(() => {
     setTimeout(() => {

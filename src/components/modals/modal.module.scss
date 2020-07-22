@@ -225,7 +225,7 @@ input.bg_dark {
 	font-weight: 600;
 	i {
 		display: inline-block;
-		transform: translate(-10%, 15%) rotate(180deg) scale(1.5);
+		transform: translate(-35%, -1%) rotate(180deg) scale(1.5);
 		font-style: normal;
 	}
 }
@@ -386,7 +386,7 @@ input.bg_dark {
 		font-size: 2em;
 		font-weight: 700;
 		color: #ffed00;
-		transform: translate(70%, -70%) rotate(90deg);
+		transform: translate(85%, -75%) rotate(90deg);
 		position: absolute;
 		top: 0;
 		left: 50%;
@@ -396,7 +396,7 @@ input.bg_dark {
 		font-size: 2em;
 		font-weight: 700;
 		color: #ffed00;
-		transform: translate(-0%, 70%) rotate(-90deg);
+		transform: translate(45%, 80%) rotate(-90deg);
 		position: absolute;
 		bottom: 0;
 		left: 50%;
@@ -405,7 +405,7 @@ input.bg_dark {
 		width: 100%;
 		position: relative;
 		.month {
-			padding-left: 1em;
+			padding-left: 1.5em;
 			text-transform: uppercase;
 			display: block;
 			width: 100%;

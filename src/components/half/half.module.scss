@@ -76,6 +76,7 @@
 				display: grid;
 				border: 2px solid #fff;
 				justify-content: center;
+				justify-items: center;
 				transition: .5s;
 				&:hover {
 					transition: .5s;
@@ -138,7 +139,7 @@
 				height: 25em;
 				@media screen and (max-width: 700px) {
 					height: 75vw;
-					transform: translateX(3%);
+					transform: translateX(5%);
 				}
 			}
 			span {
@@ -293,6 +294,14 @@
 
 .mobile_pizza_list {
 	display: none;
+	li {
+		.pizza_card {
+			img {
+				margin: 0 auto;
+				display: block;
+			}
+		}
+	}
 	@media screen and (max-width: 700px) {
 		display: block;
 		z-index: 1;

@@ -28,7 +28,7 @@ const NavComponent = props => {
       </NavbarBrand >
       <NavbarToggler className={s.navbar_toggler} onClick={toggle} />
       <Collapse isOpen={isOpen} navbar className={s.collapse} >
-        <Nav className="mr-auto" navbar>
+        <Nav className={`mr-auto ${s.nav_list}`} navbar>
           <NavItem>
             <NavLink onClick={toggle} href="/about" className={router.pathname === '/about' ? s.activeLink : 'font-weight-bold'}>О компании Панчо</NavLink>
           </NavItem>

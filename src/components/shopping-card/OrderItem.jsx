@@ -3,7 +3,6 @@ import s from "./orders.module.scss";
 import Plus from '../../assets/images/basket/plus.png';
 import Minus from '../../assets/images/basket/minus.png';
 import Remove from '../../assets/images/basket/remove.png';
-import $ from 'jquery';
 
 export default function OrderItem({
   order,
@@ -28,7 +27,7 @@ export default function OrderItem({
         <div className={s.order_item_count_control}>
           <div className={s.minus} onClick={() => {
             if (order.counter > 1) {
-              decrementOrderItem(order.id)
+              decrementOrderItem(order.orderId)
               setCount(count-- - 1)
             }
           }}>
@@ -36,7 +35,7 @@ export default function OrderItem({
           </div>
           <span className={s.count_number}>{count}</span>
           <div className={s.plus} onClick={(e) => {
-            incrementOrderItem(order.id)
+            incrementOrderItem(order.orderId)
             setCount(count++ + 1)
           }}>
             <img src={Plus} alt="+" />
@@ -45,7 +44,9 @@ export default function OrderItem({
         <span className={s.order_item_price}>{order.price} грн</span>
         <span
           className={s.order_item_remove}
-          onClick={() => removeAnOrderItem(order.id)}
+          onClick={() => {
+            removeAnOrderItem(order.orderId)
+          }}
         >
           <img src={Remove} alt="x" />
         </span>
