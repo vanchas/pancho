@@ -31,7 +31,7 @@ import YelHalf from '../../assets/images/yellow-categories/half.png';
 import YelSalads from '../../assets/images/yellow-categories/salad.png';
 import YelSets from '../../assets/images/yellow-categories/set.png';
 import YelWok from '../../assets/images/yellow-categories/wok.png';
-import YelSnaks from '../../assets/images/yellow-categories/snack.png';
+import YelSnacks from '../../assets/images/yellow-categories/snack.png';
 
 export default function Categories(props) {
   const router = useRouter();
@@ -42,7 +42,7 @@ export default function Categories(props) {
 
   const linkClickHandler = (ref) => {
       setActiveLink(ref)
-      toggle()
+      if (window.innerWidth <= 1200) toggle()
   }
 
   return (
@@ -78,7 +78,7 @@ export default function Categories(props) {
           <NavItem>
             <NavLink href="/snacks" onClick={() => linkClickHandler('snacks')} className={router.pathname === '/snacks' ? s.activeLink : null}>
               {router.pathname === '/snacks'
-                ? <img src={YelSnaks} alt="" />
+                ? <img src={YelSnacks} alt="" />
                 : <img src={Snack} alt="" />}
              <span className={`text-center`}> ЗАКУСКИ</span></NavLink>
           </NavItem>
@@ -128,10 +128,6 @@ export default function Categories(props) {
       </Collapse>
     </Navbar>
   )
-}
-
-Categories.getInitialProps = async ({ Component, ctx }) => {
-  return {}
 }
 
 
