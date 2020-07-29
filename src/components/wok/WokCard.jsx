@@ -8,6 +8,7 @@ export default function WokCard({ wok, addAnOrderItem }) {
 
   return (
     <div className={`${s.card} card border-0`}>
+        {wok && <>
       <img className={s.wok_image} src={wok.image} alt={wok.name} />
       <div className={s.card_body}>
         <h5 className={`${s.card_title}`}>
@@ -26,6 +27,7 @@ export default function WokCard({ wok, addAnOrderItem }) {
           <span className="font-weight-bold h5">{wok.price} грн</span>
         </div>
       </div>
+      </>}
     </div>
   )
 }

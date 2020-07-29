@@ -10,14 +10,16 @@ export default function DrinksItem({ drink, addAnOrderItem }) {
       </div>
       <div className={s.drink_info}>
         <h5 className={s.drink_name}>{drink.name}</h5>
-        <small className={s.drink_weight}>{drink.weight} л</small>
+        <small className={s.drink_weight}>{drink.weight.M ? drink.weight.M + ' л' : drink.weight + ' л'}</small>
         <p>{drink.description}</p>
         <div className={s.drink_btn}>
-          <span onClick={() => addAnOrderItem(drink)}>
+          <span onClick={() => addAnOrderItem({
+              ...drink, price: drink.price.M
+          })}>
             <img src={Basket} alt="" />
           В КОРЗИНУ</span>
         </div>
-        <span className={s.drink_price}>{drink.price} грн</span>
+        <span className={s.drink_price}>{drink.price.M ? drink.price.M : drink.price} грн</span>
       </div>
     </li>
   )

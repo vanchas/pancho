@@ -10,7 +10,7 @@ export default function SetsItem({ set, addAnOrderItem }) {
       </div>
       <div className={s.set_info}>
         <h5 className={s.set_name}>{set.name}</h5>
-        <small className={s.set_weight}>{set.weight} г</small>
+        <small className={s.set_weight}>{set.weight ? set.weight + " г" : null}</small>
         <p>{set.description}</p>
         <div className={s.set_btn}>
           <span onClick={() => addAnOrderItem(set)}>

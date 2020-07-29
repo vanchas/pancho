@@ -24,7 +24,7 @@ export default function HalfPizzaConstructor({ rightHalfPizza, leftHalfPizza, pi
 
   const completeAdOrder = () => {
     addAnOrderItem({
-      image: leftHalfPizza.smallImage,
+      image: leftHalfPizza.image,
       description: `FIRST PIZZA: ${leftHalfPizza.description}. / SECOND PIZZA: ${rightHalfPizza.description}`,
       green: null,
       hot: null,
@@ -39,7 +39,7 @@ export default function HalfPizzaConstructor({ rightHalfPizza, leftHalfPizza, pi
       <img src={Diameter} alt="diameter 40cm" className={s.diameter_image} />
       <div className={s.left_half_pizza_block}>
         <div className={s.left_half_pizza_image}>
-          <img className={s.pizza_half} src={leftHalfPizza.smallImage && leftHalfPizza.smallImage.length ? leftHalfPizza.smallImage : PizzaPlaceholder} alt="pizza" />
+          <img className={s.pizza_half} src={leftHalfPizza.image ? leftHalfPizza.image : PizzaPlaceholder} alt="pizza" />
           <span>ЛЕВАЯ ПОЛОВИНКА</span>
         </div>
         {leftHalfPizza.name
@@ -79,7 +79,7 @@ export default function HalfPizzaConstructor({ rightHalfPizza, leftHalfPizza, pi
       </div>
       <div className={s.right_half_pizza_block}>
         <div className={s.right_half_pizza_image}>
-          <img className={s.pizza_half} src={rightHalfPizza.smallImage && rightHalfPizza.smallImage.length ? rightHalfPizza.smallImage : PizzaPlaceholder} alt="pizza" />
+          <img className={s.pizza_half} src={rightHalfPizza.image ? rightHalfPizza.image : PizzaPlaceholder} alt="pizza" />
           <span>ПРАВАЯ ПОЛОВИНКА</span>
         </div>
         {rightHalfPizza.name
@@ -103,7 +103,9 @@ export default function HalfPizzaConstructor({ rightHalfPizza, leftHalfPizza, pi
 
         {leftHalfPizza.name && rightHalfPizza.name
           ? <div className={`${s.order_block}`}>
-            <span className="font-weight-bold h5 m-0 d-block pt-1">180 грн</span>
+            <span className="font-weight-bold h5 m-0 d-block pt-1">
+              {(+leftHalfPizza.price.L / 2) + (+rightHalfPizza.price.L / 2)}
+              &nbsp;грн</span>
           </div>
           : null}
 

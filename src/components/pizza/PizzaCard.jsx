@@ -32,16 +32,16 @@ export default function PizzaCard({ addAnOrderItem, pizza }) {
 
   return (
     <div className={`${s.card} card border-0`}>
-      <img className={`${s.big_pizza_image}`} src={pizza.bigImage} alt={pizza.name} />
+      <img className={`${s.big_pizza_image}`} src={pizza.image} alt={pizza.name} />
       <div className={s.card_body}>
         <h5 className={`${s.card_title}`}>
           {pizza.name}
-          <small className="text-muted">{pizza.weight}г +- 50г</small>
+          <small className="text-muted">{Object.values(pizza.weight)[activeBtn]}г +- 50г</small>
         </h5>
         <h6 className={`${s.subtitle} card-subtitle mb-2 text-muted`}>
           <span className={s.subtitle_control}>
-            <span className={s.new}>НОВИНКА</span>
-            <span className={s.hit}>ХИТ</span>
+            {pizza.new && <span className={s.new}>НОВИНКА</span>}
+            {pizza.hit && <span className={s.hit}>ХИТ</span>}
             <img src={Green} alt="" style={pizza.green ? { display: 'block' } : { display: 'none' }} id="vegetarian" />
             <Tooltip placement="top" style={{ backgroundColor: '#111' }}
               isOpen={tooltipVegan}
@@ -62,13 +62,13 @@ export default function PizzaCard({ addAnOrderItem, pizza }) {
         </h6>
         <p className={s.card_text}>{pizza.description}</p>
         <div className={s.size_select}>
-          <label className={activeBtn === 0 ? s.activeBtn : ''} >{Object.values(pizza.size)[0]} см
+          <label className={activeBtn === 0 ? s.activeBtn : ''} >{pizza.size.S} см
             <input type="radio" name="size" value="25 см" onChange={() => selectPizzaSize(0)} />
           </label>
-          <label className={activeBtn === 1 ? s.activeBtn : ''} >{Object.values(pizza.size)[1]} см
+          <label className={activeBtn === 1 ? s.activeBtn : ''} >{pizza.size.M} см
             <input type="radio" name="size" value="30 см" onChange={() => selectPizzaSize(1)} />
           </label>
-          <label className={activeBtn === 2 ? s.activeBtn : ''} >{Object.values(pizza.size)[2]} см
+          <label className={activeBtn === 2 ? s.activeBtn : ''} >{pizza.size.L} см
             <input type="radio" name="size" value="40 см" onChange={() => selectPizzaSize(2)} />
           </label>
         </div>

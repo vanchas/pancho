@@ -9,7 +9,4 @@ export const pastas = [
   { name: 'Pasta 1', description: 'Super tasty pasta with some magic components', price: 199, weight: 250, image: p1 },
   { name: 'Pasta 2', description: 'Super tasty pasta with some magic components', price: 199, weight: 250, image: p2 },
   { name: 'Pasta 3', description: 'Super tasty pasta with some magic components', price: 199, weight: 250, image: p3 },
-  { name: 'Pasta 1', description: 'Super tasty pasta with some magic components', price: 199, weight: 250, image: p1 },
-  { name: 'Pasta 2', description: 'Super tasty pasta with some magic components', price: 199, weight: 250, image: p2 },
-  { name: 'Pasta 3', description: 'Super tasty pasta with some magic components', price: 199, weight: 250, image: p3 }
 ];

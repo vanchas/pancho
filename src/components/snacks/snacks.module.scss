@@ -82,11 +82,12 @@
 }
 .snack_info {
 	display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-gap: 0.5em;
+	grid-template-columns: 49% 49%;
+	grid-gap: 2%;
 	.snack_name {
 		order: 1;
 		font-weight: 600;
+		white-space: nowrap;
 	}
 	.snack_price {
 		order: 5;

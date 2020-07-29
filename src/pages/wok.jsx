@@ -1,10 +1,17 @@
 import React, { useEffect } from 'react'
-import WokVegitableList from '../components/wok/WokVegList'
-import WokChickenList from '../components/wok/WokChickenList'
 import s from '../components/wok/wok.module.scss'
 import Billboard from '../components/billboard/Billboard'
 import { connect } from 'react-redux'
 import { getWoks, addAnOrderItem } from '../redux/actions/actions'
+import WokList from "../components/wok/WokList";
+
+const wokTypes = [
+    {title: "WOK С ОВОЩАМИ", type: 'vegetarian'},
+    {title: "WOK С КУРИЦЕЙ", type: 'chicken'},
+    {title: "WOK С ТЕЛЯТИНОЙ", type: 'beef'},
+    {title: "WOK С ЛАНГУСТИНАМИ", type: 'langust'},
+    {title: "WOK С МОРЕПРОДУКТАМИ", type: 'sea'}
+    ]
 
 function Wok({ getWoks, woks }) {
 
@@ -14,8 +21,15 @@ function Wok({ getWoks, woks }) {
     <div className={s.wok_page}>
       <Billboard />
       <div style={{ maxWidth: '1667px', margin: '0 auto' }}>
-        <WokVegitableList woks={woks} addAnOrderItem={addAnOrderItem} />
-        <WokChickenList woks={woks} addAnOrderItem={addAnOrderItem} />
+          {wokTypes.map((type, i) => (
+              <WokList
+                  key={i}
+                  woks={woks}
+                  addAnOrderItem={addAnOrderItem}
+                  title={type.title}
+                  type={type.type}
+              />
+          ))}
       </div>
     </div>
   )

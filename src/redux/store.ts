@@ -20,7 +20,7 @@ store.subscribe(() => {
       orders: store.getState().user.orders
     }
   });
-  console.log('updated state: ', store.getState());
+  // console.log('updated state: ', store.getState());
   // console.log('local: ', persistedState);
 });
 

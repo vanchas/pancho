@@ -48,11 +48,13 @@ export default function Recommendations({ drinks, addAnOrderItem }) {
                 </div>
                 <div className={s.to_basket_btn}>
                   <span onClick={(e) => {
-                    addAnOrderItem(d);
+                    addAnOrderItem({
+                      ...d, price: d.price.S
+                    });
                     $(e.target).css('backgroundColor', '#948a00');
                   }}>В КОРЗИНУ</span>
                 </div>
-                <div className={s.rec_price}>{d.price} грн</div>
+                <div className={s.rec_price}>{d.price.S} грн</div>
               </li>
             ))}
           </ul>

@@ -68,8 +68,9 @@
 
 .card {
 	max-width: 22em;
+	//height: 40em;
 	padding: 1em;
-	display: grid;
+	display: grid !important;
 	align-content: stretch;
 	@media screen and (max-width: 500px) {
 		max-width: 100%;
@@ -158,10 +159,11 @@
 }
 
 .card_text {
-	padding: 0.5em 0;
+	padding: 0.5em 0 0 0 ;
 	font-size: 17px;
 	font-weight: 300;
 	line-height: 21px;
+	height: 4.7em;
 }
 .size_select {
 	background-color: #dadada;

@@ -17,7 +17,7 @@ export default function OrderItem({
       {order ? <>
         <div className={s.order_item_image}>
           <img
-            src={order.image ? order.image : order.smallImage}
+            src={order.image}
             alt={order.name}
           />
         </div>

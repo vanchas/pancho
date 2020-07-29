@@ -10,7 +10,7 @@ export default function CombosItem({ combo, addAnOrderItem }) {
       </div>
       <div className={s.combo_info}>
         <h5 className={s.combo_name}>{combo.name}</h5>
-        <small className={s.combo_weight}>{combo.weight} г</small>
+        <small className={s.combo_weight}>{combo.weight ? combo.weight + ' г' : null}</small>
         <p>{combo.description}</p>
         <div className={s.combo_btn}>
           <span onClick={() => addAnOrderItem(combo)}>
