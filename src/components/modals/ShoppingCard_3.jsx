@@ -72,6 +72,9 @@ const ShoppingCard_3 = ({ ordersAmount, open }) => {
 
   return (
     <div className={`${s.shopping_card_3}`}>
+      <div className={s.background}
+           onClick={open} />
+
       <div className={`${s.header} border-0`}>
         ОФОРМЛЕНИЕ НА САМОВЫВОЗ
         <span onClick={open}>&#10006;</span>
