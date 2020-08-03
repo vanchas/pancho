@@ -22,7 +22,7 @@ import EyeSlash from "../../assets/images/svg/eye-slash.svg";
 const ModalExample = ({ buttonLabel, className, active }) => {
   const [inputType, setInputType] = useState(true);
   const router = useRouter();
-  const [modal, setModal] = useState(true);
+  const [modal, setModal] = useState(false);
   // login
   const [login, setLogin] = useState("");
   const [password, setPassword] = useState("");
