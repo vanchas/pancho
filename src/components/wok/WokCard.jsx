@@ -1,11 +1,10 @@
 import React from 'react'
 import s from './wok.module.scss'
 import Basket from '../../assets/images/basket/korzina-01.svg'
-import { useDispatch } from 'react-redux'
+import { connect } from "react-redux";
+import {increaseFreeSoucesCounter, addAnOrderItem} from "../../redux/actions/actions";
 
-export default function WokCard({ wok, addAnOrderItem }) {
-  const dispatch = useDispatch();
-
+function WokCard({ wok, addAnOrderItem, increaseFreeSoucesCounter }) {
   return (
     <div className={`${s.card} card border-0`}>
         {wok && <>
@@ -18,8 +17,9 @@ export default function WokCard({ wok, addAnOrderItem }) {
         <p className={s.card_text}>{wok.description}</p>
         <div className={`d-flex justify-content-between`}>
           <button className={`${s.basket} btn`}
-            onClick={() => {
-              dispatch(addAnOrderItem(wok));
+            onClick={(e) => {
+              addAnOrderItem(wok)
+              increaseFreeSoucesCounter(2)
             }} >
             <img src={Basket} alt="" />
             В КОРЗИНУ
@@ -31,3 +31,12 @@ export default function WokCard({ wok, addAnOrderItem }) {
     </div>
   )
 }
+
+const mapStateToProps = state => ({
+
+})
+const mapDispatchToProps = {
+  increaseFreeSoucesCounter,
+  addAnOrderItem
+}
+export default connect(mapStateToProps, mapDispatchToProps)(WokCard)

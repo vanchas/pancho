@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import s from './cabinet.module.scss'
-import Man from '../../assets/images/signs/man.png'
-import Woman from '../../assets/images/signs/woman.png'
+import Man from '../../assets/images/man2-01-01.svg'
+import Woman from '../../assets/images/woman-2-01-01.svg'
+import ManYellow from '../../assets/images/man1-01.svg'
+import WomanYellow from '../../assets/images/woman-1-01.svg'
 
 export default function UserAbout() {
   const [activeBtn, setActiveBtn] = useState('male');
@@ -46,11 +48,15 @@ export default function UserAbout() {
         <div className={`${s.gender} form-group`}>
           <span>Пол</span>
           <label className={activeBtn === 'male' ? s.activeBtn : ''}>
-            <img src={Man} alt="male" />
+            {activeBtn === 'male' ?
+              <img src={ManYellow} alt="male" />
+              : <img src={Man} alt="male" />}
             <input type="radio" value="male" name="gender" onChange={() => setActiveBtn('male')} />МУЖСКОЙ
           </label>
           <label className={activeBtn === 'female' ? s.activeBtn : ''}>
-            <img src={Woman} alt="female" />
+            {activeBtn === 'female' ?
+              <img src={WomanYellow} alt="female" />
+              : <img src={Woman} alt="female" />}
             <input type="radio" value="female" name="gender" onChange={() => setActiveBtn('female')} />ЖЕНСКИЙ
           </label>
         </div>

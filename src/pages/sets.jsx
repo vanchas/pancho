@@ -14,7 +14,7 @@ function Sets({ getSets, sets, addAnOrderItem }) {
   return (
     <div className={s.sets_page}>
         <Billboard />
-      <h3 className={s.sets_page_heading}>СЕТЫ</h3>
+      <h2 className={s.sets_page_heading}>СЕТЫ</h2>
       <SetsList sets={sets} addAnOrderItem={addAnOrderItem} />
     </div>
   )

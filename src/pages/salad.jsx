@@ -14,7 +14,7 @@ function Salad({ getSalads, salads, addAnOrderItem }) {
   return (
     <div className={s.salad_page}>
         <Billboard />
-      <h3 className={s.salad_page_heading}>CAЛATЫ</h3>
+      <h2 className={s.salad_page_heading}>CAЛATЫ</h2>
       <SaladList salads={salads} addAnOrderItem={addAnOrderItem} />
     </div>
   )

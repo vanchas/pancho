@@ -114,6 +114,14 @@
 				margin: 0;
 				position: relative;
 				color: #fff;
+				padding-left: 2em;
+				img {
+					width: 5em;
+					top: 50%;
+					left: 0;
+					transform: translateY(-50%);
+					position: absolute;
+				}
 				input[type="radio"] {
 					visibility: hidden;
 					position: absolute;
@@ -301,19 +309,36 @@
 
 	.amount_block {
 		display: grid;
-		display: grid;
 		justify-items: center;
 		position: relative;
 		border-bottom: 2px solid #666;
 		padding-bottom: 1em;
 		.sum_number {
-			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -115%);
-			font-size: 3.5em;
+			border: 5px solid #3c3c3b;
+			display: block;
+			width: 100%;
+			text-align: center;
+			padding: 1.5rem 2rem;
+ 			font-size: 3.5em;
 			font-weight: 500;
 			color: #3c3c3b;
+		}
+		.box {
+			position: absolute;
+			width: 90px;
+			top: 0;
+			left: 0;
+			transform: translate(-50%, 15%);
+		}
+		@media screen and (max-width: 600px) {
+			.sum_number {
+				width: 90%;
+				margin: 0 auto;
+			}
+			.box {
+				width: 70px;
+				transform: translate(-10%, 40%);
+			}
 		}
 	}
 

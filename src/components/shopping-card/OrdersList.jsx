@@ -9,6 +9,7 @@ export default function OrdersList({
 	incrementOrderItem,
 	decrementOrderItem
 }) {
+
 	return (
 		<ul className={s.orders_list}>
 			{orders && orders.length ?

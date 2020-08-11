@@ -40,17 +40,17 @@ export default function HalfPizzaConstructor({ rightHalfPizza, leftHalfPizza, pi
       <div className={s.left_half_pizza_block}>
         <div className={s.left_half_pizza_image}>
           <img className={s.pizza_half} src={leftHalfPizza.image ? leftHalfPizza.image : PizzaPlaceholder} alt="pizza" />
-          <span>ЛЕВАЯ ПОЛОВИНКА</span>
+          <span className={`py-1`}>ЛЕВАЯ ПОЛОВИНКА</span>
         </div>
         {leftHalfPizza.name
           ? <div className={`text-left ${s.left_half_pizza_info}`}>
             <h5>{leftHalfPizza.name}
               <span>
-              <img src={Green} alt="" style={leftHalfPizza.green ? { display: 'inline-block' } : { display: 'none' }} id="vegetarian" />
+              <img src={Green} alt="" style={leftHalfPizza.green ? { filter: 'none', opacity: '1' } : { filter: 'grayscale(1)', opacity: '0.3' }} id="vegetarian" />
               <Tooltip placement="top" style={{ backgroundColor: '#111' }}
                        isOpen={tooltipVeganLeft}
                        target="vegetarian" toggle={() => setTooltipVeganLeft(!tooltipVeganLeft)}>Вегетарианская</Tooltip>
-              <img src={Pepper} alt="" style={leftHalfPizza.hot ? { display: 'inline-block' } : { display: 'none' }} id="hot" />
+              <img src={Pepper} alt="" style={leftHalfPizza.hot ? { filter: 'none', opacity: '1' } : { filter: 'grayscale(1)', opacity: '0.2' }} id="hot" />
               <Tooltip placement="top" style={{ backgroundColor: '#111' }}
                        isOpen={tooltipHotLeft}
                        target="hot" toggle={() => setTooltipHotLeft(!tooltipHotLeft)}>Острая</Tooltip>
@@ -63,7 +63,9 @@ export default function HalfPizzaConstructor({ rightHalfPizza, leftHalfPizza, pi
         {leftHalfPizza.name && rightHalfPizza.name
           ? <div className={`${s.order_block} ${s.order_block_btn}`}>
             <button className={`${s.basket}`}
-              onClick={completeAdOrder}>
+              onClick={(e) => {
+                completeAdOrder()
+              }}>
               <img src={Basket} alt="" />
             В КОРЗИНУ
           </button>
@@ -80,17 +82,17 @@ export default function HalfPizzaConstructor({ rightHalfPizza, leftHalfPizza, pi
       <div className={s.right_half_pizza_block}>
         <div className={s.right_half_pizza_image}>
           <img className={s.pizza_half} src={rightHalfPizza.image ? rightHalfPizza.image : PizzaPlaceholder} alt="pizza" />
-          <span>ПРАВАЯ ПОЛОВИНКА</span>
+          <span className={`py-1`}>ПРАВАЯ ПОЛОВИНКА</span>
         </div>
         {rightHalfPizza.name
           ? <div className={`text-right ${s.right_half_pizza_info}`}>
             <h5>
               <span>
-              <img src={Green} alt="" style={rightHalfPizza.green ? { display: 'inline-block' } : { display: 'none' }} id="vegetarian" />
+              <img src={Green} alt="" style={rightHalfPizza.green ? { filter: 'none', opacity: '1' } : { filter: 'grayscale(1)', opacity: '0.3' }} id="vegetarian" />
               <Tooltip placement="top" style={{ backgroundColor: '#111' }}
                        isOpen={tooltipVeganRight}
                        target="vegetarian" toggle={() => setTooltipVeganRight(!tooltipVeganRight)}>Вегетарианская</Tooltip>
-              <img src={Pepper} alt="" style={rightHalfPizza.hot ? { display: 'inline-block' } : { display: 'none' }} id="hot" />
+              <img src={Pepper} alt="" style={rightHalfPizza.hot ? { filter: 'none', opacity: '1' } : { filter: 'grayscale(1)', opacity: '0.2' }} id="hot" />
               <Tooltip placement="top" style={{ backgroundColor: '#111' }}
                        isOpen={tooltipHotRight}
                        target="hot" toggle={() => setTooltipHotRight(!tooltipHotRight)}>Острая</Tooltip>
@@ -103,7 +105,7 @@ export default function HalfPizzaConstructor({ rightHalfPizza, leftHalfPizza, pi
 
         {leftHalfPizza.name && rightHalfPizza.name
           ? <div className={`${s.order_block}`}>
-            <span className="font-weight-bold h5 m-0 d-block pt-1">
+            <span className="font-weight-bold h5 m-0 d-block pt-2">
               {(+leftHalfPizza.price.L / 2) + (+rightHalfPizza.price.L / 2)}
               &nbsp;грн</span>
           </div>

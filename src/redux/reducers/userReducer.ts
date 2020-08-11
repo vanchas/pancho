@@ -11,8 +11,8 @@ import {
   PICKUP_SHOPPING_CARD,
   GET_CURRENT_LOCATION,
   SET_PESISTED_STATE,
-  ADD_REVIEW, REPEAT_ORDER
-} from '../actions/types'
+  ADD_REVIEW, REPEAT_ORDER, SET_HEADER_PHONE, INCREASE_FREE_SOUCES_COUNTER, DECREASE_FREE_SOUCES_COUNTER
+} from "../actions/types";
 import { loadState } from '../localStorage';
 
 interface IState {
@@ -24,8 +24,10 @@ interface IState {
   history: any[],
   deliveryShoppingCard: boolean,
   pickupShoppingCard: boolean,
-  currentLocation: any
-};
+  currentLocation: any,
+  headerSelectPhone: string,
+  freeSoucesCounter: number
+}
 
 const initialState: IState = {
   addresses: null,
@@ -36,8 +38,10 @@ const initialState: IState = {
   history: [],
   deliveryShoppingCard: false,
   pickupShoppingCard: false,
-  currentLocation: null
-};
+  currentLocation: null,
+  headerSelectPhone: '095-000-11-95',
+  freeSoucesCounter: 0
+}
 
 export const userReducer = (state = initialState, action: any) => {
   switch (action.type) {
@@ -65,6 +69,18 @@ export const userReducer = (state = initialState, action: any) => {
 
     case GET_CURRENT_LOCATION:
       return { ...state, currentLocation: action.payload }
+
+    case INCREASE_FREE_SOUCES_COUNTER:
+      return { ...state, freeSoucesCounter: state.freeSoucesCounter + action.payload }
+
+    case DECREASE_FREE_SOUCES_COUNTER:
+      if (state.freeSoucesCounter > 0) {
+        return { ...state, freeSoucesCounter: state.freeSoucesCounter - 1 }
+      }
+      return { ...state, freeSoucesCounter: 0 }
+
+    case SET_HEADER_PHONE:
+      return { ...state, headerSelectPhone: action.payload }
 
     case GET_ADDRESSES:
       return { ...state, addresses: action.payload }

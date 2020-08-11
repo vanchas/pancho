@@ -57,6 +57,7 @@
 		padding-right: 0;
 		grid-template-columns: 0 1fr 0;
 		gap: .5em;
+		margin-left: -0.5em;
 	}
 }
 
@@ -69,7 +70,31 @@
 		padding: 1em 0;
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
-		grid-gap: 1.5em;
+		gap: 1.5em;
+		overflow-y: auto;
+		//min-height: 39em;
+		max-height: 47em;
+		&.right_list {
+			direction: rtl !important;
+		}
+		/* width */
+		&::-webkit-scrollbar {
+			width: 8px;
+		}
+		/* Track */
+		&::-webkit-scrollbar-track {
+			background: #f1f1f1;
+			border-radius: 5px;
+		}
+		/* Handle */
+		&::-webkit-scrollbar-thumb {
+			background: #888;
+			border-radius: 5px;
+		}
+		/* Handle on hover */
+		&::-webkit-scrollbar-thumb:hover {
+			background: #555;
+		}
 		li {
 			.pizza_card {
 				border-radius: 1em;
@@ -105,7 +130,7 @@
 	background-color: #ededed;
 	border-radius: 1.5em;
 	position: relative;
-	min-height: 39em;
+	min-height: 47em;
 	padding-bottom: 1.5em;
 	height: fit-content;
 
@@ -136,7 +161,7 @@
 		.left_half_pizza_image {
 			padding: 3em 0 0 0;
 			img {
-				transform: translateX(21%);
+				transform: translateX(18%);
 				height: 25em;
 				@media screen and (max-width: 700px) {
 					height: 75vw;
@@ -165,6 +190,7 @@
 			@media screen and (max-width: 700px) {
 				top: 23em;
 				min-height: 14em;
+				height: 17.5em;
 			}
 			h5 {
 				font-weight: 600;
@@ -190,7 +216,7 @@
 		.right_half_pizza_image {
 			padding: 3em 0 0 0;
 			img {
-				transform: translateX(-54%);
+				transform: translateX(-50%);
 				height: 25em;
 				@media screen and (max-width: 700px) {
 					height: 75vw;
@@ -219,6 +245,7 @@
 			@media screen and (max-width: 700px) {
 				top: 23em;
 				min-height: 14em;
+				height: 17.5em;
 			}
 			h5 {
 				font-weight: 600;
@@ -249,6 +276,7 @@
 	display: flex;
 	justify-content: flex-end;
 	button {
+		cursor: pointer;
 		border-radius: .5em;
 		font-weight: 600;
 	}
@@ -290,8 +318,10 @@
 	&:active {
 		background-color: #757575;
 	}
-	&:hover {
-		color: #fff;
+	transition: .3s;
+	&:hover, &:active {
+		background-color: #000;
+		color: #ffed00;
 	}
 }
 
@@ -300,6 +330,7 @@
 	li {
 		.pizza_card {
 			img {
+				width: 100%;
 				margin: 0 auto;
 				display: block;
 			}

@@ -1,28 +1,28 @@
-import FourSisons from './src/assets/images/production/pizza/4-sizons.jpg'
-import Bbq from './src/assets/images/production/pizza/barbequ.jpg'
-import BigBoss from './src/assets/images/production/pizza/big-boss.jpg'
-import CheeseGod from './src/assets/images/production/pizza/bog-cipa.jpg'
-import Cezar from './src/assets/images/production/pizza/cezar.jpg'
-import Cheeseburger from './src/assets/images/production/pizza/chiz-burger-pizza.jpg'
-import Village from './src/assets/images/production/pizza/derevenskaya.jpg'
-import Hawai from './src/assets/images/production/pizza/hawaye.jpg'
-import Italy from './src/assets/images/production/pizza/italy.jpg'
-import Julien from './src/assets/images/production/pizza/julien.jpg'
-import King from './src/assets/images/production/pizza/king.jpg'
-import Kisloslad from './src/assets/images/production/pizza/kisloslad.jpg'
-import Margarita from './src/assets/images/production/pizza/margarita.jpg'
-import Mexica from './src/assets/images/production/pizza/mexica.jpg'
-import Muza from './src/assets/images/production/pizza/muza-kukuruza.jpg'
-import Myasoed from './src/assets/images/production/pizza/myasoed.jpg'
-import Owo from './src/assets/images/production/pizza/owo-sir.jpg'
-import Pancho from './src/assets/images/production/pizza/pancho.jpg'
-import Pepperoni from './src/assets/images/production/pizza/pepperoni.jpg'
-import Radosti from './src/assets/images/production/pizza/prost-radosti.jpg'
-import Ranch from './src/assets/images/production/pizza/ranch-pizza.jpg'
-import Reindjer from './src/assets/images/production/pizza/reindjer.jpg'
-import Rukola from './src/assets/images/production/pizza/rukkola.jpg'
-import Sea from './src/assets/images/production/pizza/sea.jpg'
-import Papa from './src/assets/images/production/pizza/sitiy-papa.jpg'
+import FourSisons from './src/assets/images/пиццы/4_sezona.png'
+import Bbq from './src/assets/images/пиццы/BBQ.png'
+import BigBoss from './src/assets/images/пиццы/big_boss.png'
+import Rich from './src/assets/images/пиццы/bogataya_cipa.png'
+import Cezar from './src/assets/images/пиццы/cezar.png'
+import Cheeseburger from './src/assets/images/пиццы/чизбурегер-без-фона.png'
+import Village from './src/assets/images/пиццы/derevenskaya.png'
+import Hawai from './src/assets/images/пиццы/gavayskaya.png'
+import Italy from './src/assets/images/пиццы/ital.png'
+import Julien from "./src/assets/images/пиццы/jul'en.png"
+import King from './src/assets/images/пиццы/surnuy_korol.png'
+import Kisloslad from './src/assets/images/пиццы/chiken_de_luks.png'
+import Margarita from './src/assets/images/пиццы/margorita.png'
+import Mexica from './src/assets/images/пиццы/meksika.png'
+import Muza from './src/assets/images/пиццы/muza_kukuruza.png'
+import Myasoed from './src/assets/images/пиццы/myasoed.png'
+import Owo from './src/assets/images/пиццы/ovoshi_sur.png'
+import Pancho from './src/assets/images/пиццы/pancho_firm.png'
+import Pepperoni from './src/assets/images/пиццы/peperoni.png'
+import Radosti from './src/assets/images/пиццы/prostue_radosti.png'
+import Ranch from './src/assets/images/пиццы/ran4.png'
+import Reindjer from './src/assets/images/пиццы/ranger.png'
+import Rukola from './src/assets/images/пиццы/rukkola.png'
+import Sea from './src/assets/images/пиццы/morskaya.png'
+import Papa from './src/assets/images/пиццы/sutuy_papa.png'
 
 export const pizza = [
   {
@@ -88,7 +88,7 @@ export const pizza = [
     size: {S: 25, M: 30, L: 40},
     price: {S: 171, M: 208, L: 282},
     weight: {S: 450, M: 650, L: 1080},
-    image: CheeseGod
+    image: Rich
   },
   {
     hit: false,

@@ -14,7 +14,7 @@ function Combo({ getCombos, combos, addAnOrderItem }) {
   return (
     <div className={s.combos_page}>
         <Billboard />
-      <h3 className={s.combos_page_heading}>КОМБО</h3>
+      <h2 className={s.combos_page_heading}>КОМБО</h2>
       <CombosList combos={combos} addAnOrderItem={addAnOrderItem} />
     </div>
   )

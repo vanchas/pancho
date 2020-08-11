@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Link from 'next/link'
 import s from './cabinet.module.scss'
 import BonusFrame from '../../assets/images/bonus_frame.png'
+import BonusBox from '../../assets/images/box.png'
 import Question from '../../assets/images/signs/question.png'
 
 export default function UserBonus({ bonuses }) {
@@ -21,7 +22,8 @@ export default function UserBonus({ bonuses }) {
     <div className={s.user_bonus}>
       <h5 className="text-center py-2">НА ВАШЕМ БОНУСНОМ СЧЕТУ</h5>
       <div className={s.amount_block}>
-        <img src={BonusFrame} alt="" className="w-100" />
+        {/*<img src={BonusFrame} alt="" className="w-100" />*/}
+        <img src={BonusBox} alt="" className={s.box} />
         <span className={s.sum_number}>{bonusSum}</span>
         <small className="h6 pt-1">Бонусами вы можете расчитываться <br /> за продукцию пиццерии до 100%</small>
         <Link href="/bonus"><a className="btn">

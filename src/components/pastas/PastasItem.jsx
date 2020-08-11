@@ -13,7 +13,9 @@ export default function PastasItem({ pasta, addAnOrderItem }) {
         <small className={s.pasta_weight}>{pasta.weight} г</small>
         <p>{pasta.description}</p>
         <div className={s.pasta_btn}>
-          <span onClick={() => addAnOrderItem(pasta)}>
+          <span onClick={(e) => {
+            addAnOrderItem(pasta)
+          }}>
             <img src={Basket} alt="" />
             В КОРЗИНУ</span>
         </div>

@@ -62,8 +62,11 @@
 }
 
 .card {
+	height: 100%;
 	max-width: 22em;
 	padding: 1em;
+	display: grid !important;
+	align-content: space-between;
 	@media screen and (max-width: 500px) {
 		max-width: 100%;
 	}
@@ -85,6 +88,7 @@
 		font-size: 18px;
 		font-weight: 500;
 		border-radius: .5em;
+		cursor: pointer;
 		img {
 			width: 6em;
 			position: absolute;
@@ -92,8 +96,10 @@
 			left: 0;
 			transform: translate(-31%, -45%);
 		}
-		&:hover {
-			color: #fff;
+		transition: .3s;
+		&:hover, &:active {
+			background-color: #000;
+			color: #ffed00;
 		}
 	}
 }

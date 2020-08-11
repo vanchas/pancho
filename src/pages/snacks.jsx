@@ -14,7 +14,7 @@ function Snacks({ getSnacks, snacks, addAnOrderItem }) {
   return (
     <div className={s.snacks_page}>
         <Billboard />
-      <h3 className={s.snacks_page_heading}>ЗАКУСКИ</h3>
+      <h2 className={s.snacks_page_heading}>ЗАКУСКИ</h2>
       <SnacksList snacks={snacks} addAnOrderItem={addAnOrderItem} />
     </div>
   )

@@ -13,7 +13,9 @@ export default function CombosItem({ combo, addAnOrderItem }) {
         <small className={s.combo_weight}>{combo.weight ? combo.weight + ' г' : null}</small>
         <p>{combo.description}</p>
         <div className={s.combo_btn}>
-          <span onClick={() => addAnOrderItem(combo)}>
+          <span onClick={(e) => {
+            addAnOrderItem(combo)
+          }}>
             <img src={Basket} alt="" />
           В КОРЗИНУ</span>
         </div>

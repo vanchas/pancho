@@ -16,11 +16,12 @@ const store = createStore(
 store.subscribe(() => {
   saveState({
     user: {
+      ...store.getState().user,
       ordersAmount: store.getState().user.ordersAmount,
       orders: store.getState().user.orders
     }
   });
-  // console.log('updated state: ', store.getState());
+  console.log('updated state: ', store.getState());
   // console.log('local: ', persistedState);
 });
 

@@ -10,7 +10,7 @@ export default function RightList({ pizza, setRightHalfPizza }) {
 
   return (
     <div className={s.pizza_list}>
-      <ul>{pizza.map((p, i) => (
+      <ul className={s.right_list}>{pizza.map((p, i) => (
         <li key={i} onClick={() => setRightHalfPizzaHandler(p)}>
           <ListItem pizza={p} />
         </li>

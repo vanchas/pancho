@@ -225,6 +225,10 @@ input.bg_dark {
 	font-weight: 600 !important;
 	padding: 0.4em 1em !important;
 	border-radius: 0.3em !important;
+	cursor: pointer;
+	//&:hover {
+	//	background-color: #f7a43a !important;
+	//}
 	&:active {
 		outline: none;
 		filter: brightness(50%);
@@ -516,6 +520,105 @@ input.bg_dark {
 			transform: scale(2) translateY(-20%);
 			padding: 0 0.2em 0 0.5em;
 			font-weight: 700;
+		}
+	}
+}
+
+.login_with_social_block {
+	img {
+		width: 7rem;
+	}
+	span {
+		width: 7rem;
+		color: #fff;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-radius: .1em;
+		font-weight: bold;
+		height: 2.2em;
+		svg {
+			margin-right: .4em;
+		}
+		&:nth-child(1) {
+			background-color: #3663a1;
+		}
+		&:nth-child(2) {
+			background-color: #d84733;
+		}
+	}
+}
+
+.bonus_modal {
+	background-color: #1d1d1b;
+	padding: .8em;
+	.bonus_modal_content {
+		width: 100%;
+		height: 100%;
+		padding: 1em;
+		font-weight: 600;
+		color: #fff;
+		text-align: center;
+		border: 1px solid #ffed00;
+		h5 {
+			font-weight: 600;
+			margin-bottom: 1em;
+		}
+		input {
+			appearance: none;
+			-webkit-appearance: none;
+			-moz-appearance: none;
+			&:focus {
+				outline: none;
+			}
+		}
+		/* Chrome, Safari, Edge, Opera */
+		input::-webkit-outer-spin-button,
+		input::-webkit-inner-spin-button {
+			-webkit-appearance: none;
+			margin: 0;
+		}
+		/* Firefox */
+		input[type=number] {
+			-moz-appearance: textfield;
+		}
+		.bonus_image {
+			width: 2em;
+		}
+		.submit_btn {
+			padding: .4em 1em;
+			border-radius: .3em;
+			background-color: #ffed00;
+			border: 1px solid #ffed00;
+			color: #1b1b1b;
+			font-weight: bold;
+			margin-right: .5em;
+			transition: .3s;
+			&:hover {
+				background-color: #1b1b1b;
+				color: #ffed00;
+				border: 1px solid #ffed00;
+			}
+			&:focus {
+				outline: none;
+			}
+		}
+		.cancel_btn {
+			padding: .4em 1em;
+			border-radius: .3em;
+			background-color: #1b1b1b;
+			color: #ffed00;
+			border: 1px solid #ffed00;
+			font-weight: bold;
+			transition: .3s;
+			&:hover {
+				background-color: #ffed00;
+				border: 1px solid #ffed00;
+				color: #1b1b1b;
+			}
+			&:focus {
+				outline: none;
+			}
 		}
 	}
 }

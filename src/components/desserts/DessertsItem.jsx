@@ -13,7 +13,9 @@ export default function DessertsItem({ dessert, addAnOrderItem }) {
         <small className={s.dessert_weight}>{dessert.weight} г</small>
         <p>{dessert.description}</p>
         <div className={s.dessert_btn}>
-          <span onClick={() => addAnOrderItem(dessert)}>
+          <span onClick={(e) => {
+            addAnOrderItem(dessert)
+          }}>
             <img src={Basket} alt="" />
             В КОРЗИНУ</span>
         </div>

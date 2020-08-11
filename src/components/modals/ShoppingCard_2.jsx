@@ -3,6 +3,8 @@ import s from "./modal.module.scss";
 import Visa from "../../assets/images/basket/visa.png";
 import Calendar from "../../assets/images/basket/calendar.png";
 import Clock from "../../assets/images/basket/clock.png";
+import Present from "../../assets/images/basket/present.png";
+import Bonus from "./Bonus";
 
 const monthes = [
   "январь",
@@ -80,7 +82,9 @@ const ShoppingCard_2 = ({ ordersAmount, open }) => {
 
       <div className={`${s.header} border-0`}>
         ОФОРМЛЕНИЕ НА ДОСТАВКУ
-        <span onClick={open}>&#10006;</span>
+        <span onClick={open} style={{color: '#ffed00'}}>
+            <i className="fas fa-times" />
+        </span>
       </div>
       <div className={s.body}>
         <form onSubmit={submitHandler}>
@@ -263,6 +267,12 @@ const ShoppingCard_2 = ({ ordersAmount, open }) => {
         </form>
       </div>
       <div className={`${s.footer} border-0 pt-3 pb-5`}>
+        <div className={s.footer_bonus_block}>
+          <span>БОНУСНЫЙ СЧЕТ</span>
+          <span>332</span>
+          <img src={Present} alt="" />
+          <Bonus />
+        </div>
         <div className={s.footer_buttons}>
           <button className={s.total_sum} onClick={open}>
             <i>&#10157;</i> НАЗАД

@@ -13,9 +13,11 @@ export default function DrinksItem({ drink, addAnOrderItem }) {
         <small className={s.drink_weight}>{drink.weight.M ? drink.weight.M + ' л' : drink.weight + ' л'}</small>
         <p>{drink.description}</p>
         <div className={s.drink_btn}>
-          <span onClick={() => addAnOrderItem({
+          <span onClick={(e) => {
+            addAnOrderItem({
               ...drink, price: drink.price.M
-          })}>
+            })
+          }}>
             <img src={Basket} alt="" />
           В КОРЗИНУ</span>
         </div>

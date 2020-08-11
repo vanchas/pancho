@@ -14,7 +14,7 @@ function Drinks({ getDrinks, drinks, addAnOrderItem }) {
   return (
     <div className={s.drinks_page}>
         <Billboard />
-      <h3 className={s.drinks_page_heading}>НАПИТКИ</h3>
+      <h2 className={s.drinks_page_heading}>НАПИТКИ</h2>
       <DrinksList drinks={drinks} addAnOrderItem={addAnOrderItem} />
     </div>
   )

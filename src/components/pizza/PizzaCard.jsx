@@ -42,11 +42,11 @@ export default function PizzaCard({ addAnOrderItem, pizza }) {
           <span className={s.subtitle_control}>
             {pizza.new && <span className={s.new}>НОВИНКА</span>}
             {pizza.hit && <span className={s.hit}>ХИТ</span>}
-            <img src={Green} alt="" style={pizza.green ? { display: 'block' } : { display: 'none' }} id="vegetarian" />
+            <img src={Green} alt="" style={pizza.green ? { filter: 'none', opacity: '1' } : { filter: 'grayscale(1)', opacity: '0.3' }} id="vegetarian" />
             <Tooltip placement="top" style={{ backgroundColor: '#111' }}
               isOpen={tooltipVegan}
               target="vegetarian" toggle={() => setTooltipVegan(!tooltipVegan)}>Вегетарианская</Tooltip>
-            <img src={Pepper} alt="" style={pizza.hot ? { display: 'block' } : { display: 'none' }} id="hot" />
+            <img src={Pepper} alt="" style={pizza.hot ? { filter: 'none', opacity: '1' } : { filter: 'grayscale(1)', opacity: '0.2' }} id="hot" />
             <Tooltip placement="top" style={{ backgroundColor: '#111' }}
               isOpen={tooltipHot}
               target="hot" toggle={() => setTooltipHot(!tooltipHot)}>Острая</Tooltip>
@@ -57,7 +57,7 @@ export default function PizzaCard({ addAnOrderItem, pizza }) {
           </span>
           <Tooltip placement="top" style={{ backgroundColor: '#111' }} isOpen={tooltipPerson}
             target="person" toggle={() => setTooltipPerson(!tooltipPerson)}>
-            На какое кол-во людей пицца
+            Kоличество персон
           </Tooltip>
         </h6>
         <p className={s.card_text}>{pizza.description}</p>
@@ -73,17 +73,18 @@ export default function PizzaCard({ addAnOrderItem, pizza }) {
           </label>
         </div>
         <div className={`d-flex justify-content-between align-items-center`}>
-          <button className={`${s.basket} btn`}
-            onClick={() => addAnOrderItem({
-              bigImage: pizza.bigImage,
-              smallImage: pizza.smallImage,
-              description: pizza.description,
-              name: pizza.name,
-              size: Object.values(pizza.size)[activeBtn],
-              green: pizza.green,
-              hot: pizza.hot,
-              price: Object.values(pizza.price)[activeBtn]
-            })}>
+          <button className={`${s.basket} btn shopping-card-btn`}
+            onClick={(e) => {
+              addAnOrderItem({
+                image: pizza.image,
+                description: pizza.description,
+                name: pizza.name,
+                size: Object.values(pizza.size)[activeBtn],
+                green: pizza.green,
+                hot: pizza.hot,
+                price: Object.values(pizza.price)[activeBtn]
+              })
+            }}>
             <img src={Basket} alt="" />
             В КОРЗИНУ
           </button>

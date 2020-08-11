@@ -18,10 +18,14 @@ const NavComponent = props => {
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggle = () => setIsOpen(!isOpen);
+  const toggle = () => {
+    if (window && window.innerWidth < 992) {
+      setIsOpen(!isOpen)
+    }
+  }
 
   return (
-    <Navbar color="" expand="lg" className="py-1" style={{zIndex: '1'}}>
+    <Navbar color="" expand="lg" className="py-1" style={{zIndex: '1', maxWidth: '1667px', margin: 'auto'}}>
       <NavbarBrand href="tel:+0950001195" className={s.navbar_brand}>
         <img src={Phone} alt="" />
         <span className="btn text-light">095-000-11-95</span>

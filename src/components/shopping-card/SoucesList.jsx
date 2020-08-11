@@ -1,8 +1,9 @@
 import React from 'react'
 import s from './orders.module.scss'
-import $ from 'jquery'
+import { connect } from "react-redux";
+import { decreaseFreeSoucesCounter } from "../../redux/actions/actions";
 
-export default function SoucesLIst({ souces, addAnOrderItem }) {
+function SoucesList({ souces, addAnOrderItem, freeSoucesCounter, decreaseFreeSoucesCounter }) {
   return (
     <div>{souces.length ? <>
       <h5 className={s.souces_heading}>СОУСЫ</h5>
@@ -16,8 +17,13 @@ export default function SoucesLIst({ souces, addAnOrderItem }) {
             <span className={s.souce_name}>{souce.name}</span>
             <div className={s.to_basket_btn}>
               <span onClick={e => {
-                addAnOrderItem(souce);
-                $(e.target).css('backgroundColor', '#948a00');
+                e.target.style.backgroundColor = '#ffb025'
+                if (freeSoucesCounter > 0) {
+                  addAnOrderItem({ ...souce, price: 0 })
+                  decreaseFreeSoucesCounter()
+                } else {
+                  addAnOrderItem(souce)
+                }
               }}> В КОРЗИНУ</span>
             </div>
           </li>
@@ -27,3 +33,11 @@ export default function SoucesLIst({ souces, addAnOrderItem }) {
     </div>
   )
 }
+
+const mapStateToProps = state => ({
+  freeSoucesCounter: state.user.freeSoucesCounter
+})
+const mapDispatchToProps = {
+  decreaseFreeSoucesCounter,
+}
+export default connect(mapStateToProps, mapDispatchToProps)(SoucesList)

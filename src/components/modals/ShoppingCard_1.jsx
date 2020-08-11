@@ -38,6 +38,7 @@ const ShoppingCard_1 = ({
 }) => {
   const [step2, setStep2] = useState("delivery");
   const [show, setShow] = useState(false);
+  const [empty, setEmpty] = useState(false);
 
   const toggleShoppingCard = () => {
     setShow(true)
@@ -47,7 +48,8 @@ const ShoppingCard_1 = ({
   useEffect(() => {
     getDrinks();
     getSouces();
-  }, []);
+    !orders.length ? setEmpty(true) : setEmpty(false)
+  }, [orders]);
 
   return (
     <React.Fragment>
@@ -78,9 +80,12 @@ const ShoppingCard_1 = ({
         >
           <div className={s.background} onClick={() => setShow(false)} />
 
+          {!empty ? <>
           <div className={`border-0 ${s.header}`}>
             В КОРЗИНЕ
-            <span onClick={() => setShow(false)}>&#10006;</span>
+            <span onClick={() => setShow(false)} style={{color: '#ffed00'}}>
+                <i className="fas fa-times" />
+            </span>
           </div>
 
           <div className={s.body}>
@@ -143,6 +148,17 @@ const ShoppingCard_1 = ({
               </div>
             )}
           </footer>
+            </>
+            : <>
+            <div className={`border-0 ${s.header}`}>
+              В КОРЗИНЕ
+              <span onClick={() => setShow(false)} style={{color: '#ffed00'}}>
+                <i className="fas fa-times" />
+              </span>
+            </div>
+            <div className={`text-white h4 pl-3 pt-5`}>Нет товаров в корзине</div>
+          </>
+          }
         </div>
       )}
     </React.Fragment>

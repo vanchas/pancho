@@ -112,6 +112,7 @@
 		order: 4;
 		white-space: nowrap;
 		span {
+			cursor: pointer;
 			background-color: #575756;
 			color: #ffed00;
 			font-size: 18px;
@@ -126,8 +127,10 @@
 				left: 0;
 				transform: translate(-28%, -45%);
 			}
-			&:hover {
-				color: #fff;
+			transition: .3s;
+			&:hover, &:active {
+				background-color: #000;
+				color: #ffed00;
 			}
 		}
 	}

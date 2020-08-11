@@ -2,12 +2,13 @@
 	padding-right: 1em;
 	header {
 		h2 {
+			color: #212529;
 			margin: 1em auto 2em auto;
 			padding: 0 15px;
 			text-align: center;
 			width: fit-content;
 			position: relative;
-			font-weight: 800;
+			font-weight: 700;
 			&::before {
 				content: "";
 				width: 300px;
@@ -68,10 +69,10 @@
 
 .card {
 	max-width: 22em;
-	//height: 40em;
+	height: 100%;
 	padding: 1em;
 	display: grid !important;
-	align-content: stretch;
+	align-content: space-between;
 	@media screen and (max-width: 500px) {
 		max-width: 100%;
 	}
@@ -89,6 +90,7 @@
 
 	.basket {
 		white-space: nowrap;
+		cursor: pointer;
 		font-size: 18px;
 		font-weight: 500;
 		background-color: #575756;
@@ -103,8 +105,10 @@
 			left: 0;
 			transform: translate(-28%, -45%);
 		}
-		&:hover {
-			color: #fff;
+		transition: .3s;
+		&:hover, &:active {
+			background-color: #000;
+			color: #ffed00;
 		}
 	}
 }

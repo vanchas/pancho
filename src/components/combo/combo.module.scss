@@ -118,6 +118,7 @@
 			color: #ffed00;
 			font-size: 18px;
 			font-weight: 500;
+			cursor: pointer;
 			img {
 				width: 6em;
 				position: absolute;
@@ -125,8 +126,10 @@
 				left: 0;
 				transform: translate(-28%, -45%);
 			}
-			&:hover {
-				color: #fff;
+			transition: .3s;
+			&:hover, &:active {
+				background-color: #000;
+				color: #ffed00;
 			}
 		}
 	}

@@ -1,8 +1,10 @@
 import React from 'react'
 import s from './snacks.module.scss';
 import Basket from '../../assets/images/basket/korzina-01.svg'
+import { connect } from "react-redux";
+import {increaseFreeSoucesCounter} from "../../redux/actions/actions";
 
-export default function SnackItem({ snack, addAnOrderItem }) {
+function SnackItem({ snack, addAnOrderItem, increaseFreeSoucesCounter }) {
   return (
     <li className={s.snack_item}>
       <div className={s.snack_image}>
@@ -13,8 +15,9 @@ export default function SnackItem({ snack, addAnOrderItem }) {
         <small className={s.snack_weight}>{snack.weight} г</small>
         <p>{snack.description}</p>
         <div className={s.snack_btn}>
-          <span onClick={() => {
-            addAnOrderItem(snack);
+          <span onClick={(e) => {
+            addAnOrderItem(snack)
+            increaseFreeSoucesCounter(1)
           }}>
             <img src={Basket} alt="" />
             В КОРЗИНУ</span>
@@ -24,3 +27,11 @@ export default function SnackItem({ snack, addAnOrderItem }) {
     </li>
   )
 }
+
+const mapStateToProps = state => ({
+
+})
+const mapDispatchToProps = {
+  increaseFreeSoucesCounter
+}
+export default connect(mapStateToProps, mapDispatchToProps)(SnackItem)

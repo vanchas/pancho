@@ -15,7 +15,7 @@ function Pizza({ addAnOrderItem, pizza, getPizzas }) {
       <Billboard />
       <div style={{ maxWidth: '1667px', margin: '0 auto' }}>
         <header>
-          <h2>ПИЦЦЫ</h2>
+          <h2>ПИЦЦA</h2>
         </header>
         <PizzaList addAnOrderItem={addAnOrderItem} pizzas={pizza} />
       </div>

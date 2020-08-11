@@ -1,5 +1,34 @@
 import fetch from 'isomorphic-unfetch'
-import { GET_PIZZAS, SET_LEFT_HALF_PIZZA, SET_RIGHT_HALF_PIZZA, GET_ADDRESSES, GET_BONUSES, GET_WOKS, SHOW_DISCOUNTS, ADD_REVIEW, GET_REVIEWS, GET_SNACKS, GET_SOUCES, GET_DRINKS, GET_PASTAS, GET_COMBOS, GET_SETS, GET_DESSERTS, ADD_AN_ORDER_ITEM, REMOVE_AN_ORDER_ITEM, INCREMENT_ORDER_ITEM, DECREMENT_ORDER_ITEM, GET_HISTORY, REPEAT_ORDER, DELIVERY_SHOPPING_CARD, PICKUP_SHOPPING_CARD, GET_CURRENT_LOCATION, SET_PESISTED_STATE, GET_SALADS } from "./types"
+import {
+  GET_PIZZAS,
+  SET_LEFT_HALF_PIZZA,
+  SET_RIGHT_HALF_PIZZA,
+  GET_ADDRESSES,
+  GET_BONUSES,
+  GET_WOKS,
+  SHOW_DISCOUNTS,
+  ADD_REVIEW,
+  GET_REVIEWS,
+  GET_SNACKS,
+  GET_SOUCES,
+  GET_DRINKS,
+  GET_PASTAS,
+  GET_COMBOS,
+  GET_SETS,
+  GET_DESSERTS,
+  ADD_AN_ORDER_ITEM,
+  REMOVE_AN_ORDER_ITEM,
+  INCREMENT_ORDER_ITEM,
+  DECREMENT_ORDER_ITEM,
+  GET_HISTORY,
+  REPEAT_ORDER,
+  DELIVERY_SHOPPING_CARD,
+  PICKUP_SHOPPING_CARD,
+  GET_CURRENT_LOCATION,
+  SET_PESISTED_STATE,
+  GET_SALADS,
+  SET_HEADER_PHONE, INCREASE_FREE_SOUCES_COUNTER, DECREASE_FREE_SOUCES_COUNTER
+} from "./types";
 import { pizza } from '../../../fakePizzas'
 import { woks } from '../../../fakeWoks'
 import { discounts } from '../../../fakeDiscounts'
@@ -109,6 +138,13 @@ export const openPickupShoppingCard = () => {
   return { type: PICKUP_SHOPPING_CARD };
 }
 
+export const increaseFreeSoucesCounter = (n: number) => {
+  return { type: INCREASE_FREE_SOUCES_COUNTER, payload: n };
+}
+export const decreaseFreeSoucesCounter = (n: number) => {
+  return { type: DECREASE_FREE_SOUCES_COUNTER, payload: n };
+}
+
 // app
 export const getCurrentLocation = () => async (dispatch: Function) => {
   return await fetch(`https://api.2ip.ua/geo.json?ip=`)
@@ -126,4 +162,16 @@ export const getCurrentLocation = () => async (dispatch: Function) => {
 
 export const setPersistedState = () => async (dispatch: Function) => {
   return await dispatch({ type: SET_PESISTED_STATE });
+}
+
+export const setHeaderPhone = (city: string) => async (dispatch: Function) => {
+  let phone: string = ''
+  if (city === 'Славянск') {
+    phone = '095-000-11-95'
+  } else if (city === 'Краматорск') {
+    phone = '050-41-41-041'
+  } else if (city === 'Бахмут') {
+    phone = '099-21-21-021'
+  }
+  return await dispatch({ type: SET_HEADER_PHONE, payload: phone });
 }

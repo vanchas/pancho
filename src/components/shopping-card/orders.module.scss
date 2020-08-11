@@ -95,6 +95,7 @@
 		}
 		.to_basket_btn {
 			span {
+				cursor: pointer;
 				color: #000;
 				background-color: #ffed00;
 				border-radius: 0.3em;
@@ -102,6 +103,10 @@
 				font-size: 0.8em;
 				font-weight: 500;
 				white-space: nowrap;
+				transition: .3s;
+				&:hover, &:active {
+					background-color: #f7a43a;
+				}
 			}
 		}
 	}
@@ -154,6 +159,11 @@
 				font-weight: 500;
 				padding: 0.2em 0.5em;
 				border-radius: 0.2em;
+				transition: .3s;
+				cursor: pointer;
+				&:hover, &:active {
+					background-color: #f7a43a;
+				}
 			}
 		}
 		.rec_price {

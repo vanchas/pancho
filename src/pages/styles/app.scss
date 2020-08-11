@@ -27,3 +27,25 @@ body {
 .modal {
 	top: 15% !important;
 }
+
+
+.sticky_element {
+	position: fixed !important;
+	top: 0 !important;
+	left: 50% !important;
+	transform: translateX(-50%) !important;
+	width: 100vw !important;
+	max-width: 10000px !important;
+	z-index: 1 !important;
+	animation: fade .5s ease-in;
+	box-shadow: 0 .5rem 1rem rgba(0,0,0,.15) !important;
+}
+@keyframes fade {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+

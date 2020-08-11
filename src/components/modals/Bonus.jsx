@@ -1,11 +1,16 @@
 import React, { useState } from "react";
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
-import { PropTypes } from "prop-types";
+import { Button, Modal } from "reactstrap";
+import BonusImg from '../../assets/images/bonus-2-01.svg'
 import s from "./modal.module.scss";
 
 export default function Bonus(props) {
   const [modal, setModal] = useState(false);
   const toggle = () => setModal(!modal);
+
+  const submitHandler = e => {
+    e.preventDefault()
+    toggle()
+  }
 
   return (
     <div>
@@ -14,46 +19,30 @@ export default function Bonus(props) {
       </Button>
 
       <Modal isOpen={modal} toggle={toggle}>
-        <ModalHeader toggle={toggle}>
-          СНЯТЬ БОНУСЫ
-        </ModalHeader>
+        <div className={s.bonus_modal}>
+          <div className={s.bonus_modal_content}>
+            <h5>ОПЛАТА БОНУСАМИ</h5>
+              <div>
+                <img src={BonusImg} alt={``} className={s.bonus_image} />
+              </div>
 
-        <ModalBody>
-          СНЯТЬ БОНУСЫ
-        </ModalBody>
+            <div>На счету 332 грн</div>
 
-        <ModalFooter>
-          <Button onClick={toggle}>СНЯТЬ БОНУСЫ</Button>
-        </ModalFooter>
+            <form onSubmit={submitHandler}>
+              <label className={`d-flex pt-1 w-100 justify-content-center align-items-center`}>
+                списать
+                <input type={`number`} maxLength={``} className={`ml-2 pl-1`} />
+              </label>
+              <div className={`mb-2`}>(от 1 до 332 грн)</div>
+              <div className={`py-1`}>
+                <button type={`submit`} className={s.submit_btn}>ПРИМЕНИТЬ</button>
+                <button onClick={toggle} className={s.cancel_btn}>ОТМЕНА</button>
+              </div>
+            </form>
+          </div>
+        </div>
       </Modal>
     </div>
   );
 };
 
-Modal.propTypes = {
-  isOpen: PropTypes.bool,
-  autoFocus: PropTypes.bool,
-  centered: PropTypes.bool,
-  size: PropTypes.string,
-  toggle: PropTypes.func,
-  role: PropTypes.string,
-  labelledBy: PropTypes.string,
-  keyboard: PropTypes.bool,
-  backdrop: PropTypes.oneOfType([PropTypes.bool, PropTypes.oneOf(["static"])]),
-  scrollable: PropTypes.bool,
-  onEnter: PropTypes.func,
-  onExit: PropTypes.func,
-  onOpened: PropTypes.func,
-  onClosed: PropTypes.func,
-  className: PropTypes.string,
-  wrapClassName: PropTypes.string,
-  modalClassName: PropTypes.string,
-  backdropClassName: PropTypes.string,
-  contentClassName: PropTypes.string,
-  fade: PropTypes.bool,
-  cssModule: PropTypes.object,
-  zIndex: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
-  innerRef: PropTypes.object,
-  unmountOnClose: PropTypes.bool,
-  returnFocusAfterClose: PropTypes.bool,
-};

@@ -6,15 +6,17 @@ import Location from '../../assets/images/signs/point-01.svg';
 import Phone from '../../assets/images/signs/phone-01.svg';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { connect } from "react-redux";
+import { setHeaderPhone } from "../../redux/actions/actions";
 
-export default function HeaderInfoBlock() {
+function HeaderInfoBlock(props) {
   const router = useRouter();
 
   return (
     <div className={s.header_info_block}>
       <div className={s.header_info_block_item}>
         <Link href="/"><a>
-          <img src={Brand} alt="Pancho" className={s.brang_logo} />
+          <img src={Brand} alt="Pancho" className={s.brand_logo} />
         </a></Link>
       </div>
       <div className={s.header_info_block_item}>
@@ -29,7 +31,8 @@ export default function HeaderInfoBlock() {
       <div className={s.header_info_block_item_location}>
         <img src={Location} alt="" className={s.location_image} />
         <p>Ваш город</p>
-        <select defaultValue="Славянск" className={s.city_select}>
+        <select defaultValue="Славянск" className={s.city_select}
+        onChange={(e) => props.setHeaderPhone(e.target.value)}>
           <option value="Славянск" hidden>СЛАВЯНСК</option>
           <option value="Славянск">СЛАВЯНСК</option>
           <option value="Краматорск">КРАМАТОРСК</option>
@@ -38,8 +41,17 @@ export default function HeaderInfoBlock() {
       </div>
       <div className={`d-flex ${s.header_info_block_item}`}>
         <img src={Phone} alt="" className={s.phone_image} />
-        <a href="tel:+0950001195" className={`${s.phone} btn`}>095-000-11-95</a>
+        <a href={`tel:+38${props.phone.split('-').join('')}`}
+           className={`${s.phone} btn`}>{props.phone}</a>
       </div>
     </div>
   )
 }
+
+const mapStateToProps = state => ({
+  phone: state.user.headerSelectPhone
+})
+const mapDispatchToProps = {
+  setHeaderPhone
+}
+export default connect(mapStateToProps, mapDispatchToProps)(HeaderInfoBlock)

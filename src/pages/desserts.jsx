@@ -14,7 +14,7 @@ function Desserts({ getDesserts, desserts, addAnOrderItem }) {
   return (
     <div className={s.desserts_page}>
         <Billboard />
-      <h3 className={s.desserts_page_heading}>ДЕСЕРТЫ</h3>
+      <h2 className={s.desserts_page_heading}>ДЕСЕРТЫ</h2>
       <DessertsList desserts={desserts} addAnOrderItem={addAnOrderItem} />
     </div>
   )

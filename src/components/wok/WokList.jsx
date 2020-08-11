@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import WokCard from "./WokCard";
 import s from "./wok.module.scss";
 
-export default function WokList({woks, addAnOrderItem, title, type}) {
+export default function WokList({woks, title, type}) {
     const [wokArray, setWokArray] = useState(null)
 
     useEffect(() => {
@@ -20,7 +20,6 @@ export default function WokList({woks, addAnOrderItem, title, type}) {
                     <li key={i}>
                         <WokCard
                             wok={w}
-                            addAnOrderItem={addAnOrderItem}
                         />
                     </li>
                 ))}

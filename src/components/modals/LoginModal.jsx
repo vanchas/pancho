@@ -150,9 +150,17 @@ const ModalExample = ({ buttonLabel, className, active }) => {
             ВОЙТИ
           </Button>
           <div className="text-center text-white">ВОЙТИ КАК ПОЛЬЗОВАТЕЛЬ</div>
-          <InputGroup className="d-flex justify-content-around pt-3">
-            <CardImg src={Facebook} className="w-25" />
-            <CardImg src={Google} className="w-25" />
+          <InputGroup className={`d - flex justify-content-around pt-3 ${s.login_with_social_block}`}>
+            <span>
+              <i className="fab fa-facebook-f" />
+              facebook
+            </span>
+            {/*<CardImg src={Facebook} />*/}
+            <span>
+              <i className="fab fa-google" />
+              google
+            </span>
+            {/*<CardImg src={Google} className="w-25" />*/}
           </InputGroup>
         </ModalBody>
         <ModalFooter className={`${s.bg_dark} text-center border-0 pt-0`}>

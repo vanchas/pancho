@@ -41,10 +41,10 @@ export const history = [
 ];
 
 export const souces = [
-  { name: 'Кисло-Сладкий', image: Souce, price: 0 },
-  { name: 'Кисло-Сладкий', image: Souce, price: 0 },
-  { name: 'Кисло-Сладкий', image: Souce, price: 0 },
-  { name: 'Кисло-Сладкий', image: Souce, price: 0 }
+  { name: 'Терияки', image: Souce, price: 6 },
+  { name: 'Манго-чили', image: Souce, price: 6 },
+  { name: 'Терияки', image: Souce, price: 6 },
+  { name: 'Манго-чили', image: Souce, price: 6 }
 ];
 
 export const drinks = [

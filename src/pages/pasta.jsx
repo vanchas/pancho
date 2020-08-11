@@ -14,7 +14,7 @@ function Pasta({ getPastas, pastas, addAnOrderItem }) {
   return (
     <div className={s.pastas_page}>
         <Billboard />
-      <h3 className={s.pastas_page_heading}>ПАСТА</h3>
+      <h2 className={s.pastas_page_heading}>ПАСТА</h2>
       <PastasList pastas={pastas} addAnOrderItem={addAnOrderItem} />
     </div>
   )

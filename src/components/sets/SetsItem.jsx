@@ -13,7 +13,9 @@ export default function SetsItem({ set, addAnOrderItem }) {
         <small className={s.set_weight}>{set.weight ? set.weight + " г" : null}</small>
         <p>{set.description}</p>
         <div className={s.set_btn}>
-          <span onClick={() => addAnOrderItem(set)}>
+          <span onClick={(e) => {
+            addAnOrderItem(set)
+          }}>
             <img src={Basket} alt="" />
             В КОРЗИНУ</span>
         </div>
