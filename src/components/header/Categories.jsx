@@ -89,16 +89,9 @@ export default function Categories(props) {
               <NavItem>
                 <NavLink href="/wok" onClick={() => linkClickHandler('wok')} className={router.pathname === '/wok' ? s.activeLink : null}>
                   {router.pathname === '/wok'
-                    ? <img src={YelWok} alt="" style={{height: '4.4em', marginTop: '-.4em'}} />
-                    : <img src={Wok} alt="" style={{height: '4.4em', marginTop: '-.4em'}} />}
+                    ? <img src={YelWok} alt="" />
+                    : <img src={Wok} alt="" />}
                  <span className={`text-center`}> ВОК</span></NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="/snacks" onClick={() => linkClickHandler('snacks')} className={router.pathname === '/snacks' ? s.activeLink : null}>
-                  {router.pathname === '/snacks'
-                    ? <img src={YelSnacks} alt="" />
-                    : <img src={Snack} alt="" />}
-                 <span className={`text-center`}> ЗАКУСКИ</span></NavLink>
               </NavItem>
               <NavItem>
                 <NavLink href="/pasta" onClick={() => linkClickHandler('pasta')} className={router.pathname === '/pasta' ? s.activeLink : null}>
@@ -113,6 +106,13 @@ export default function Categories(props) {
                     ? <img src={YelSalads} alt="" />
                     : <img src={Salad} alt="" />}
                  <span className={`text-center`}> CAЛATЫ</span></NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="/snacks" onClick={() => linkClickHandler('snacks')} className={router.pathname === '/snacks' ? s.activeLink : null}>
+                  {router.pathname === '/snacks'
+                    ? <img src={YelSnacks} alt="" />
+                    : <img src={Snack} alt="" />}
+                  <span className={`text-center`}> ЗАКУСКИ</span></NavLink>
               </NavItem>
               <NavItem>
                 <NavLink href="/combo" onClick={() => linkClickHandler('combo')} className={router.pathname === '/combo' ? s.activeLink : null}>

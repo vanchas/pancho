@@ -6,6 +6,7 @@ function Home({ city }) {
     <div>
       <LocationModal
         city={city} />
+        Производство
     </div>
   );
 }

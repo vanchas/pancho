@@ -5,13 +5,12 @@ import Clock from '../../assets/images/signs/watch-01.svg';
 import Location from '../../assets/images/signs/point-01.svg';
 import Phone from '../../assets/images/signs/phone-01.svg';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
 import { connect } from "react-redux";
 import { setHeaderPhone } from "../../redux/actions/actions";
 
-function HeaderInfoBlock(props) {
-  const router = useRouter();
+const cities = ['Славянск', 'Краматорск', 'Бахмут']
 
+function HeaderInfoBlock(props) {
   return (
     <div className={s.header_info_block}>
       <div className={s.header_info_block_item}>
@@ -31,12 +30,17 @@ function HeaderInfoBlock(props) {
       <div className={s.header_info_block_item_location}>
         <img src={Location} alt="" className={s.location_image} />
         <p>Ваш город</p>
-        <select defaultValue="Славянск" className={s.city_select}
-        onChange={(e) => props.setHeaderPhone(e.target.value)}>
-          <option value="Славянск" hidden>СЛАВЯНСК</option>
-          <option value="Славянск">СЛАВЯНСК</option>
-          <option value="Краматорск">КРАМАТОРСК</option>
-          <option value="Бахмут">БАХМУТ</option>
+        <select
+          className={s.city_select}
+          onChange={(e) => props.setHeaderPhone(e.target.value)}>
+          <option
+            value={props.currentLocation}
+            hidden>
+            {props.currentLocation}
+          </option>
+          {cities.map((c, i) => (
+            <option value={c} key={i}>{c}</option>
+          ))}
         </select>
       </div>
       <div className={`d-flex ${s.header_info_block_item}`}>
@@ -49,7 +53,8 @@ function HeaderInfoBlock(props) {
 }
 
 const mapStateToProps = state => ({
-  phone: state.user.headerSelectPhone
+  phone: state.user.headerSelectPhone,
+  currentLocation: state.user.currentLocation
 })
 const mapDispatchToProps = {
   setHeaderPhone

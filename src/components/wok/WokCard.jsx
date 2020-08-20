@@ -17,14 +17,11 @@ function WokCard({ wok, addAnOrderItem, increaseFreeSoucesCounter }) {
         <p className={s.card_text}>{wok.description}</p>
         <div className={`d-flex justify-content-between`}>
           <button className={`${s.basket} btn`}
-            onClick={(e) => {
+            onClick={() => {
               addAnOrderItem(wok)
               increaseFreeSoucesCounter(2)
             }} >
-            <img src={Basket} alt="" />
-            В КОРЗИНУ
-          </button>
-          <span className="font-weight-bold h5">{wok.price} грн</span>
+            <img src={Basket} alt="" />В КОРЗИНУ</button><span className="font-weight-bold h5">{wok.price} грн</span>
         </div>
       </div>
       </>}

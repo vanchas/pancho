@@ -27,7 +27,7 @@ import {
   GET_CURRENT_LOCATION,
   SET_PESISTED_STATE,
   GET_SALADS,
-  SET_HEADER_PHONE, INCREASE_FREE_SOUCES_COUNTER, DECREASE_FREE_SOUCES_COUNTER
+  SET_HEADER_PHONE, INCREASE_FREE_SOUCES_COUNTER, DECREASE_FREE_SOUCES_COUNTER, SET_CURRENT_CITY
 } from "./types";
 import { pizza } from '../../../fakePizzas'
 import { woks } from '../../../fakeWoks'
@@ -173,5 +173,6 @@ export const setHeaderPhone = (city: string) => async (dispatch: Function) => {
   } else if (city === 'Бахмут') {
     phone = '099-21-21-021'
   }
-  return await dispatch({ type: SET_HEADER_PHONE, payload: phone });
+  await dispatch({ type: SET_HEADER_PHONE, payload: phone });
+  await dispatch({ type: SET_CURRENT_CITY, payload: city });
 }

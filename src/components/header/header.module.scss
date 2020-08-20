@@ -59,18 +59,24 @@
 				font-weight: bold;
 			}
 			.login_nav_item {
-				//flex-basis: 20%;
-				//padding-right: 1em;
+				flex-basis: 25%;
 				div {
 					display: flex;
 					justify-content: flex-end;
 					button {
 						width: fit-content;
+						white-space: nowrap;
 					}
 					@media screen and (max-width: 992px) {
 						justify-content: center;
 						padding-bottom: 1em;
 					}
+				}
+				@media screen and (max-width: 1300px) {
+					flex-basis: 20%;
+				}
+				@media screen and (max-width: 1100px) {
+					flex-basis: 15%;
 				}
 			}
 			@media screen and (max-width: 992px) {
