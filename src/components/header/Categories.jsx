@@ -90,7 +90,7 @@ export default function Categories(props) {
                 <NavLink href="/wok" onClick={() => linkClickHandler('wok')} className={router.pathname === '/wok' ? s.activeLink : null}>
                   {router.pathname === '/wok'
                     ? <img src={YelWok} alt="" />
-                    : <img src={Wok} alt="" />}
+                    : <img src={c} alt="" />}
                  <span className={`text-center`}> ВОК</span></NavLink>
               </NavItem>
               <NavItem>
