@@ -1,9 +1,8 @@
 import React, {useState} from 'react'
 import s from './bill.module.scss'
-import BillboardImage from '../../assets/images/billboard.png';
+import BillboardImage from '../../assets/images/compressed/billboard.png';
 import Filter from '../../assets/images/signs/filter_lines.png';
 import Search from '../../assets/images/signs/search.png';
-import $ from 'jquery'
 
 export default function Billboard() {
     const [searchValue, setSearchValue] = useState(null)
