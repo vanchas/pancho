@@ -40,6 +40,7 @@
 			margin: 0 auto;
 			justify-content: space-between;
 			justify-items: center;
+			align-items: center;
 			li {
 				a {
 					color: #fff;
@@ -49,9 +50,8 @@
 					white-space: nowrap;
 				}
 				@media screen and (max-width: 992px) {
-					a {
-						text-align: center;
-					}
+					padding: .5em;
+					text-align: center;
 				}
 			}
 			.activeLink {
