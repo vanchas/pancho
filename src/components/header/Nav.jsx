@@ -9,16 +9,25 @@ import {
   NavbarBrand,
   Nav,
   NavItem,
-  NavLink
 } from 'reactstrap';
 import Phone from '../../assets/images/signs/phone_light.png';
 import LoginModal from '../modals/LoginModal'
+import Link from "next/link";
+
+const links = [
+  {path: '/', name: 'О компании Панчо'},
+  {path: 'delivery', name: 'Доставка и оплата'},
+  {path: 'discounts', name: 'Акции'},
+  {path: 'bonus', name: 'Бонусная программа'},
+  {path: 'reviews', name: 'Отзывы'},
+  {path: 'contacts', name: 'Контакты'}
+]
 
 const NavComponent = props => {
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
 
-  const toggle = () => {
+  const toggle = (e) => {
     if (window && window.innerWidth < 992) {
       setIsOpen(!isOpen)
     }
@@ -33,37 +42,21 @@ const NavComponent = props => {
       <NavbarToggler className={`mr-3 ${s.navbar_toggler}`} onClick={toggle} />
       <Collapse isOpen={isOpen} navbar className={s.collapse} >
         <Nav className={`mr-auto ${s.nav_list}`} navbar>
-          <NavItem>
-            <NavLink onClick={toggle} href="/" className={router.pathname === '/about' ? s.activeLink : 'font-weight-bold'}>О компании Панчо</NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink onClick={toggle} href="/delivery" className={router.pathname === '/delivery' ? s.activeLink : 'font-weight-bold'}>Доставка и оплата</NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink onClick={toggle} href="/discounts" className={router.pathname === '/discounts' ? s.activeLink : 'font-weight-bold'}>Акции</NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink onClick={toggle} href="/bonus" className={router.pathname === '/bonus' ? s.activeLink : 'font-weight-bold'}>Бонусная программа</NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink onClick={toggle} href="/reviews" className={router.pathname === '/reviews' ? s.activeLink : 'font-weight-bold'}>Отзывы</NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink onClick={toggle} href="/contacts" className={router.pathname === '/contacts' ? s.activeLink : 'font-weight-bold'}>Контакты</NavLink>
-          </NavItem>
+          {links.map((l, i) => (
+            <NavItem key={i}>
+              <Link href={l.path}>
+                <a onClick={toggle} className={'nav-link' + router.pathname === l.path ? s.activeLink : 'font-weight-bold'}>{l.name}</a>
+              </Link>
+            </NavItem>
+          ))}
           <NavItem onClick={toggle} className={s.login_nav_item}>
-            <LoginModal buttonLabel="Войти" active={router.pathname === '/cabinet' ? true : false} />
+            <LoginModal buttonLabel={router.pathname === '/cabinet' ? "Выйти" : "Войти"} active={router.pathname === '/cabinet' ? true : false} />
           </NavItem>
         </Nav>
       </Collapse>
     </Navbar>
   )
 }
-
-NavComponent.getInitialProps = async ({ Component, ctx }) => {
-  return {}
-}
-
 
 NavComponent.propTypes = {
   light: PropTypes.bool,

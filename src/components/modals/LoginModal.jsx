@@ -36,7 +36,13 @@ const ModalExample = ({ buttonLabel, className, active }) => {
   const [passwordConfirmation, setPasswordConfirmation] = useState("");
   const [registrationWarning, setRegistrationWarning] = useState("");
 
-  const toggle = () => setModal(!modal);
+  const toggle = () => {
+    if (router.pathname === '/cabinet') {
+      router.push('/')
+    } else {
+      setModal(!modal);
+    }
+  }
 
   const [nestedModal, setNestedModal] = useState(false);
   const [closeAll, setCloseAll] = useState(false);
