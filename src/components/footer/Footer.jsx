@@ -6,8 +6,9 @@ import Location from '../../assets/images/signs/point-01.svg';
 import Social from '../../assets/images/signs/social.png';
 import AppStore from '../../assets/images/app_store.png';
 import GooglePlay from '../../assets/images/google.png';
+import { connect } from "react-redux";
 
-export default function Footer() {
+function Footer({headerSelectPhone, address}) {
   return (
     <div className={s.footer}>
       <div className={s.footer_content}>
@@ -41,12 +42,12 @@ export default function Footer() {
           <h6 className="">Звоните для заказа</h6>
           <div className="d-flex align-items-center">
             <img src={Phone} alt="" className={s.sign} />
-            <a href="tel:+0950001195" className={`${s.phone} btn`}>095-000-11-95</a>
+            <a href={`tel:+${headerSelectPhone}`} className={`${s.phone} btn`}>{headerSelectPhone}</a>
           </div>
           <h6 className="">Заходите в гости</h6>
           <div className="d-flex align-items-center">
             <img src={Location} alt="" className={s.sign} />
-            <address>Славянск, ул. Шевченко,10</address>
+            <address>{address}</address>
           </div>
         </div>
         <div className={s.footer_item}>
@@ -68,3 +69,9 @@ export default function Footer() {
     </div>
   )
 }
+
+const mapStateTopProps = state => ({
+  headerSelectPhone: state.user.headerSelectPhone,
+  address: state.user.cafeAddress
+})
+export default connect(mapStateTopProps, null)(Footer)

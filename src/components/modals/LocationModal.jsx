@@ -6,22 +6,30 @@ import {setHeaderPhone} from "../../redux/actions/actions";
 const cities = ['Славянск', 'Краматорск', 'Бахмут']
 
 function LocationModal({ city, setHeaderPhone }) {
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(false);
   const [chooseCity, setChooseCity] = useState(false);
 
   useEffect(() => {
-    setTimeout(() => {
-      setShow(true);
-    }, 1000);
+    let timer
+    if (!localStorage.getItem('loc-prompt')) {
+      timer = setTimeout(() => {
+        setShow(true);
+      }, 1000);
+    }
+    return () => {
+      clearTimeout(timer)
+    }
   }, []);
 
   const hideModal = () => {
     setShow(false);
+    localStorage.setItem('loc-prompt', '1')
   }
 
   const chooseCityHandler = (city) => {
     setHeaderPhone(city)
     hideModal()
+    localStorage.setItem('loc-prompt', '1')
   }
 
   return (

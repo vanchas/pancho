@@ -1,14 +1,38 @@
-import App from 'next/app';
-import { Provider } from 'react-redux';
-import React from 'react';
-import './styles/app.scss';
-import Layout from '../components/layout/Layout';
+import App from "next/app";
+import { Provider } from "react-redux";
+import React from "react";
+import "./styles/app.scss";
+import Layout from "../components/layout/Layout";
 import withRedux from "next-redux-wrapper";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import store from '../redux/store';
+import "bootstrap/dist/css/bootstrap.min.css";
+import store from "../redux/store";
 import Head from "next/head";
 
+import { css } from "@emotion/core";
+import FadeLoader from "react-spinners/FadeLoader";
+
+const override = css`
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(0, -50%);
+`;
+
 class CustomApp extends App {
+  constructor(props) {
+    super(props);
+    this.state = {
+      loading: true
+    };
+  }
+
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({ loading: false })
+    }, 500)
+  }
+
   static async getInitialProps(props) {
     const pageProps = props.Component.getInitialProps ? await props.Component.getInitialProps(props.ctx) : {};
     return {
@@ -16,19 +40,33 @@ class CustomApp extends App {
     };
   }
 
+  componentWillUnmount() {
+    localStorage.removeItem('loc-prompt')
+  }
+
   render() {
     const { Component, pageProps, store } = this.props;
 
     return (
-      <Provider store={store}>
-        <Head>
-          <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" />
-          <title>Pancho</title>
-        </Head>
-        <Layout>
-          <Component {...pageProps} />
-        </Layout>
-      </Provider>
+      this.state.loading ?
+        <div className="sweet-loading">
+          <FadeLoader
+            css={override}
+            size={150}
+            color={"#ffc107"}
+            loading={this.state.loading}
+          />
+        </div>
+        :
+        <Provider store={store}>
+          <Head>
+            <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" />
+            <title>Pancho</title>
+          </Head>
+          <Layout>
+            <Component {...pageProps} />
+          </Layout>
+        </Provider>
     );
   }
 }

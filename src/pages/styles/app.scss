@@ -36,7 +36,7 @@ body {
 	transform: translateX(-50%) !important;
 	width: 100vw !important;
 	max-width: 10000px !important;
-	z-index: 1 !important;
+	z-index: 2 !important;
 	animation: fade .5s ease-in;
 	box-shadow: 0 .5rem 1rem rgba(0,0,0,.15) !important;
 }
@@ -49,3 +49,9 @@ body {
 	}
 }
 
+// nav
+@media screen and (max-width: 1190px) {
+	.navbar {
+		padding: 0 !important;
+	}
+}

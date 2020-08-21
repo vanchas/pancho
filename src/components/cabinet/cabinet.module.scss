@@ -45,6 +45,9 @@
 	grid-auto-flow: column;
 	grid-column-gap: 2em;
 	justify-content: center;
+	span {
+		cursor: pointer;
+	}
 	@media screen and (max-width: 769px) {
 		grid-auto-flow: initial;
 		grid-template-columns: 1fr 1fr;
@@ -78,6 +81,7 @@
 
 // about
 .user_about_form {
+	padding-bottom: 5em;
 	form {
 		max-width: 500px;
 		margin: 1em auto 0 auto;
@@ -118,7 +122,7 @@
 				img {
 					width: 5em;
 					top: 50%;
-					left: 0;
+					left: -.5em;
 					transform: translateY(-50%);
 					position: absolute;
 				}
@@ -235,7 +239,7 @@
 .user_address {
 	max-width: 500px;
 	margin: 0 auto;
-	padding: 2em 0.5em 0.5em 0.5em;
+	padding: 2em 0.5em 5em 0.5em;
 	display: grid;
 	justify-items: center;
 	h5 {
@@ -305,7 +309,7 @@
 .user_bonus {
 	max-width: 500px;
 	margin: 0 auto;
-	padding: 2em 0.5em;
+	padding: 2em 0.5em 10em 0.5em;
 
 	.amount_block {
 		display: grid;

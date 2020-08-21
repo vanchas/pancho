@@ -1,6 +1,8 @@
 import React, {useState} from 'react'
 import s from './half.module.scss'
-import PizzaPlaceholder from '../../assets/images/pizza_placeholder.png'
+// import PizzaPlaceholder from '../../assets/images/pizza_placeholder.png'
+import PlaceholderLeft from '../../assets/images/placeholder_left.png'
+import PlaceholderRight from '../../assets/images/placeholder_right.png'
 import Basket from '../../assets/images/basket/korzina-01.svg'
 import Green from '../../assets/images/green.png'
 import Pepper from '../../assets/images/pepper.png'
@@ -39,7 +41,7 @@ export default function HalfPizzaConstructor({ rightHalfPizza, leftHalfPizza, pi
       <img src={Diameter} alt="diameter 40cm" className={s.diameter_image} />
       <div className={s.left_half_pizza_block}>
         <div className={s.left_half_pizza_image}>
-          <img className={s.pizza_half} src={leftHalfPizza.image ? leftHalfPizza.image : PizzaPlaceholder} alt="pizza" />
+          <img className={s.pizza_half} src={leftHalfPizza.image ? leftHalfPizza.image : PlaceholderLeft} alt="pizza" />
           <span className={`py-1`}>ЛЕВАЯ ПОЛОВИНКА</span>
         </div>
         {leftHalfPizza.name
@@ -81,7 +83,7 @@ export default function HalfPizzaConstructor({ rightHalfPizza, leftHalfPizza, pi
       </div>
       <div className={s.right_half_pizza_block}>
         <div className={s.right_half_pizza_image}>
-          <img className={s.pizza_half} src={rightHalfPizza.image ? rightHalfPizza.image : PizzaPlaceholder} alt="pizza" />
+          <img className={s.pizza_half} src={rightHalfPizza.image ? rightHalfPizza.image : PlaceholderRight} alt="pizza" />
           <span className={`py-1`}>ПРАВАЯ ПОЛОВИНКА</span>
         </div>
         {rightHalfPizza.name

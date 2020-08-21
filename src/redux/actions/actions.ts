@@ -27,7 +27,7 @@ import {
   GET_CURRENT_LOCATION,
   SET_PESISTED_STATE,
   GET_SALADS,
-  SET_HEADER_PHONE, INCREASE_FREE_SOUCES_COUNTER, DECREASE_FREE_SOUCES_COUNTER, SET_CURRENT_CITY
+  SET_HEADER_PHONE, INCREASE_FREE_SOUCES_COUNTER, DECREASE_FREE_SOUCES_COUNTER, SET_CURRENT_CITY, SET_CAFE_ADDRESS
 } from "./types";
 import { pizza } from '../../../fakePizzas'
 import { woks } from '../../../fakeWoks'
@@ -166,13 +166,18 @@ export const setPersistedState = () => async (dispatch: Function) => {
 
 export const setHeaderPhone = (city: string) => async (dispatch: Function) => {
   let phone: string = ''
+  let address: string = ''
   if (city === 'Славянск') {
     phone = '095-000-11-95'
+    address = 'Славянск, ул. Шевченко,10'
   } else if (city === 'Краматорск') {
     phone = '050-41-41-041'
+    address = 'Краматорск, ул. Дружбы,24'
   } else if (city === 'Бахмут') {
     phone = '099-21-21-021'
+    address = 'Бахмут, ул. Василия Першина (напротив отеля Украина)'
   }
   await dispatch({ type: SET_HEADER_PHONE, payload: phone });
   await dispatch({ type: SET_CURRENT_CITY, payload: city });
+  await dispatch({ type: SET_CAFE_ADDRESS, payload: address });
 }

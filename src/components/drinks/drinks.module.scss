@@ -51,9 +51,9 @@
 	grid-template-columns: repeat(4, 1fr);
 	justify-content: space-between;
 	justify-items: center;
-	grid-template-columns: repeat(4, 1fr);
 	li {
 		margin: 0 auto;
+		width: 100%;
 	}
 	@media screen and (max-width: 1550px) {
 		grid-template-columns: repeat(3, 1fr);

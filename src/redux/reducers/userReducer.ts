@@ -16,7 +16,7 @@ import {
   SET_HEADER_PHONE,
   INCREASE_FREE_SOUCES_COUNTER,
   DECREASE_FREE_SOUCES_COUNTER,
-  SET_CURRENT_CITY
+  SET_CURRENT_CITY, SET_CAFE_ADDRESS
 } from "../actions/types";
 import { loadState } from '../localStorage';
 
@@ -31,7 +31,8 @@ interface IState {
   pickupShoppingCard: boolean,
   currentLocation: string,
   headerSelectPhone: string,
-  freeSoucesCounter: number
+  freeSoucesCounter: number,
+  cafeAddress: string
 }
 
 const initialState: IState = {
@@ -45,7 +46,8 @@ const initialState: IState = {
   pickupShoppingCard: false,
   currentLocation: 'Славянск',
   headerSelectPhone: '095-000-11-95',
-  freeSoucesCounter: 0
+  freeSoucesCounter: 0,
+  cafeAddress: 'Славянск, ул. Шевченко,10'
 }
 
 export const userReducer = (state = initialState, action: any) => {
@@ -77,6 +79,9 @@ export const userReducer = (state = initialState, action: any) => {
 
     case SET_CURRENT_CITY:
       return { ...state, currentLocation: action.payload }
+
+    case SET_CAFE_ADDRESS:
+      return { ...state, cafeAddress: action.payload }
 
     case INCREASE_FREE_SOUCES_COUNTER:
       return { ...state, freeSoucesCounter: state.freeSoucesCounter + action.payload }

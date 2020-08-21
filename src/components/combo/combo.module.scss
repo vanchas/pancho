@@ -51,7 +51,6 @@
 	grid-template-columns: repeat(4, 1fr);
 	justify-content: space-between;
 	justify-items: center;
-	grid-template-columns: repeat(4, 1fr);
 	li {
 		margin: 0 auto;
 	}
@@ -69,9 +68,12 @@
 	padding: 1em;
 	max-width: 22em;
 	display: grid;
-	align-content: space-between;
+	align-content: stretch;
 	@media screen and (max-width: 500px) {
 		max-width: 100%;
+		.combo_image {
+			max-width: 100%;
+		}
 	}
 }
 .combo_image {
@@ -89,8 +91,10 @@
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	grid-gap: 0.5em;
+	align-content: stretch;
 	.combo_name {
 		order: 1;
+		grid-column: span 2;
 		font-weight: 600;
 	}
 	.combo_price {

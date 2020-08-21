@@ -47,9 +47,9 @@
 	grid-template-columns: repeat(4, 1fr);
 	justify-content: space-between;
 	justify-items: center;
-	grid-template-columns: repeat(4, 1fr);
 	li {
 		margin: 0 auto;
+		width: 100%;
 	}
 	@media screen and (max-width: 1550px) {
 		grid-template-columns: repeat(3, 1fr);
@@ -67,6 +67,11 @@
 	padding: 1em;
 	@media screen and (max-width: 500px) {
 		max-width: 100%;
+		.snack_image {
+			img {
+				max-width: 100%;
+			}
+		}
 	}
 }
 .snack_image {

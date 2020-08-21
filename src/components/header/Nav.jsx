@@ -26,15 +26,15 @@ const NavComponent = props => {
 
   return (
     <Navbar color="" expand="lg" className="py-1" style={{zIndex: '1', maxWidth: '1667px', margin: 'auto'}}>
-      <NavbarBrand href="tel:+0950001195" className={s.navbar_brand}>
+      <NavbarBrand href="tel:+0950001195" className={`ml-3 ${s.navbar_brand}`}>
         <img src={Phone} alt="" />
         <span className="btn text-light">095-000-11-95</span>
       </NavbarBrand >
-      <NavbarToggler className={s.navbar_toggler} onClick={toggle} />
+      <NavbarToggler className={`mr-3 ${s.navbar_toggler}`} onClick={toggle} />
       <Collapse isOpen={isOpen} navbar className={s.collapse} >
         <Nav className={`mr-auto ${s.nav_list}`} navbar>
           <NavItem>
-            <NavLink onClick={toggle} href="/about" className={router.pathname === '/about' ? s.activeLink : 'font-weight-bold'}>О компании Панчо</NavLink>
+            <NavLink onClick={toggle} href="/" className={router.pathname === '/about' ? s.activeLink : 'font-weight-bold'}>О компании Панчо</NavLink>
           </NavItem>
           <NavItem>
             <NavLink onClick={toggle} href="/delivery" className={router.pathname === '/delivery' ? s.activeLink : 'font-weight-bold'}>Доставка и оплата</NavLink>

@@ -72,6 +72,11 @@
 	align-content: space-between;
 	@media screen and (max-width: 500px) {
 		max-width: 100%;
+		.pasta_image {
+			img {
+				max-width: 100%;
+			}
+		}
 	}
 }
 .pasta_image {
@@ -87,6 +92,7 @@
 	}
 }
 .pasta_info {
+	padding-top: .5em;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	grid-gap: 0.5em;

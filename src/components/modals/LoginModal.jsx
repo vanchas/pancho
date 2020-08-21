@@ -178,7 +178,7 @@ const ModalExample = ({ buttonLabel, className, active }) => {
             onClosed={closeAll ? toggle : undefined}
           >
             <ModalHeader
-              className={`border-0 text-white d-block text-center ${s.bg_dark}`}
+              className={`border-0 text-white d-block text-center font-weight-bold ${s.bg_dark}`}
             >
               РЕГИСТРАЦИЯ
             </ModalHeader>
@@ -232,7 +232,7 @@ const ModalExample = ({ buttonLabel, className, active }) => {
               ) : null}
               <Button
                 color=""
-                className="d-block mx-auto"
+                className="d-block mx-auto font-weight-bold"
                 style={{ backgroundColor: "#ffed00" }}
                 onClick={registrationSubmitHandler}
               >
