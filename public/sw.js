@@ -1,1 +1,128 @@
-if(!self.define){const e=e=>{"require"!==e&&(e+=".js");let a=Promise.resolve();return c[e]||(a=new Promise(async a=>{if("document"in self){const c=document.createElement("script");c.src=e,document.head.appendChild(c),c.onload=a}else importScripts(e),a()})),a.then(()=>{if(!c[e])throw new Error(`Module ${e} didn’t register its module`);return c[e]})},a=(a,c)=>{Promise.all(a.map(e)).then(e=>c(1===e.length?e[0]:e))},c={require:Promise.resolve(a)};self.define=(a,s,i)=>{c[a]||(c[a]=Promise.resolve().then(()=>{let c={};const d={uri:location.origin+a.slice(1)};return Promise.all(s.map(a=>{switch(a){case"exports":return c;case"module":return d;default:return e(a)}})).then(e=>{const a=i(...e);return c.default||(c.default=a),c})}))}}define("./sw.js",["./workbox-e032be30"],(function(e){"use strict";importScripts(),e.skipWaiting(),e.clientsClaim(),e.precacheAndRoute([{url:"/",revision:"axwHxTlDy0dw2KdjznXkh"},{url:"/_next/static/axwHxTlDy0dw2KdjznXkh/_buildManifest.js",revision:"070942a98b59edcb25c0b3e18cfb9ece"},{url:"/_next/static/axwHxTlDy0dw2KdjznXkh/_ssgManifest.js",revision:"abee47769bf307639ace4945f9cfd4ff"},{url:"/_next/static/axwHxTlDy0dw2KdjznXkh/pages/404.js",revision:"a37bd9c1ccafa5f9ddac8940146f5068"},{url:"/_next/static/axwHxTlDy0dw2KdjznXkh/pages/_app.js",revision:"0d5ec151ccf2e80cf3f2410102244787"},{url:"/_next/static/axwHxTlDy0dw2KdjznXkh/pages/_error.js",revision:"82c77106f2434126928197c7524564ca"},{url:"/_next/static/axwHxTlDy0dw2KdjznXkh/pages/about.js",revision:"f5fae6134f0c447b7ef3037729b499ab"},{url:"/_next/static/axwHxTlDy0dw2KdjznXkh/pages/bonus.js",revision:"d59bbf165b3b839cd94dde24ad414bf3"},{url:"/_next/static/axwHxTlDy0dw2KdjznXkh/pages/cabinet.js",revision:"733a0ffde0d6ece96b1fb27089e10130"},{url:"/_next/static/axwHxTlDy0dw2KdjznXkh/pages/combo.js",revision:"a897709face61c9a585b78071955ca63"},{url:"/_next/static/axwHxTlDy0dw2KdjznXkh/pages/contacts.js",revision:"d173f72dd2c3c62d5d2ddb8d7bfd8264"},{url:"/_next/static/axwHxTlDy0dw2KdjznXkh/pages/delivery.js",revision:"35663eb290508d113efb537137d732cb"},{url:"/_next/static/axwHxTlDy0dw2KdjznXkh/pages/desserts.js",revision:"63d790409f644d99f5136de1852546b4"},{url:"/_next/static/axwHxTlDy0dw2KdjznXkh/pages/discounts.js",revision:"da2822d58766f4dbb27631fc8ed1cffd"},{url:"/_next/static/axwHxTlDy0dw2KdjznXkh/pages/drinks.js",revision:"ae9f3f357e69f78d9843c862ce18b447"},{url:"/_next/static/axwHxTlDy0dw2KdjznXkh/pages/half.js",revision:"a393b7f8e59b4a40ce4998f2aa3f69e8"},{url:"/_next/static/axwHxTlDy0dw2KdjznXkh/pages/index.js",revision:"fa8f03f378a2ad3fb2d4b437380ceebd"},{url:"/_next/static/axwHxTlDy0dw2KdjznXkh/pages/pasta.js",revision:"00265ee25343fffcb82f7aafda324b4d"},{url:"/_next/static/axwHxTlDy0dw2KdjznXkh/pages/pizza.js",revision:"f445f3a099a9a0d692b14195f58e5a3e"},{url:"/_next/static/axwHxTlDy0dw2KdjznXkh/pages/reviews.js",revision:"d8dadd411d8ec4ad6d9a0ba87c73e781"},{url:"/_next/static/axwHxTlDy0dw2KdjznXkh/pages/salad.js",revision:"9de9f2522ad17cc073e341bf9a0775db"},{url:"/_next/static/axwHxTlDy0dw2KdjznXkh/pages/sets.js",revision:"2e44f64e06465b61497210baf876ce5a"},{url:"/_next/static/axwHxTlDy0dw2KdjznXkh/pages/snacks.js",revision:"a0cea9591bf345a6170a356ff5df10b3"},{url:"/_next/static/axwHxTlDy0dw2KdjznXkh/pages/wok.js",revision:"b7875179830aa2a6159af78fed66cebf"},{url:"/_next/static/chunks/085e42becfa5093d56a5683326f6e2091abfe4ff.1d44368defdd618cded7.js",revision:"08b958c8494b381cce903b4198af790d"},{url:"/_next/static/chunks/120a39021f4e65a63c964b648c7f8abaaffab418.15024a102a83d36f8480.js",revision:"6dc0392f767df482a31b218f3ec17485"},{url:"/_next/static/chunks/22f4cd74e37f3cf2f1c4569541ad960edf60edf6.79e9d2c3448ca9d636f4.js",revision:"3959614e2e08f69365e02ddb4e9a18c3"},{url:"/_next/static/chunks/b637e9a5.a705a21716e5b01f8145.js",revision:"b34ed2b73ac647c65acde163e6bcdea0"},{url:"/_next/static/chunks/beb07314364003859a602817709be873a9f6541a.f5785b8f82c55da9d21f.js",revision:"0306da8bd90cd13bcc78282f310422ac"},{url:"/_next/static/chunks/d34a94fa5801a4a983dffc713634393b7218fb5a.2e4a5bd8453bffedaff1.js",revision:"0fca8ee27e731efa2ecb00a407738df9"},{url:"/_next/static/chunks/framework.c4a2b05e6662040d1d25.js",revision:"fcc42d3255bb8891527c05f41240cc0b"},{url:"/_next/static/css/0755b69ccdf81f76c87c.css",revision:"a8a5ecb9e1a7ad888a4f891f9717fb8b"},{url:"/_next/static/css/0b5d8b426aece2ddc6e1.css",revision:"0006e1b5703401f5fc4c3b5e0b8c7bb9"},{url:"/_next/static/css/196304e20852a0783966.css",revision:"d5de8d55b6882bdbe156e7244475c032"},{url:"/_next/static/css/3a4d1c5636168abf3e9f.css",revision:"5dc3beb425d49781abf001c601086b85"},{url:"/_next/static/css/3e7dbe5df0d08116f60c.css",revision:"107a9fa97f56c10f637d5ad801ea34e1"},{url:"/_next/static/css/40460149aaa9d7a15b96.css",revision:"3999396350dc9ea333faa18d469a7dcb"},{url:"/_next/static/css/491996787da722c423f3.css",revision:"60166be92cd7d8818ca1183a526bd92a"},{url:"/_next/static/css/4fb7efd9f80a37ee8d53.css",revision:"890ad262de01c8cedab22a56eb6ee04e"},{url:"/_next/static/css/6dae3d47fc922bbcb79e.css",revision:"8186eb46e5e15b4a4d099f98c554e246"},{url:"/_next/static/css/848f39a5970462149fbf.css",revision:"b1ea8996694e894890715cdfe71c6ee2"},{url:"/_next/static/css/8b6142343095442d2948.css",revision:"64c097e0e4c5089b56f39c209d8e95b6"},{url:"/_next/static/css/91187b83176313b552d1.css",revision:"409024b5013089b683bae1e1c09dbfa5"},{url:"/_next/static/css/b078a70fcde01fea49a3.css",revision:"24dbcb0b77aeaef430d599f02fbdfca8"},{url:"/_next/static/css/b5198787085cd9acba44.css",revision:"9fae48c92aaa5e09af68ef83e8f04340"},{url:"/_next/static/css/c39b7cd6dc1246aa269f.css",revision:"48957f5a6bfef9d038488da058a0381a"},{url:"/_next/static/css/c7936c33f4f4be952a32.css",revision:"342cb598b883182e7921b87e54a90d2b"},{url:"/_next/static/css/d56f770bf8806e08cca3.css",revision:"0122204644f0984a2670a3877b11470d"},{url:"/_next/static/images/1-4bcdeb9129b98848de8dd9098c66aa52.png",revision:"0c7583aaff16e98c2f5e423269e6b383"},{url:"/_next/static/images/1-d652e2d744fb33b94ef8687579e709e2.jpg",revision:"1998bf06b60a036c94c771e815d6540e"},{url:"/_next/static/images/1-ec534563e66e68266119d7e86bc300ed.jpg",revision:"143b9bada186fabb9a4778ca6e77e5ab"},{url:"/_next/static/images/2-384ae218e460f5bfb938a95265efd6bc.jpg",revision:"f24527c21b0bf9414616991c528d0e78"},{url:"/_next/static/images/2-4b259c3a53d424249307c0aec29c9b31.png",revision:"90193d0b847ff49f563798d7f7800a5d"},{url:"/_next/static/images/2-7e23816bd5976794505d29415d5120c8.jpg",revision:"a3b873e4c28f4ae78ee80f92e0280941"},{url:"/_next/static/images/2-87c9dd87f307c4f77d0c2b559bd487b0.jpg",revision:"7efd9e7d0be404fc754355c7cb78e84c"},{url:"/_next/static/images/3-1e27b71d6a00e1a2571a45d161096416.jpg",revision:"b13bdf369e68ff53d000e5eae99f3acd"},{url:"/_next/static/images/3-832467643b165fb3cfcc4c4f33ce439d.jpg",revision:"1335b2e1240c7eeb9f6a822d36b7979e"},{url:"/_next/static/images/3-9608903de59636a37dd132997a4497bc.png",revision:"d1165c3d7799e2db60ceae520d6c403b"},{url:"/_next/static/images/4-723110e84865fe76337ec70d97cf3bf6.jpg",revision:"4e8698bdcf8335e743b040e2d7f6d972"},{url:"/_next/static/images/4-cbb45792cc21e9d6592c23345766c79a.jpg",revision:"08398518518071b0cd0b9de88781933b"},{url:"/_next/static/images/4_sezona-b93291e166bb6c3c435c0850d12e48e0.png",revision:"0bde26f7f22c81b51857944d41062077"},{url:"/_next/static/images/5-e0db0b2e32a235eb45d62a24f104dc03.jpg",revision:"4414585ee795f1a91640bcf3ca5d63a8"},{url:"/_next/static/images/BBQ-64f1eb6a4fd1d36273729e842715b357.png",revision:"d2f6ced2d658aae4dfbf9028e1a931cc"},{url:"/_next/static/images/beer-a5ec6005fc4232b3b490151a84358d60.jpg",revision:"715f760697976a43e62557ec9771c23d"},{url:"/_next/static/images/big_boss-991e79f9935bdc90a0a8a8130cc143dd.png",revision:"9cee6030c197d017901732c154a59707"},{url:"/_next/static/images/billboard-9857070f589ce85b9e704072991a603a.png",revision:"ecf2271fdc7dff3621689022bb11ec60"},{url:"/_next/static/images/bogataya_cipa-f40cc45b96db4fba684c7eb397561fff.png",revision:"da8a839cc4dce7b83f7164f930970f1e"},{url:"/_next/static/images/box-a154024a83addba6f878ec55965c21a1.png",revision:"cc0df4d65f69d2b2b4df28743d1dcd49"},{url:"/_next/static/images/cart-po-sel-13f7579bc23e8d31439a83948a19a730.jpg",revision:"0a98fb90329599515b25612ca0d00541"},{url:"/_next/static/images/cezar-aeedff28c301cfb3d9106c99bb304f0a.png",revision:"cb854a746453b62267d9f65eff7b183b"},{url:"/_next/static/images/cezar-f1f3ab5b185db353415c1683940697cb.jpg",revision:"0a582c26dbfd185e1ecb0a7f4b623ebb"},{url:"/_next/static/images/cheesbolls-b-2f779e890b9a463a1960ef7228c236d4.jpg",revision:"c522b784edb434994fbe6a29ecdce116"},{url:"/_next/static/images/cheesbolls-e4b28de6b7a6c2c627575336b247796f.jpg",revision:"b56a05007ef9cc3675ea28e32005021a"},{url:"/_next/static/images/chiken_de_luks-9ccdb6c35ae4441b0a201c4f64027494.png",revision:"e80142ad4959cdd38b9168cf284384b5"},{url:"/_next/static/images/cola-fce67a332970f2a7a9a7aaa3cc0f20b6.jpg",revision:"6a8489bba31b082d9197516d4798d919"},{url:"/_next/static/images/combo-d5359d02d372c0e3a5204963702b2d34.png",revision:"7514fced724bbfd89f14345971138642"},{url:"/_next/static/images/derevenskaya-b22b4d31c9fc18e6df7b89c85770fe12.png",revision:"8a082ce2865f71e3c8480be1bce5783b"},{url:"/_next/static/images/dessert-67c78886066b83a1655479cc42eb0eb2.png",revision:"fe5e876c84652201e6cae3e9bb3b6b59"},{url:"/_next/static/images/dislike-61ef6f75552b7bde567f172395ccc8f6.png",revision:"62b5cb4e948b1715d8dc6aeb8f84ac3a"},{url:"/_next/static/images/drink-dabe3c27d1b8e7d6745ac229bc42a95d.png",revision:"d5e8afca1071503dcbca70cbe31e43c0"},{url:"/_next/static/images/fanta-b5b0c66beba2367df1935a02ff8db867.jpg",revision:"24a8b2489f7f420b294da202267baf1a"},{url:"/_next/static/images/fry-6e854f57f48094f030a96893a205244f.jpg",revision:"29b3543988f3e5db321608088cbf4c31"},{url:"/_next/static/images/funchoza-56b1628970959fa56efbabc41c177ff7.jpg",revision:"dd25746aca09185d98313ec12cb6d333"},{url:"/_next/static/images/funchoza-591a0ff50e09f30d848d1a903c024f4e.jpg",revision:"d65036590c63e006a7dacc6e7783b08c"},{url:"/_next/static/images/funchoza-6efd48f8d80bf916bc60cfa8c4713df1.jpg",revision:"4bc4bdbe909ec28f6472008c5c61ec87"},{url:"/_next/static/images/funchoza-7a23f1129fb9074f3656dc04e8a844be.jpg",revision:"f21071a7938bb52aa1837546b2a9179d"},{url:"/_next/static/images/funchoza-d14523d408ad52b6355408e7d9d8e11d.jpg",revision:"73d63399d0ab6aac28327a1935c071fb"},{url:"/_next/static/images/gavayskaya-2905bc07a32dbfd82b845bc016b08685.png",revision:"d10d28d687058d95fc2ca5a32829de8e"},{url:"/_next/static/images/greece-c3f70d362b720d99135100f81287998a.jpg",revision:"38d846813b4fd1405f6977b95dc83faf"},{url:"/_next/static/images/half-6d6980e83f6ef64349aa3b8e03210be0.png",revision:"525119e0b9794c6ce22363273778d542"},{url:"/_next/static/images/ital-db998e71277ae76062680b23a17c8131.png",revision:"b1c0664eff54907fed04910a3d80267e"},{url:"/_next/static/images/juice-30c1b5330909388497a19777c891dea4.jpg",revision:"e8dcac35874888e24d986efc280ba872"},{url:"/_next/static/images/jul'en-4b2633f2aeb8c95fa8172851f87d8198.png",revision:"044afc994c9980bc6fb641b6f73895d2"},{url:"/_next/static/images/logo_pancho-01-c9e9a4b5d3d2b62d88e7abe4bcf343cf.svg",revision:"31d3b2898991dd13a9039a022819b222"},{url:"/_next/static/images/margorita-7cb9da813d3de7c4ac41ca4cbbb52357.png",revision:"a34e284608bcecd03404300213ae7efd"},{url:"/_next/static/images/meksika-2ec7a005885a5d08dfd9c7f75503e927.png",revision:"83e704ff167e3195470bf2c9a3986d6d"},{url:"/_next/static/images/morskaya-10f9c08bfd8fafa1b0c62b8681cc370e.png",revision:"6beee4f97eda6a1e9066adc996224207"},{url:"/_next/static/images/mramornyj-maffin-f1d071b9e4b999a0484593c801a1c46d.jpg",revision:"9e2a9fe3b299682e0639f78276b15e98"},{url:"/_next/static/images/muza_kukuruza-c2aa2805b7fecfde1e3a35f35608b187.png",revision:"b4346d48d468088c678bbdd2dfc6b6e4"},{url:"/_next/static/images/myasoed-0f2a5050837bcfd87d6e42210648c44b.png",revision:"c4ed01892988ba4d235575aa9247829f"},{url:"/_next/static/images/nagets-684726006faeca21273014907a75d985.jpg",revision:"30653e06137f654dfc0e4521b20afbf2"},{url:"/_next/static/images/ovoshi_sur-9a4ba30846dde6be6bd630499601f484.png",revision:"54c3d6a73f8ea6ca296371ec4bcb3071"},{url:"/_next/static/images/pancho_firm-62e264db1033404b2f3b098ad03415c0.png",revision:"198cfb4f5f223d7f6ebb280fef038992"},{url:"/_next/static/images/panchos-beaf-b8fd423ee6085d7ac734e4240eed77fc.jpg",revision:"2bb243f25f908413845f8c04192a9a71"},{url:"/_next/static/images/panchos-chicken-42505e3b54b12764cbf7b4b157c4f612.jpg",revision:"0fcddc74a6a7da973c418c09ded82bd2"},{url:"/_next/static/images/pasta-a6b7fcc65539f4072fb7d252b4f782e0.png",revision:"afc680d90751e3b5dca17fe558e2145c"},{url:"/_next/static/images/pasta_1-d25e60a498e3d4af3d4670306e7c2807.jpg",revision:"ce2aa37f940e8160b9aaed4a14fe2809"},{url:"/_next/static/images/pasta_2-5aca3da05e7e9f2c08af561589ead92f.jpg",revision:"3ffe90c8b947f43752db9f63fa9f2b7c"},{url:"/_next/static/images/pasta_3-f21a53e6bf99a0b82e8bcf69c86c7cfd.png",revision:"5e590b0de38f23562d75b34e2d73af4c"},{url:"/_next/static/images/peperoni-192c85c3f5f055cee3c3549e54c95fba.png",revision:"1d28da32b2f53137afffec520877229c"},{url:"/_next/static/images/pizza-b4e47ff966e2511c990d8c9e0d0a6fc6.png",revision:"838d624a306012516f815078899c1c75"},{url:"/_next/static/images/pizza_1-2e3d95fe298e766768e7e2fe2f1290d4.png",revision:"449bf7577e399b6930c9e457483c1f49"},{url:"/_next/static/images/pizza_2-6fcb2829ffcb0e8a8f5ecc69b8c4f14e.png",revision:"a2f7510db1d2048707fc0b85f247cad5"},{url:"/_next/static/images/pizza_3-1e631615f44890d6aefca5a7fe1305ed.png",revision:"c0554f4c20a863eb710822037e1e5bbb"},{url:"/_next/static/images/placeholder_left-3abe874d6518960f9a01d5f4222b93ae.png",revision:"96b6a4597796e90967fd71a7bc318a24"},{url:"/_next/static/images/placeholder_right-c160b96fc87b0e2c76d0526114515f6a.png",revision:"5f129440ecbaa711ae26ad2b8e60acbe"},{url:"/_next/static/images/prostue_radosti-ec5cfc9bc377fdd8ee03ad7528755d0a.png",revision:"dc397a14ab870f1adb4d589a3dbf52a5"},{url:"/_next/static/images/ran4-60caf5573cb8c3af0a30d0436bdbc49e.png",revision:"9de6a2bfafc603e791b075c162e4c3d8"},{url:"/_next/static/images/ranger-a2315e63e5662819e3f1b6d9eb62683c.png",revision:"b1a0a3f14647a45609b8292077fe983f"},{url:"/_next/static/images/review_photo-8c78822731908837cc1290dfb2dbcef3.png",revision:"c813dbef492a559957afa4fe677d3e1d"},{url:"/_next/static/images/rice-25c0bc3274202e331dea0c5dabba2ff6.jpg",revision:"1356ecd83bfcc5ed5c563bc46bfc9481"},{url:"/_next/static/images/rice-772e97219bc1f201fb844395882a23b6.jpg",revision:"b206e080f211594b2928fbf32b3250ce"},{url:"/_next/static/images/rice-a5a385bc5e11ba2d303461010813d83e.jpg",revision:"6666cf220ffd2409acc75ca05785ddca"},{url:"/_next/static/images/rice-a8bab318dadd44d36df7da9f3279bd9e.jpg",revision:"970b200ff4adbb57f41ec1b1f1bb993a"},{url:"/_next/static/images/rice-e482950df6750d1b947afd529702b6cb.jpg",revision:"9a034077342ec32cb6cfd14b9cf3f0ab"},{url:"/_next/static/images/rukkola-2cb487673d19e4812c732726506fe9fa.png",revision:"d92841631fc0ab6fed11e98ba9868100"},{url:"/_next/static/images/salad-c4f876887c3dab97d8f1010afe425e28.png",revision:"ad19b84e614d52a0901edfada3359ee7"},{url:"/_next/static/images/salat-s-krevetkami-d3ca959624a01d112b35f6ea46c871b8.jpg",revision:"c29cc88bf5e02b1b55d18c91efac141e"},{url:"/_next/static/images/set-ca501c16f18ce965c3a3452a0cb6211b.png",revision:"12ccc59964fa64d5e1842e3e39ffc8e6"},{url:"/_next/static/images/snack-2eeb07cbfe7f75986606cc3b3e641603.png",revision:"ed04e76771aed7deee7750aad05b3c76"},{url:"/_next/static/images/soba-4f24fe3133d07a087a9360c575ad58ee.jpg",revision:"3ef5e137d12e7d283fd5fffde37379e5"},{url:"/_next/static/images/soba-54b1d3664eff5cb15c250971a6658ff8.jpg",revision:"700c53cd1de98e16147899903b9adf19"},{url:"/_next/static/images/soba-5a3ef913d5797360141a43d8bcfcfefd.jpg",revision:"7d06e894a40e85998c729b040ce0609b"},{url:"/_next/static/images/soba-60ed7d14cec188c75fdc954596842b0c.jpg",revision:"2cbed34a4cab09852cd48f0f1009a09f"},{url:"/_next/static/images/soba-bc8f86b8d1eeece3ae4ccf072730e566.jpg",revision:"a5dab122a87702a9c037431894461079"},{url:"/_next/static/images/sprite-72cb56e0a1c2fbc3c11a04860735c767.jpg",revision:"efd2e88b1787c8b9f9475e86e30b246b"},{url:"/_next/static/images/surnuy_korol-30615c563df587f7b18cddb34c9f2be8.png",revision:"02be185bbda8a649bac24ea6ec039317"},{url:"/_next/static/images/sutuy_papa-9b7e555bd7c6b95cde1816375ca6027a.png",revision:"9dac6725635388c3081e64d62a084e81"},{url:"/_next/static/images/tort-tvorozhnyj-11-0959bf3c0adc7577f4f610a4a0940d29.jpg",revision:"6285f7fe44424ea4e0a5e9f1ba69e90a"},{url:"/_next/static/images/udon-059ec61bbf48428460c51c8669e88cbc.jpg",revision:"dc95631e8f34516b65acd09faf3649b7"},{url:"/_next/static/images/udon-3907e47a72d02f412f3ec4a95cd62525.jpg",revision:"8dc2cdd0bb076a48192250eeb69d5890"},{url:"/_next/static/images/udon-a8957f88f815cc051c22f9a7cccf3103.jpg",revision:"f51328683259e4d543ef4a43aca8e060"},{url:"/_next/static/images/udon-d94ddc28a96b908dced957be49a3d713.jpg",revision:"a518831808721e93b26b60c67c6c9e24"},{url:"/_next/static/images/udon-de3ca26b2b3c7d7e092ed55533c6fc3b.jpg",revision:"6bdb7a9814f2a63888412fc3d6f366ab"},{url:"/_next/static/images/wok-e065b695e12e6760b9fe30201d7a0127.png",revision:"3410f8c9f4254d932da5ad5c1c8446b7"},{url:"/_next/static/media/quotes_down.2904c867799e8cf55e07a6214ac7c71d.png",revision:"b55e0e96ff4b3ecf824c362a364528a3"},{url:"/_next/static/media/quotes_up.8cac8a5bf1ec4f64cbc555213be2457a.png",revision:"7f14d0624ae0921eb83b1bca407ae859"},{url:"/_next/static/runtime/main-c9521564ba824568c2dc.js",revision:"f4bcae7c7ab3bc2f2d25f3df00fb2b0e"},{url:"/_next/static/runtime/polyfills-d4f5125ac451f7d9b26b.js",revision:"f9229c80bb7f9464d7fdb62dfc846dd9"},{url:"/_next/static/runtime/webpack-c212667a5f965e81e004.js",revision:"f5e6e2fca3144cc944812cfa3547f475"},{url:"/favicon.ico",revision:"412192267449ea67eebabd3e62acfe51"},{url:"/vercel.svg",revision:"0222c3eef0be0734c8cd707b37c55d7e"}],{ignoreURLParametersMatching:[]}),e.cleanupOutdatedCaches(),e.registerRoute(/^https:\/\/fonts\.(?:googleapis|gstatic)\.com\/.*/i,new e.CacheFirst({cacheName:"google-fonts",plugins:[new e.ExpirationPlugin({maxEntries:4,maxAgeSeconds:31536e3,purgeOnQuotaError:!0})]}),"GET"),e.registerRoute(/^https:\/\/use\.fontawesome\.com\/releases\/.*/i,new e.CacheFirst({cacheName:"font-awesome",plugins:[new e.ExpirationPlugin({maxEntries:1,maxAgeSeconds:31536e3,purgeOnQuotaError:!0})]}),"GET"),e.registerRoute(/\.(?:eot|otf|ttc|ttf|woff|woff2|font.css)$/i,new e.StaleWhileRevalidate({cacheName:"static-font-assets",plugins:[new e.ExpirationPlugin({maxEntries:4,maxAgeSeconds:604800,purgeOnQuotaError:!0})]}),"GET"),e.registerRoute(/\.(?:jpg|jpeg|gif|png|svg|ico|webp)$/i,new e.StaleWhileRevalidate({cacheName:"static-image-assets",plugins:[new e.ExpirationPlugin({maxEntries:64,maxAgeSeconds:86400,purgeOnQuotaError:!0})]}),"GET"),e.registerRoute(/\.(?:js)$/i,new e.StaleWhileRevalidate({cacheName:"static-js-assets",plugins:[new e.ExpirationPlugin({maxEntries:16,maxAgeSeconds:86400,purgeOnQuotaError:!0})]}),"GET"),e.registerRoute(/\.(?:css|less)$/i,new e.StaleWhileRevalidate({cacheName:"static-style-assets",plugins:[new e.ExpirationPlugin({maxEntries:16,maxAgeSeconds:86400,purgeOnQuotaError:!0})]}),"GET"),e.registerRoute(/\.(?:json|xml|csv)$/i,new e.StaleWhileRevalidate({cacheName:"static-data-assets",plugins:[new e.ExpirationPlugin({maxEntries:16,maxAgeSeconds:86400,purgeOnQuotaError:!0})]}),"GET"),e.registerRoute(/.*/i,new e.StaleWhileRevalidate({cacheName:"others",plugins:[new e.ExpirationPlugin({maxEntries:16,maxAgeSeconds:86400,purgeOnQuotaError:!0})]}),"GET")}));
+/**
+ * Copyright 2018 Google Inc. All Rights Reserved.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+// If the loader is already loaded, just stop.
+if (!self.define) {
+  const singleRequire = name => {
+    if (name !== 'require') {
+      name = name + '.js';
+    }
+    let promise = Promise.resolve();
+    if (!registry[name]) {
+      
+        promise = new Promise(async resolve => {
+          if ("document" in self) {
+            const script = document.createElement("script");
+            script.src = name;
+            document.head.appendChild(script);
+            script.onload = resolve;
+          } else {
+            importScripts(name);
+            resolve();
+          }
+        });
+      
+    }
+    return promise.then(() => {
+      if (!registry[name]) {
+        throw new Error(`Module ${name} didn’t register its module`);
+      }
+      return registry[name];
+    });
+  };
+
+  const require = (names, resolve) => {
+    Promise.all(names.map(singleRequire))
+      .then(modules => resolve(modules.length === 1 ? modules[0] : modules));
+  };
+  
+  const registry = {
+    require: Promise.resolve(require)
+  };
+
+  self.define = (moduleName, depsNames, factory) => {
+    if (registry[moduleName]) {
+      // Module is already loading or loaded.
+      return;
+    }
+    registry[moduleName] = Promise.resolve().then(() => {
+      let exports = {};
+      const module = {
+        uri: location.origin + moduleName.slice(1)
+      };
+      return Promise.all(
+        depsNames.map(depName => {
+          switch(depName) {
+            case "exports":
+              return exports;
+            case "module":
+              return module;
+            default:
+              return singleRequire(depName);
+          }
+        })
+      ).then(deps => {
+        const facValue = factory(...deps);
+        if(!exports.default) {
+          exports.default = facValue;
+        }
+        return exports;
+      });
+    });
+  };
+}
+define("./sw.js",['./workbox-b90066a8'], function (workbox) { 'use strict';
+
+  /**
+  * Welcome to your Workbox-powered service worker!
+  *
+  * You'll need to register this file in your web app.
+  * See https://goo.gl/nhQhGp
+  *
+  * The rest of the code is auto-generated. Please don't update this file
+  * directly; instead, make changes to your Workbox build configuration
+  * and re-run your build process.
+  * See https://goo.gl/2aRDsh
+  */
+
+  importScripts();
+  workbox.skipWaiting();
+  workbox.clientsClaim();
+  /**
+   * The precacheAndRoute() method efficiently caches and responds to
+   * requests for URLs in the manifest.
+   * See https://goo.gl/S9QRab
+   */
+
+  workbox.precacheAndRoute([{
+    "url": "/_next/static/runtime/amp.js",
+    "revision": "928ccca026f583450a075efc991608ff"
+  }, {
+    "url": "/_next/static/runtime/main.js",
+    "revision": "f7deda76bc5f10de719e81615b612b27"
+  }, {
+    "url": "/_next/static/runtime/polyfills.js",
+    "revision": "516c3d4deeff70783126396a5a14d34e"
+  }, {
+    "url": "/_next/static/runtime/react-refresh.js",
+    "revision": "9d11ea7095b60a828f2db49ed1004ade"
+  }, {
+    "url": "/_next/static/runtime/webpack.js",
+    "revision": "db0f3be6867723f24b0f45a2dc0ac555"
+  }], {
+    "ignoreURLParametersMatching": [/ts/]
+  });
+  workbox.cleanupOutdatedCaches();
+
+});
+//# sourceMappingURL=sw.js.map
