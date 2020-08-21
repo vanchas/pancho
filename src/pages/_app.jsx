@@ -7,6 +7,7 @@ import withRedux from "next-redux-wrapper";
 import "bootstrap/dist/css/bootstrap.min.css";
 import store from "../redux/store";
 import Head from "next/head";
+import InstallPWA from "../components/pwa/PWA";
 
 import { css } from "@emotion/core";
 import FadeLoader from "react-spinners/FadeLoader";
@@ -23,7 +24,7 @@ class CustomApp extends App {
   constructor(props) {
     super(props);
     this.state = {
-      loading: true
+      loading: true,
     };
   }
 
@@ -59,6 +60,7 @@ class CustomApp extends App {
         </div>
         :
         <Provider store={store}>
+          <InstallPWA />
           <Head>
             <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" />
             <title>Pancho</title>
@@ -71,10 +73,8 @@ class CustomApp extends App {
   }
 }
 
-//makeStore function that returns a new store for every request
 const makeStore = () => store;
 
-//withRedux wrapper that passes the store to the App Component
 export default withRedux(makeStore)(CustomApp);
 
 
