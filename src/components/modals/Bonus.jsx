@@ -5,17 +5,20 @@ import s from "./modal.module.scss";
 
 export default function Bonus(props) {
   const [modal, setModal] = useState(false);
-  const toggle = () => setModal(!modal);
+  const toggle = (e) => {
+    e.preventDefault()
+    setModal(!modal);
+  }
 
   const submitHandler = e => {
     e.preventDefault()
-    toggle()
+    toggle(e)
   }
 
   return (
     <div>
       <Button color="" className={`p-0`} onClick={toggle}>
-        <span><i>&#8250;</i> <u>СНЯТЬ БОНУСЫ</u></span>
+        <span className={`font-weight-bold`}><i>&#8250;</i> <u>СНЯТЬ БОНУСЫ</u></span>
       </Button>
 
       <Modal isOpen={modal} toggle={toggle}>

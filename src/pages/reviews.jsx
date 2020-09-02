@@ -12,8 +12,8 @@ function Reviews({ getReviews, reviews }) {
   }, []);
 
   return (
-    <div className={s.revies_page}>
-      <h3 className={s.revies_page_heading}>ОТЗЫВЫ</h3>
+    <div className={s.reviews_page}>
+      <h3 className={s.reviews_page_heading}>ОТЗЫВЫ</h3>
       <ul className={s.rules_list}>
         <li><p>Уважаемые клиенты, ваш обратная связь помогает нам совершенствоваться каждый день! Пожалуйста, оставьте свой отзыв о работе нашей службы доставки пиццы.</p></li>
         <li><p>Мы принимаем к сведению каждое обращение наших клиентов и на каждый из них стараемся реагировать.</p></li>

@@ -11,7 +11,7 @@ import {
   NavItem,
 } from 'reactstrap';
 import Phone from '../../assets/images/signs/phone_light.png';
-import LoginModal from '../modals/LoginModal'
+import LoginModal from '../login/Login'
 import Link from "next/link";
 
 const links = [

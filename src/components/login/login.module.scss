@@ -1,0 +1,72 @@
+
+.toggle_button {
+  padding-top: 0.5em !important;
+  cursor: pointer;
+  .activeLink,
+  .button {
+    margin-top: 0.3em;
+    padding: 0.25em 1.5em;
+    font-weight: 600;
+    color: #000;
+    background-color: #ffed00;
+    width: 100%;
+    border-radius: 0.2em;
+    span {
+      height: 27px;
+    }
+  }
+  .person_sign {
+    height: 29px;
+    margin-right: 0.4em;
+    margin-top: -0.1em;
+  }
+}
+.password_input {
+  position: relative;
+  span {
+    z-index: 111;
+    user-select: none;
+    position: absolute;
+    right: 2em;
+    top: 0.5em;
+    color: #fff;
+    &.eye {
+      //transform: translateY(-0.6em);
+    }
+    img {
+      width: 1em;
+      filter: invert(1);
+    }
+  }
+}
+
+.bg_dark,
+input.bg_dark {
+  background-color: #1d1d1b;
+  &:focus {
+    background-color: #1d1d1b;
+  }
+}
+
+.color_white {
+  color: #fff;
+}
+
+.facebook_icon, .google_icon {
+  width: 2em;
+  margin-left: .5em;
+  filter: invert(1);
+}
+
+.login_with_google_facebook_block {
+  padding-top: 1em;
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-between;
+  justify-items: center;
+  @media screen and (max-width: 767px) {
+    grid-template-columns: 1fr;
+  }
+}
+

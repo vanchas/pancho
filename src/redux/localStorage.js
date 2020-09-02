@@ -19,6 +19,3 @@ export const saveState = (shoppingCard) => {
   }
 };
 
-// export const getStorage = () => {
-//   return JSON.parse(localStorage.getItem('shoppingCard'))
-// }

@@ -57,7 +57,7 @@ function Footer({headerSelectPhone, address}) {
           </div>
           <div>
             <p className="">Закачай наше мобильное приложение</p>
-            <div>
+            <div className={`pr-2`}>
               <a href="http://" target="_blank" rel="noopener noreferrer">
                 <img src={AppStore} alt="Apple Store" />
                 <img src={GooglePlay} alt="Google Play" />

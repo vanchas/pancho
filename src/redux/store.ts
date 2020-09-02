@@ -1,15 +1,15 @@
 import { createStore, applyMiddleware } from 'redux';
 import rootReducer from './reducers/rootReducer';
 import thunk from 'redux-thunk';
-import { saveState, loadState } from './localStorage';
+import { saveState } from './localStorage';
 import { setPersistedState } from './actions/actions';
 // import { getCurrentLocation } from './actions/actions';
 
-const persistedState = loadState();
+// const persistedState = loadState();
 
 const store = createStore(
   rootReducer,
-  persistedState,
+  // persistedState,
   applyMiddleware(thunk)
 );
 
@@ -22,7 +22,7 @@ store.subscribe(() => {
     }
   });
   // console.log('updated state: ', store.getState());
-  // console.log('local: ', persistedState);
+  // console.log('local storage: ', persistedState);
 });
 
 store.dispatch(setPersistedState());

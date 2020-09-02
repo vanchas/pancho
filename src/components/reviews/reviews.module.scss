@@ -1,4 +1,4 @@
-.revies_page {
+.reviews_page {
 	max-width: 1667px;
 	margin: 0 auto;
 	padding-right: 1em;
@@ -6,8 +6,9 @@
 		padding-right: 0;
 	}
 }
-.revies_page_heading {
+.reviews_page_heading {
 	margin: 1em auto 1em auto;
+	font-weight: 600;
 	text-align: center;
 	width: fit-content;
 	position: relative;
@@ -162,7 +163,7 @@
 	grid-gap: 1em;
 	align-items: center;
 	justify-items: center;
-	min-height: 5em;
+	min-height: 6em;
 	padding: 0.5em .5em 1em .5em;
 	p {
 		position: relative;
