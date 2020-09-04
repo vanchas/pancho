@@ -32,7 +32,7 @@
 	@media screen and (max-width: 900px) {
 		&::after,
 		&::before {
-			display: none;
+			width: 2em;
 		}
 	}
 }
@@ -42,7 +42,7 @@
 	margin: 0 auto;
 	list-style: none;
 	padding: 0;
-	display: grid;;
+	display: grid;
 	row-gap: 1em;
 	grid-template-columns: repeat(4, 1fr);
 	justify-content: space-between;
@@ -57,19 +57,45 @@
 	@media screen and (max-width: 1160px) {
 		grid-template-columns: repeat(2, 1fr);
 	}
-	@media screen and (max-width: 720px) {
-		grid-template-columns: repeat(1, 1fr);
-	}
+	// @media screen and (max-width: 720px) {
+	// 	grid-template-columns: repeat(1, 1fr);
+	// }
 }
 .snack_item {
 	display: grid;
 	max-width: 22em;
 	padding: 1em;
 	@media screen and (max-width: 500px) {
-		max-width: 100%;
+		max-width: 50vw;
 		.snack_image {
 			img {
 				max-width: 100%;
+			}
+		}
+		.snack_info {
+			h5 {
+				font-size: 18px;
+			}
+			p {
+				font-size: 14px;
+			}
+			.snack_name {
+				white-space: normal;
+			}
+			.snack_btn {
+				span {
+					font-size: 14px;
+					max-height: 2.6em;
+					padding-left: 1.5em;
+					img {
+						width: 4em;
+					}
+				}
+			}
+			.snack_price {
+				font-size: 14px;
+				white-space: nowrap;
+				align-self: center;
 			}
 		}
 	}
@@ -119,7 +145,7 @@
 			color: #f9e803;
 			font-size: 18px;
 			font-weight: 500;
-			border-radius: .5em;
+			border-radius: 0.5em;
 			img {
 				width: 6em;
 				position: absolute;
@@ -127,8 +153,9 @@
 				left: 0;
 				transform: translate(-28%, -45%);
 			}
-			transition: .3s;
-			&:hover, &:active {
+			transition: 0.3s;
+			&:hover,
+			&:active {
 				background-color: #000;
 				color: #ffed00;
 			}

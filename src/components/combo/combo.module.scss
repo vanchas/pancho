@@ -36,7 +36,7 @@
 	@media screen and (max-width: 900px) {
 		&::after,
 		&::before {
-			display: none;
+			width: 2em;
 		}
 	}
 }
@@ -60,9 +60,9 @@
 	@media screen and (max-width: 1160px) {
 		grid-template-columns: repeat(2, 1fr);
 	}
-	@media screen and (max-width: 720px) {
-		grid-template-columns: repeat(1, 1fr);
-	}
+	// @media screen and (max-width: 720px) {
+	// 	grid-template-columns: repeat(1, 1fr);
+	// }
 }
 .combo_item {
 	padding: 1em;
@@ -70,9 +70,34 @@
 	display: grid;
 	align-content: stretch;
 	@media screen and (max-width: 500px) {
-		max-width: 100%;
+		max-width: 50vw;
 		.combo_image {
-			max-width: 100%;
+			img {
+				max-width: 100%;
+			}
+		}
+		.combo_info {
+			h5 {
+				font-size: 18px;
+			}
+			p {
+				font-size: 14px;
+			}
+			.combo_btn {
+				span {
+					font-size: 14px;
+					max-height: 2.6em;
+					padding-left: 1.5em;
+					img {
+						width: 4em;
+					}
+				}
+			}
+			.combo_price {
+				font-size: 14px;
+				white-space: nowrap;
+				align-self: center;
+			}
 		}
 	}
 }
@@ -130,8 +155,9 @@
 				left: 0;
 				transform: translate(-28%, -45%);
 			}
-			transition: .3s;
-			&:hover, &:active {
+			transition: 0.3s;
+			&:hover,
+			&:active {
 				background-color: #000;
 				color: #ffed00;
 			}

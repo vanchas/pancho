@@ -5,7 +5,7 @@
 	}
 	.wok_list_heading {
 		margin: 2em auto 2em auto;
-		padding: 0 .5em;
+		padding: 0 0.5em;
 		text-align: center;
 		width: fit-content;
 		position: relative;
@@ -33,7 +33,7 @@
 		@media screen and (max-width: 900px) {
 			&::before,
 			&::after {
-				display: none;
+				width: 2em;
 			}
 		}
 	}
@@ -56,9 +56,9 @@
 	@media screen and (max-width: 1160px) {
 		grid-template-columns: repeat(2, 1fr);
 	}
-	@media screen and (max-width: 720px) {
-		grid-template-columns: repeat(1, 1fr);
-	}
+	// @media screen and (max-width: 720px) {
+	// 	grid-template-columns: repeat(1, 1fr);
+	// }
 }
 
 .card {
@@ -67,9 +67,6 @@
 	padding: 1em;
 	display: grid !important;
 	align-content: space-between;
-	@media screen and (max-width: 500px) {
-		max-width: 100%;
-	}
 
 	.wok_image {
 		//height: 17em;
@@ -87,7 +84,7 @@
 		padding-left: 2em;
 		font-size: 18px;
 		font-weight: 500;
-		border-radius: .5em;
+		border-radius: 0.5em;
 		cursor: pointer;
 		img {
 			width: 6em;
@@ -96,10 +93,37 @@
 			left: 0;
 			transform: translate(-31%, -45%);
 		}
-		transition: .3s;
-		&:hover, &:active {
+		transition: 0.3s;
+		&:hover,
+		&:active {
 			background-color: #000;
 			color: #ffed00;
+		}
+	}
+
+	@media screen and (max-width: 500px) {
+		max-width: 50vw;
+		.card_title {
+			font-size: 18px;
+			small {
+				font-size: 12px;
+			}
+		}
+		.card_text {
+			font-size: 14px;
+		}
+		.basket {
+			font-size: 14px;
+			max-height: 2.6em;
+			padding-left: 1.5em;
+			img {
+				width: 4em;
+			}
+		}
+		.price {
+			font-size: 14px;
+			white-space: nowrap;
+			align-self: center;
 		}
 	}
 }

@@ -32,7 +32,7 @@
 			@media screen and (max-width: 900px) {
 				&::after,
 				&::before {
-					display: none;
+					width: 2em;
 				}
 			}
 		}
@@ -45,7 +45,7 @@
 .pizzas_list {
 	max-width: 1667px;
 	margin: 0 auto;
-	list-style: none;;
+	list-style: none;
 	row-gap: 1em;
 	padding: 0;
 	display: grid;
@@ -62,9 +62,9 @@
 	@media screen and (max-width: 1160px) {
 		grid-template-columns: repeat(2, 1fr);
 	}
-	@media screen and (max-width: 720px) {
-		grid-template-columns: repeat(1, 1fr);
-	}
+	// @media screen and (max-width: 720px) {
+	// 	grid-template-columns: repeat(1, 1fr);
+	// }
 }
 
 .card {
@@ -73,17 +73,12 @@
 	padding: 1em;
 	display: grid !important;
 	align-content: space-between;
-	@media screen and (max-width: 500px) {
-		max-width: 100%;
-	}
 
 	.card_body {
 		padding: 1em 0;
 	}
 
 	.big_pizza_image {
-		//height: 15em;
-		//width: auto;
 		width: 100%;
 		margin: 0 auto;
 	}
@@ -105,10 +100,54 @@
 			left: 0;
 			transform: translate(-28%, -45%);
 		}
-		transition: .3s;
-		&:hover, &:active {
+		transition: 0.3s;
+		&:hover,
+		&:active {
 			background-color: #000;
 			color: #ffed00;
+		}
+	}
+	@media screen and (max-width: 500px) {
+		max-width: 50vw;
+		.card_title {
+			font-size: 18px;
+			small {
+				font-size: 12px;
+			}
+		}
+		.hit,
+		.new {
+			font-size: 13px;
+			max-height: 1.7em;
+		}
+		.card_text {
+			font-size: 13px;
+			height: 6.5em;
+			display: flex;
+			align-items: center;
+		}
+		.size_select {
+			label {
+				font-size: 15px;
+			}
+		}
+		.basket {
+			padding-left: 1.5em;
+			img {
+				width: 4em;
+			}
+			font-size: 14px;
+		}
+		.price {
+			// white-space: nowrap;
+			font-size: 16px;
+		}
+	}
+	@media screen and (max-width: 400px) {
+		.size_select {
+			label {
+				font-size: 14px;
+			}
 		}
 	}
 }
@@ -163,7 +202,7 @@
 }
 
 .card_text {
-	padding: 0.5em 0 0 0 ;
+	padding: 0.5em 0 0 0;
 	font-size: 17px;
 	font-weight: 300;
 	line-height: 21px;
