@@ -92,7 +92,7 @@
 		color: #f9e803;
 		position: relative;
 		padding: 0.3em 0.6em 0.3em 2.5em;
-		border-radius: 0.2em;
+		border-radius: 0.5em;
 		img {
 			width: 6em;
 			position: absolute;
@@ -112,7 +112,7 @@
 		.card_title {
 			font-size: 18px;
 			small {
-				font-size: 12px;
+				font-size: 11px;
 			}
 		}
 		.hit,
@@ -136,7 +136,7 @@
 			img {
 				width: 4em;
 			}
-			font-size: 14px;
+			font-size: 12px;
 		}
 		.price {
 			// white-space: nowrap;
@@ -238,6 +238,14 @@
 		background-color: #fff;
 		box-shadow: 2px 2px 3px 1px #aaa9a9;
 		border-radius: 0.3em;
+	}
+	@media screen and (max-width: 500px) {
+		label {
+			padding: 0.1em 0.3em;
+		}
+		label.activeBtn {
+			padding: 0.1em 0.5em;
+		}
 	}
 }
 .price {
