@@ -4,6 +4,7 @@ import Billboard from '../components/billboard/Billboard'
 import { connect } from 'react-redux'
 import { getWoks, addAnOrderItem } from '../redux/actions/actions'
 import WokList from "../components/wok/WokList";
+import scrollPage from "../utils/scroll-page";
 
 const wokTypes = [
     {title: "WOK С ОВОЩАМИ", type: 'vegetarian'},
@@ -15,7 +16,15 @@ const wokTypes = [
 
 function Wok({ getWoks, woks }) {
 
-  useEffect(() => { getWoks() }, []);
+  useEffect(() => {
+    getWoks()
+
+    const timer = setTimeout(() => {
+      scrollPage(650)
+    }, 100)
+
+    return () => clearTimeout(timer)
+  }, []);
 
   return (
     <div className={s.wok_page}>

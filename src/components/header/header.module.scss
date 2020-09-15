@@ -125,6 +125,9 @@
 		.header_info_block_item {
 			padding: 0 !important;
 		}
+		.header_info_block_item:nth-child(1) {
+			width: 50%;
+		}
 		.header_info_block_item:nth-child(2) {
 			display: none !important;
 		}

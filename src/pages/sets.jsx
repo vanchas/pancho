@@ -4,11 +4,18 @@ import { getSets, addAnOrderItem } from '../redux/actions/actions'
 import SetsList from '../components/sets/SetsList'
 import s from '../components/sets/sets.module.scss'
 import Billboard from "../components/billboard/Billboard";
+import scrollPage from "../utils/scroll-page";
 
 function Sets({ getSets, sets, addAnOrderItem }) {
 
   useEffect(() => {
     getSets();
+
+    const timer = setTimeout(() => {
+      scrollPage(650)
+    }, 100)
+
+    return () => clearTimeout(timer)
   }, []);
 
   return (

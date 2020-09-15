@@ -4,11 +4,18 @@ import { getCombos, addAnOrderItem } from '../redux/actions/actions'
 import CombosList from '../components/combo/CombosList'
 import s from '../components/combo/combo.module.scss'
 import Billboard from "../components/billboard/Billboard";
+import scrollPage from "../utils/scroll-page";
 
 function Combo({ getCombos, combos, addAnOrderItem }) {
 
   useEffect(() => {
     getCombos();
+
+    const timer = setTimeout(() => {
+      scrollPage(650)
+    }, 100)
+
+    return () => clearTimeout(timer)
   }, []);
 
   return (
