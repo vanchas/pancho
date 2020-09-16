@@ -100,7 +100,8 @@
 				justify-content: center;
 				justify-items: center;
 				transition: .5s;
-				&:hover {
+				&:hover,
+				&.selected {
 					transition: .5s;
 					border: 2px solid #f3959b;
 				}
@@ -186,7 +187,7 @@
 			@media screen and (max-width: 700px) {
 				top: 23em;
 				min-height: 14em;
-				height: 17.5em;
+				height: 19.5em;
 			}
 			h5 {
 				font-weight: 600;
@@ -241,7 +242,7 @@
 			@media screen and (max-width: 700px) {
 				top: 23em;
 				min-height: 14em;
-				height: 17.5em;
+				height: 19.5em;
 			}
 			h5 {
 				font-weight: 600;
@@ -325,6 +326,11 @@
 	display: none;
 	li {
 		.pizza_card {
+			&.selected {
+				transition: .5s;
+				border: 2px solid #f3959b;
+				border-radius: .5em;
+			}
 			img {
 				width: 100%;
 				margin: 0 auto;

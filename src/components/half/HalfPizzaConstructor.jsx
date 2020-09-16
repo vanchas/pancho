@@ -7,7 +7,8 @@ import Basket from '../../assets/images/basket/korzina-01.svg'
 import Green from '../../assets/images/green.png'
 import Pepper from '../../assets/images/pepper.png'
 import Diameter from '../../assets/images/diameter.png'
-import ListItem from './ListItem'
+import LeftListItem from './LeftListItem'
+import RightListItem from './RightListItem'
 import {Tooltip} from "reactstrap";
 
 export default function HalfPizzaConstructor({ rightHalfPizza, leftHalfPizza, pizzas, setLeftHalfPizza, setRightHalfPizza, addAnOrderItem }) {
@@ -76,7 +77,7 @@ export default function HalfPizzaConstructor({ rightHalfPizza, leftHalfPizza, pi
 
         <ul className={s.mobile_pizza_list}>{pizzas.map((p, i) => (
           <li key={i} onClick={() => setLeftHalfPizzaHandler(p)}>
-            <ListItem pizza={p} />
+            <LeftListItem pizza={p} />
           </li>
         ))}</ul>
 
@@ -116,7 +117,7 @@ export default function HalfPizzaConstructor({ rightHalfPizza, leftHalfPizza, pi
         <ul className={s.mobile_pizza_list}>
           {pizzas.map((p, i) => (
             <li key={i} onClick={() => setRightHalfPizzaHandler(p)}>
-              <ListItem pizza={p} />
+              <RightListItem pizza={p} />
             </li>
           ))}</ul>
       </div>

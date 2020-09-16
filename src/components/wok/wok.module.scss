@@ -4,7 +4,7 @@
 		padding-right: 0;
 	}
 	.wok_list_heading {
-		margin: 2em auto 2em auto;
+		margin: 1em auto 1em auto;
 		padding: 0 0.5em;
 		text-align: center;
 		width: fit-content;
@@ -103,6 +103,7 @@
 
 	@media screen and (max-width: 500px) {
 		max-width: 50vw;
+		padding: 1em .5em;
 		.card_title {
 			font-size: 18px;
 			small {

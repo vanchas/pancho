@@ -1,0 +1,38 @@
+.root {
+  position: fixed;
+  min-width: 290px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #1b1b1b;
+  border-radius: .6em;
+  padding: 1em;
+  z-index: 999;
+  font-weight: 600;
+  display: grid;
+  align-items: center;
+  gap: 1em;
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    span {
+      color: #f0df02;
+      text-transform: uppercase;
+      svg {
+        color: #f0df02;
+      }
+    }
+  }
+  .product {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    span {
+      color: #fff;
+    }
+    .price {
+      white-space: nowrap;
+    }
+  }
+}

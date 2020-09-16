@@ -8,7 +8,7 @@
 }
 .desserts_page_heading {
 	max-width: 1667px;
-	margin: 1em auto 2em auto;
+	margin: 1em auto 1em auto;
 	text-align: center;
 	width: fit-content;
 	position: relative;
@@ -72,6 +72,15 @@
 	align-content: space-between;
 	@media screen and (max-width: 500px) {
 		max-width: 50vw;
+		padding: 1em .5em;
+		.dessert_name {
+			grid-column: span 2;
+			margin-bottom: 0;
+		}
+		.dessert_weight {
+			grid-column: span 2;
+			text-align: end;
+		}
 		.dessert_image {
 			img {
 				max-width: 100%;

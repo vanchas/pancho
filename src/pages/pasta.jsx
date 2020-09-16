@@ -4,11 +4,18 @@ import { getPastas, addAnOrderItem } from '../redux/actions/actions'
 import s from '../components/pastas/pasta.module.scss'
 import PastasList from '../components/pastas/PastasList'
 import Billboard from "../components/billboard/Billboard";
+import scrollPage from "../utils/scroll-page";
 
 function Pasta({ getPastas, pastas, addAnOrderItem }) {
 
   useEffect(() => {
     getPastas();
+
+    const timer = setTimeout(() => {
+      scrollPage(550)
+    }, 100)
+
+    return () => clearTimeout(timer)
   }, []);
 
   return (

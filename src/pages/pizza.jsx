@@ -4,10 +4,19 @@ import PizzaList from '../components/pizza/PizzaList'
 import Billboard from '../components/billboard/Billboard'
 import { connect } from 'react-redux'
 import { addAnOrderItem, getPizzas } from '../redux/actions/actions'
+import scrollPage from "../utils/scroll-page";
 
 function Pizza({ addAnOrderItem, pizza, getPizzas }) {
+
+
   useEffect(() => {
     getPizzas();
+
+    const timer = setTimeout(() => {
+      scrollPage(550)
+    }, 100)
+
+    return () => clearTimeout(timer)
   }, []);
 
   return (

@@ -1,6 +1,6 @@
 import React from 'react'
 import s from './half.module.scss'
-import ListItem from './ListItem'
+import ListItem from './RightListItem'
 
 export default function RightList({ pizza, setRightHalfPizza }) {
 

@@ -4,11 +4,18 @@ import { getSnacks, addAnOrderItem } from '../redux/actions/actions'
 import SnacksList from '../components/snacks/SnacksList';
 import s from '../components/snacks/snacks.module.scss'
 import Billboard from "../components/billboard/Billboard";
+import scrollPage from "../utils/scroll-page";
 
 function Snacks({ getSnacks, snacks, addAnOrderItem }) {
 
   useEffect(() => {
     getSnacks();
+
+    const timer = setTimeout(() => {
+      scrollPage(550)
+    }, 100)
+
+    return () => clearTimeout(timer)
   }, []);
 
   return (

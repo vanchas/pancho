@@ -44,6 +44,7 @@
       align-items: center;
 
       img {
+        transition: .3s;
         height: 4em;
         margin-right: 0.3em;
         @media screen and (max-width: 1600px) {
@@ -64,11 +65,22 @@
         text-decoration: none;
         display: flex;
         align-items: flex-end;
+        transition: .3s;
+        &:hover {
+          img {
+            opacity: .8;
+          }
+          span {
+            border-bottom: 2px solid #3c3c3b;
+          }
+        }
         span {
           color: #3c3c3b;
           font-size: 18px;
           font-weight: 700;
           padding-bottom: 5px;
+          border-bottom: 2px solid #ffffff;
+          transition: .3s;
           @media screen and (max-width: 1600px) {
             font-size: 16px;
           }

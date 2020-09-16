@@ -11,6 +11,7 @@ import InstallPWA from "../components/pwa/PWA";
 
 import { css } from "@emotion/core";
 import FadeLoader from "react-spinners/FadeLoader";
+import Router from "next/router";
 
 const override = css`
   display: block;
@@ -31,7 +32,8 @@ class CustomApp extends App {
   componentDidMount() {
     setTimeout(() => {
       this.setState({ loading: false })
-    }, 500)
+    }, 200)
+    Router.push('/pizza')
   }
 
   static async getInitialProps(props) {

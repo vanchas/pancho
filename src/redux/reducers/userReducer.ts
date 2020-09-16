@@ -16,7 +16,7 @@ import {
   SET_HEADER_PHONE,
   INCREASE_FREE_SOUCES_COUNTER,
   DECREASE_FREE_SOUCES_COUNTER,
-  SET_CURRENT_CITY, SET_CAFE_ADDRESS
+  SET_CURRENT_CITY, SET_CAFE_ADDRESS, SHOW_SUCCESS, SHOW_FAILURE, HIDE_SUCCESS, HIDE_FAILURE
 } from "../actions/types";
 import { loadState } from '../localStorage';
 
@@ -32,7 +32,9 @@ interface IState {
   currentLocation: string,
   headerSelectPhone: string,
   freeSoucesCounter: number,
-  cafeAddress: string
+  cafeAddress: string,
+  showSuccess: any,
+  showFailure: string | null
 }
 
 const initialState: IState = {
@@ -47,11 +49,25 @@ const initialState: IState = {
   currentLocation: 'Славянск',
   headerSelectPhone: '095-000-11-95',
   freeSoucesCounter: 0,
-  cafeAddress: 'Славянск, ул. Шевченко,10'
+  cafeAddress: 'Славянск, ул. Шевченко,10',
+  showSuccess: null,
+  showFailure: null
 }
 
 export const userReducer = (state = initialState, action: any) => {
   switch (action.type) {
+
+    case SHOW_SUCCESS:
+      return {...state, showSuccess: action.payload}
+
+    case SHOW_FAILURE:
+      return {...state, showFailure: action.payload}
+
+    case HIDE_SUCCESS:
+      return {...state, showSuccess: null}
+
+    case HIDE_FAILURE:
+      return {...state, showFailure: null}
 
     case REPEAT_ORDER:
       let repeatOrders: any[] = []

@@ -32,6 +32,10 @@ export const DELIVERY_SHOPPING_CARD: string = 'OPEN_DELIVERY_SHOPPING_CARD';
 export const PICKUP_SHOPPING_CARD: string = 'OPEN_PICKUP_SHOPPING_CARD';
 export const SET_CURRENT_CITY: string = 'SET_CURRENT_CITY';
 export const SET_CAFE_ADDRESS: string = 'SET_CAFE_ADDRESS';
+export const SHOW_SUCCESS: string = 'SHOW_SUCCESS';
+export const HIDE_SUCCESS: string = 'HIDE_SUCCESS';
+export const SHOW_FAILURE: string = 'SHOW_FAILURE';
+export const HIDE_FAILURE: string = 'HIDE_FAILURE';
 
 // app
 export const GET_CURRENT_LOCATION: string = 'GET_CURRENT_LOCATION';

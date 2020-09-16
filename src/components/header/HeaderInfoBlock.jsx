@@ -1,6 +1,5 @@
 import React from "react";
 import s from "./header.module.scss";
-// import Brand from '../../assets/images/logo_pancho-01.svg';
 import Brand from "../../assets/images/brand.png";
 import Clock from "../../assets/images/signs/watch-01.svg";
 import Location from "../../assets/images/signs/point-01.svg";
@@ -15,7 +14,7 @@ function HeaderInfoBlock(props) {
 	return (
 		<div className={s.header_info_block}>
 			<div className={s.header_info_block_item}>
-				<Link href="/">
+				<Link href="/pizza">
 					<a>
 						<img src={Brand} alt="Pancho" className={s.brand_logo} />
 					</a>

@@ -44,7 +44,7 @@
 		}
 	}
 	.input_image {
-		height: 43px;
+		height: 38px;
 		display: block;
 		margin-right: -2.5em;
 	}
@@ -57,6 +57,9 @@
 		color: #777;
 		padding-left: 3em;
 		transition: 0.5s;
+		appearance: none;
+		-webkit-appearance: none;
+		-moz-appearance: none;
 		&:focus {
 			outline: none;
 		}
@@ -72,8 +75,8 @@
 	}
 	.select_image {
 		margin-right: -3em;
-		width: 50px;
-		height: 1.6em;
+		width: 48px;
+		height: 1.5em;
 		display: block;
 		@media screen and (max-width: 500px) {
 			width: 40px;

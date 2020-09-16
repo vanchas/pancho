@@ -4,11 +4,18 @@ import { getSalads, addAnOrderItem } from '../redux/actions/actions'
 import s from '../components/salad/salad.module.scss'
 import SaladList from '../components/salad/SaladList'
 import Billboard from "../components/billboard/Billboard";
+import scrollPage from "../utils/scroll-page";
 
 function Salad({ getSalads, salads, addAnOrderItem }) {
 
   useEffect(() => {
     getSalads();
+
+    const timer = setTimeout(() => {
+      scrollPage(550)
+    }, 100)
+
+    return () => clearTimeout(timer)
   }, []);
 
   return (

@@ -6,10 +6,17 @@ import LeftList from '../components/half/LeftList'
 import RightList from '../components/half/RightList'
 import HalfPizzaConstructor from '../components/half/HalfPizzaConstructor'
 import Billboard from "../components/billboard/Billboard";
+import scrollPage from "../utils/scroll-page";
 
 const Half = ({ pizza, setLeftHalfPizza, setRightHalfPizza, rightHalfPizza, leftHalfPizza, addAnOrderItem, getPizzas }) => {
   useEffect(() => {
     getPizzas();
+
+    const timer = setTimeout(() => {
+      scrollPage(550)
+    }, 100)
+
+    return () => clearTimeout(timer)
   }, []);
 
   return (

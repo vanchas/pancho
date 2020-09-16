@@ -4,11 +4,18 @@ import { getDrinks, addAnOrderItem } from '../redux/actions/actions'
 import s from '../components/drinks/drinks.module.scss'
 import DrinksList from '../components/drinks/DrinksList'
 import Billboard from "../components/billboard/Billboard";
+import scrollPage from "../utils/scroll-page";
 
 function Drinks({ getDrinks, drinks, addAnOrderItem }) {
 
   useEffect(() => {
     getDrinks();
+
+    const timer = setTimeout(() => {
+      scrollPage(650)
+    }, 100)
+
+    return () => clearTimeout(timer)
   }, []);
 
   return (

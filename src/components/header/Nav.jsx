@@ -45,10 +45,13 @@ const NavComponent = (props) => {
 			className="py-1"
 			style={{ zIndex: "1", maxWidth: "1667px", margin: "auto" }}
 		>
-			<NavbarBrand href="tel:+0950001195" className={`ml-3 ${s.navbar_brand}`}>
+			<NavbarBrand
+				href={`tel:+38${props.phone.split("-").join("")}`}
+				className={`ml-3 ${s.navbar_brand}`}
+			>
 				<div>
 					<img src={Phone} alt="" />
-					<span className="btn text-light">095-000-11-95</span>
+					<span className="btn text-light">{props.phone}</span>
 				</div>
 			</NavbarBrand>
 			<div className={s.location_select}>
@@ -102,6 +105,7 @@ const NavComponent = (props) => {
 const mapStateToProps = (state) => ({
 	cities: state.user.cities,
 	currentLocation: state.user.currentLocation,
+	phone: state.user.headerSelectPhone,
 });
 
 const mapDispatchToProps = {

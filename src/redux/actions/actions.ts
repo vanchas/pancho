@@ -27,7 +27,12 @@ import {
   GET_CURRENT_LOCATION,
   SET_PESISTED_STATE,
   GET_SALADS,
-  SET_HEADER_PHONE, INCREASE_FREE_SOUCES_COUNTER, DECREASE_FREE_SOUCES_COUNTER, SET_CURRENT_CITY, SET_CAFE_ADDRESS
+  SET_HEADER_PHONE,
+  INCREASE_FREE_SOUCES_COUNTER,
+  DECREASE_FREE_SOUCES_COUNTER,
+  SET_CURRENT_CITY,
+  SET_CAFE_ADDRESS,
+  SHOW_SUCCESS, SHOW_FAILURE, HIDE_SUCCESS, HIDE_FAILURE
 } from "./types";
 import { pizza } from '../../../fakePizzas'
 import { woks } from '../../../fakeWoks'
@@ -82,6 +87,20 @@ export const getDesserts = () => {
   return { type: GET_DESSERTS, payload: desserts }
 }
 
+export const showSuccess = (product: any) => (dispatch: Function) => {
+  dispatch({ type: SHOW_SUCCESS, payload: product })
+  setTimeout(() => {
+    dispatch({ type: HIDE_SUCCESS })
+  }, 2500)
+}
+
+export const showFailure = (product: any) => (dispatch: Function) => {
+  dispatch({ type: SHOW_FAILURE, payload: product })
+  setTimeout(() => {
+    dispatch({ type: HIDE_FAILURE })
+  }, 2500)
+}
+
 
 // user
 // export const getOrders = (id: number) => {
@@ -112,8 +131,11 @@ export const addReview = (review: any) => {
 export const getReviews = () => {
   return { type: GET_REVIEWS, payload: reviews }
 }
-export const addAnOrderItem = (orderItem: any) => {
-  return { type: ADD_AN_ORDER_ITEM, payload: { ...orderItem, orderId: Date.now(), counter: 1 } };
+export const addAnOrderItem = (orderItem: any) => (dispatch: Function) => {
+  setTimeout(() => {
+    dispatch({ type: ADD_AN_ORDER_ITEM, payload: { ...orderItem, orderId: Date.now(), counter: 1 } });
+    dispatch(showSuccess(orderItem));
+  }, 300)
 }
 export const removeAnOrderItem = (id: number) => {
   return { type: REMOVE_AN_ORDER_ITEM, payload: id };

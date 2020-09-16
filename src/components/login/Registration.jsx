@@ -65,7 +65,7 @@ const Registration = ({ buttonLabel }) => {
         .email("Некорректный е-мейл")
         .required("Обязательное поле!"),
       phone: Yup.string()
-        .matches(phoneNumberMask, `Некорректный номер телефона ${validationSchema.phone}`)
+        .matches(phoneNumberMask, `Некорректный номер телефона`)
         .required("Обязательное поле!")
     }),
     onSubmit: values => {
